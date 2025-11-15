@@ -1,0 +1,2585 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offerte di Lavoro - ATTAL Group | 1331 Opportunità in Italia</title>
+    <meta name="description" content="1331 offerte di lavoro in Italia. Ti chiamiamo in 48h. Colloquio lo stesso giorno. Zero burocrazia.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: #f9fafb;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* HEADER */
+        header {
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 20px 0;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #e22721;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: #1f2937;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #e22721;
+        }
+        
+        /* HERO SECTION */
+        .hero {
+            background: #e22721;
+            padding: 60px 0 80px 0;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        
+        .hero .subtitle {
+            font-size: 20px;
+            color: rgba(255,255,255,0.95);
+            margin-bottom: 40px;
+        }
+        
+        /* SEARCH BAR */
+        .search-container {
+            background: white;
+            padding: 12px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            max-width: 900px;
+        }
+        
+        .search-input-wrapper {
+            flex: 2;
+            min-width: 280px;
+            position: relative;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 18px 20px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: #e22721;
+        }
+        
+        .search-select {
+            flex: 1;
+            min-width: 180px;
+            padding: 18px 20px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+            background: white;
+            cursor: pointer;
+        }
+        
+        .search-select:focus {
+            outline: none;
+            border-color: #e22721;
+        }
+        
+        .search-btn {
+            background: #e22721;
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .search-btn:hover {
+            background: #c91f1a;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(226, 39, 33, 0.3);
+        }
+        
+        /* TRUST SIGNALS */
+        .trust-signals {
+            margin-top: 30px;
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            color: white;
+            font-size: 14px;
+        }
+        
+        .trust-signal {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* MAIN CONTENT */
+        .main-content {
+            padding: 40px 0 80px 0;
+        }
+        
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+        
+        /* SIDEBAR FILTERS */
+        .filters-sidebar {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 100px;
+        }
+        
+        .filters-header {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        
+        .filter-group {
+            margin-bottom: 25px;
+        }
+        
+        .filter-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .filter-select {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            font-size: 14px;
+            background: white;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+        
+        .filter-select:focus {
+            outline: none;
+            border-color: #e22721;
+        }
+        
+        .clear-filters {
+            width: 100%;
+            padding: 10px;
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            color: #6b7280;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .clear-filters:hover {
+            background: #e5e7eb;
+            color: #1f2937;
+        }
+        
+        /* JOBS GRID */
+        .jobs-container {
+            min-height: 600px;
+        }
+        
+        .zero-results {
+            text-align: center;
+            padding: 60px 40px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        .zero-results-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+        
+        .zero-results-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 10px;
+        }
+        
+        .zero-results-query {
+            font-size: 18px;
+            color: #6b7280;
+            margin-bottom: 40px;
+        }
+        
+        .suggestions-section {
+            margin-bottom: 40px;
+        }
+        
+        .suggestions-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .suggestions-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .suggestion-card {
+            background: #f9fafb;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        
+        .suggestion-card:hover {
+            border-color: #e22721;
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .suggestion-title {
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        
+        .suggestion-count {
+            color: #e22721;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 40px 0;
+            color: #9ca3af;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .divider::before {
+            margin-right: 20px;
+        }
+        
+        .divider::after {
+            margin-left: 20px;
+        }
+        
+        .alert-section {
+            background: #fef3f2;
+            border: 2px solid #e22721;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .alert-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .alert-form {
+            display: flex;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .alert-input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+        
+        .alert-input:focus {
+            outline: none;
+            border-color: #e22721;
+        }
+        
+        .alert-btn {
+            background: #e22721;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+        
+        .alert-btn:hover {
+            background: #c91f1a;
+            transform: translateY(-2px);
+        }
+        
+        .fallback-btn {
+            background: #f9fafb;
+            border: 2px solid #e5e7eb;
+            color: #1f2937;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .fallback-btn:hover {
+            border-color: #e22721;
+            background: white;
+            transform: translateY(-2px);
+        }
+        
+        .jobs-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .jobs-count {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1f2937;
+        }
+        
+        .jobs-count span {
+            color: #e22721;
+        }
+        
+        .sort-select {
+            padding: 8px 12px;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            font-size: 14px;
+            background: white;
+            cursor: pointer;
+        }
+        
+        .jobs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        /* JOB CARD */
+        .job-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            border: 2px solid transparent;
+            height: fit-content;
+        }
+        
+        .job-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            border-color: #e22721;
+        }
+        
+        .job-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .badge-urgent {
+            background: #fef3f2;
+            color: #e22721;
+        }
+        
+        .badge-top {
+            background: #fffbeb;
+            color: #f59e0b;
+        }
+        
+        .badge-salary {
+            background: #f0fdf4;
+            color: #16a34a;
+        }
+        
+        .job-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 12px;
+            padding-right: 100px;
+            line-height: 1.3;
+        }
+        
+        .job-salary {
+            font-size: 28px;
+            font-weight: 700;
+            color: #e22721;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        
+        .job-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        
+        .job-meta-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 10px;
+            background: #f9fafb;
+            border-radius: 16px;
+            font-size: 13px;
+            color: #6b7280;
+        }
+        
+        .job-start-date {
+            color: #e22721;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .job-social-proof {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 15px;
+            font-size: 12px;
+            color: #9ca3af;
+            flex-wrap: wrap;
+        }
+        
+        .social-proof-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .job-location {
+            display: none; /* Location now in meta pills */
+        }
+        
+        .job-cta {
+            background: #e22721;
+            color: white;
+            border: none;
+            padding: 14px 24px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: auto;
+        }
+        
+        .job-cta:hover {
+            background: #c91f1a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(226, 39, 33, 0.3);
+        }
+        
+        /* MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 16px;
+            max-width: 700px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            margin: auto;
+        }
+        
+        .modal-header {
+            background: #e22721;
+            color: white;
+            padding: 30px;
+            border-radius: 16px 16px 0 0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 32px;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+            line-height: 1;
+            transition: transform 0.3s;
+        }
+        
+        .modal-close:hover {
+            transform: rotate(90deg);
+        }
+        
+        .modal-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            padding-right: 40px;
+        }
+        
+        .modal-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 15px;
+            opacity: 0.95;
+        }
+        
+        .modal-body {
+            padding: 35px;
+        }
+        
+        .modal-section {
+            margin-bottom: 30px;
+        }
+        
+        .modal-section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .modal-text {
+            color: #4b5563;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        
+        .modal-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .modal-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #4b5563;
+        }
+        
+        .modal-list li:before {
+            content: "•";
+            color: #e22721;
+            font-weight: bold;
+            position: absolute;
+            left: 8px;
+        }
+        
+        .modal-branch {
+            background: #f9fafb;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #e22721;
+        }
+        
+        .modal-branch h4 {
+            color: #1f2937;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .modal-branch p {
+            color: #6b7280;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        
+        .modal-work-location {
+            background: #f9fafb;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #e22721;
+        }
+        
+        .distance-calc-btn {
+            background: white;
+            border: 2px solid #e22721;
+            color: #e22721;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .distance-calc-btn:hover {
+            background: #e22721;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(226, 39, 33, 0.2);
+        }
+        
+        /* APPLICATION BOX */
+        .application-box {
+            background: linear-gradient(135deg, #fef3f2 0%, #fff 100%);
+            border: 2px solid #e22721;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .application-box h3 {
+            font-size: 24px;
+            color: #1f2937;
+            margin-bottom: 15px;
+        }
+        
+        .application-steps {
+            text-align: left;
+            margin: 25px 0;
+            color: #4b5563;
+        }
+        
+        .application-step {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            font-size: 15px;
+        }
+        
+        .step-number {
+            background: #e22721;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+        
+        .upload-btn {
+            background: #e22721;
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 20px 0 15px 0;
+            width: 100%;
+        }
+        
+        .upload-btn:hover {
+            background: #c91f1a;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(226, 39, 33, 0.3);
+        }
+        
+        .login-link {
+            color: #6b7280;
+            font-size: 14px;
+        }
+        
+        .login-link a {
+            color: #e22721;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+        
+        /* SUCCESS MODAL */
+        .success-content {
+            text-align: center;
+            padding: 50px 35px;
+        }
+        
+        .success-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+        
+        .success-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 15px;
+        }
+        
+        .success-subtitle {
+            font-size: 18px;
+            color: #6b7280;
+            margin-bottom: 30px;
+        }
+        
+        .success-phone {
+            background: #f9fafb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .success-phone input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            font-size: 16px;
+            text-align: center;
+        }
+        
+        .success-actions {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .action-btn {
+            flex: 1;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+        }
+        
+        .action-primary {
+            background: #e22721;
+            color: white;
+        }
+        
+        .action-primary:hover {
+            background: #c91f1a;
+        }
+        
+        .action-secondary {
+            background: #f9fafb;
+            color: #1f2937;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .action-secondary:hover {
+            background: #e5e7eb;
+        }
+        
+        .similar-jobs {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 2px solid #e5e7eb;
+        }
+        
+        .similar-jobs h4 {
+            font-size: 18px;
+            color: #1f2937;
+            margin-bottom: 20px;
+        }
+        
+        .similar-job-card {
+            background: #f9fafb;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .similar-job-card:hover {
+            background: #e5e7eb;
+        }
+        
+        .similar-job-title {
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 5px;
+        }
+        
+        .similar-job-meta {
+            font-size: 13px;
+            color: #6b7280;
+        }
+        
+        /* TESTIMONIALS */
+        .testimonials {
+            background: white;
+            padding: 50px 0 60px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .testimonials-header h2 {
+            font-size: 28px;
+            color: #1f2937;
+            margin-bottom: 15px;
+        }
+        
+        .trustpilot-rating {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+        
+        .trustpilot-stars {
+            color: #00b67a;
+            font-size: 24px;
+            letter-spacing: 2px;
+        }
+        
+        .trustpilot-score {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1f2937;
+        }
+        
+        .trustpilot-label {
+            color: #6b7280;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: all 0.3s;
+        }
+        
+        .testimonial-card:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+        
+        .testimonial-stars {
+            color: #fbbf24;
+            font-size: 18px;
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+        }
+        
+        .testimonial-quote {
+            font-size: 15px;
+            color: #4b5563;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-top: 15px;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e22721 0%, #c91f1a 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        
+        .testimonial-info {
+            flex: 1;
+        }
+        
+        .testimonial-name {
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 3px;
+            font-size: 15px;
+        }
+        
+        .testimonial-job {
+            font-size: 13px;
+            color: #6b7280;
+            margin-bottom: 4px;
+        }
+        
+        .testimonial-meta {
+            font-size: 12px;
+            color: #9ca3af;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .verified-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            color: #16a34a;
+            font-weight: 600;
+        }
+        
+        .testimonials-cta {
+            text-align: center;
+            margin-top: 35px;
+        }
+        
+        .testimonials-cta a {
+            color: #e22721;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s;
+        }
+        
+        .testimonials-cta a:hover {
+            gap: 10px;
+        }
+        
+        /* FOOTER */
+        footer {
+            background: #1f2937;
+            color: white;
+            padding: 60px 0 30px 0;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-column a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: #e22721;
+        }
+        
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: rgba(255,255,255,0.6);
+        }
+        
+        /* LOADING STATE */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+            }
+            
+            .filters-sidebar {
+                position: static;
+            }
+            
+            .jobs-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero .subtitle {
+                font-size: 16px;
+            }
+            
+            .search-container {
+                flex-direction: column;
+            }
+            
+            .search-input-wrapper,
+            .search-select {
+                min-width: 100%;
+            }
+            
+            .trust-signals {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .jobs-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .job-title {
+                font-size: 18px;
+                padding-right: 80px;
+            }
+            
+            .job-salary {
+                font-size: 24px;
+            }
+            
+            .suggestions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .alert-form {
+                flex-direction: column;
+            }
+            
+            .modal-title {
+                font-size: 22px;
+            }
+            
+            .success-actions {
+                flex-direction: column;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="/" class="logo">ATTAL</a>
+                <ul class="nav-links">
+                    <li><a href="/offerte-lavoro">Offerte</a></li>
+                    <li><a href="/filiali">Filiali</a></li>
+                    <li><a href="/servizi">Servizi</a></li>
+                    <li><a href="/contatti">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <h1>Trova lavoro oggi.<br>Inizia subito.</h1>
+            <p class="subtitle">1331 offerte attive. Ti chiamiamo in 48h garantito. Zero burocrazia.</p>
+            
+            <div class="search-container">
+                <div class="search-input-wrapper">
+                    <input type="text" 
+                           id="heroSearch" 
+                           class="search-input" 
+                           placeholder="Che lavoro cerchi? Es: Magazziniere, Cameriere, Commessa..."
+                           autocomplete="off"
+                           oninput="liveSearch(); updateSearchButton()"
+                           onkeypress="if(event.key === 'Enter') searchAndScroll()">
+                </div>
+                <select id="heroCity" class="search-select">
+                    <option value="">Tutta Italia</option>
+                    <option value="Milano" selected>Milano</option>
+                    <option value="Roma">Roma</option>
+                    <option value="Torino">Torino</option>
+                    <option value="Bologna">Bologna</option>
+                    <option value="Napoli">Napoli</option>
+                    <option value="Firenze">Firenze</option>
+                    <option value="Venezia">Venezia</option>
+                    <option value="Brescia">Brescia</option>
+                    <option value="Verona">Verona</option>
+                </select>
+                <button class="search-btn" id="searchButton" onclick="searchAndScroll()">Sfoglia lavori a Milano</button>
+            </div>
+            
+            <div class="trust-signals">
+                <div class="trust-signal">✅ 1.200+ persone assunte quest'anno</div>
+                <div class="trust-signal">⚡ Risposta garantita in 48h</div>
+                <div class="trust-signal">🏢 88 filiali in Italia</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="testimonials-header">
+                <h2>Cosa dicono i candidati</h2>
+                <div class="trustpilot-rating">
+                    <span class="trustpilot-stars">★★★★★</span>
+                    <span class="trustpilot-score">4.7/5</span>
+                </div>
+                <p class="trustpilot-label">Basato su 1.892 recensioni verificate</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-quote">"Assunto in 5 giorni, ora lavoro in Amazon. Mai stato così semplice trovare lavoro. Il recruiter mi ha seguito passo passo."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MR</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Marco Rossi</div>
+                            <div class="testimonial-job">Magazziniere presso Amazon</div>
+                            <div class="testimonial-meta">
+                                <span class="verified-badge">✓ Verificato</span>
+                                <span>•</span>
+                                <span>2 settimane fa</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-quote">"Cercavo part-time compatibile con l'università. In una settimana ero già al lavoro. Orari flessibili come promesso."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SL</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Sara Lombardi</div>
+                            <div class="testimonial-job">Commessa presso Zara</div>
+                            <div class="testimonial-meta">
+                                <span class="verified-badge">✓ Verificato</span>
+                                <span>•</span>
+                                <span>1 mese fa</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-quote">"Dopo anni di ricerca, finalmente un contratto indeterminato. Grazie ATTAL per la professionalità e il supporto."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">AP</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Andrea Pellegrini</div>
+                            <div class="testimonial-job">Operaio presso Fiat</div>
+                            <div class="testimonial-meta">
+                                <span class="verified-badge">✓ Verificato</span>
+                                <span>•</span>
+                                <span>3 settimane fa</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonials-cta">
+                <a href="#" onclick="event.preventDefault(); alert('Funzione non disponibile nel mockup')">
+                    Leggi altre 1.889 recensioni →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <section class="main-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <!-- SIDEBAR FILTERS -->
+                <aside class="filters-sidebar">
+                    <div class="filters-header">Filtra offerte</div>
+                    
+                    <div class="filter-group">
+                        <label class="filter-label">📍 Provincia</label>
+                        <select id="filterCity" class="filter-select" onchange="filterJobs()">
+                            <option value="">Tutte</option>
+                            <option value="Milano">Milano</option>
+                            <option value="Roma">Roma</option>
+                            <option value="Torino">Torino</option>
+                            <option value="Bologna">Bologna</option>
+                            <option value="Napoli">Napoli</option>
+                            <option value="Firenze">Firenze</option>
+                            <option value="Venezia">Venezia</option>
+                            <option value="Brescia">Brescia</option>
+                            <option value="Verona">Verona</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label class="filter-label">💼 Settore</label>
+                        <select id="filterCategory" class="filter-select" onchange="filterJobs()">
+                            <option value="">Tutti i settori</option>
+                            <option value="logistica">📦 Logistica e Magazzino</option>
+                            <option value="produzione">🏭 Produzione e Industria</option>
+                            <option value="retail">🏪 Retail e GDO</option>
+                            <option value="ristorazione">🍽️ Ristorazione e Hotellerie</option>
+                            <option value="amministrazione">💼 Amministrazione e Ufficio</option>
+                            <option value="edilizia">🏗️ Edilizia e Cantieristica</option>
+                            <option value="trasporti">🚚 Trasporti e Autisti</option>
+                            <option value="sanita">🏥 Sanità e Assistenza</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label class="filter-label">📝 Contratto</label>
+                        <select id="filterContract" class="filter-select" onchange="filterJobs()">
+                            <option value="">Tutti i contratti</option>
+                            <option value="tempo-determinato">Tempo determinato</option>
+                            <option value="tempo-indeterminato">Tempo indeterminato</option>
+                            <option value="somministrazione">Somministrazione</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label class="filter-label">⏰ Orario</label>
+                        <select id="filterTime" class="filter-select" onchange="filterJobs()">
+                            <option value="">Tutti gli orari</option>
+                            <option value="full-time">Full-time</option>
+                            <option value="part-time">Part-time</option>
+                        </select>
+                    </div>
+                    
+                    <button class="clear-filters" onclick="clearFilters()">Cancella filtri</button>
+                </aside>
+
+                <!-- JOBS GRID -->
+                <div class="jobs-container">
+                    <div class="jobs-header">
+                        <div class="jobs-count">
+                            <span id="jobsCount">1331</span> offerte trovate
+                        </div>
+                        <select class="sort-select" id="sortBy" onchange="sortJobs()">
+                            <option value="recent">Più recenti</option>
+                            <option value="salary-high">Stipendio (alto)</option>
+                            <option value="salary-low">Stipendio (basso)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="jobs-grid" id="jobsGrid">
+                        <!-- Jobs will be inserted here by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>ATTAL Group</h3>
+                    <ul>
+                        <li><a href="#">Chi siamo</a></li>
+                        <li><a href="#">Storia</a></li>
+                        <li><a href="#">Mission</a></li>
+                        <li><a href="#">Certificazioni</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Servizi</h3>
+                    <ul>
+                        <li><a href="#">Somministrazione</a></li>
+                        <li><a href="#">Ricerca e Selezione</a></li>
+                        <li><a href="#">Formazione</a></li>
+                        <li><a href="#">Outplacement</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Candidati</h3>
+                    <ul>
+                        <li><a href="#">Offerte di lavoro</a></li>
+                        <li><a href="#">Trova filiale</a></li>
+                        <li><a href="#">Area candidati</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Aziende</h3>
+                    <ul>
+                        <li><a href="#">Ricerca personale</a></li>
+                        <li><a href="#">Consulenza HR</a></li>
+                        <li><a href="#">Area aziende</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 ATTAL Group - Tutti i diritti riservati - Aut. Min. XXX</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JOB MODAL -->
+    <div id="jobModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+                <h2 class="modal-title" id="modalTitle"></h2>
+                <div class="modal-meta" id="modalMeta"></div>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- SUCCESS MODAL -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="success-content">
+                <div class="success-icon">✅</div>
+                <h2 class="success-title">CANDIDATURA INVIATA!</h2>
+                <p class="success-subtitle">Ti chiamiamo entro 48h</p>
+                
+                <div class="success-phone">
+                    <input type="tel" placeholder="+39 ___ ___ ____" value="+39 340 123 4567">
+                </div>
+                
+                <div class="success-actions">
+                    <button class="action-btn action-primary">📞 Chiamaci ora</button>
+                    <button class="action-btn action-secondary">📍 Vieni in filiale</button>
+                </div>
+                
+                <div class="similar-jobs">
+                    <h4>Altre 3 offerte simili per te:</h4>
+                    <div class="similar-job-card" onclick="closeModal()">
+                        <div class="similar-job-title">Operaio di Produzione - Milano</div>
+                        <div class="similar-job-meta">Tempo determinato • 1.500€/mese • Full-time</div>
+                    </div>
+                    <div class="similar-job-card" onclick="closeModal()">
+                        <div class="similar-job-title">Addetto Magazzino - Segrate</div>
+                        <div class="similar-job-meta">Somministrazione • 1.450€/mese • Full-time</div>
+                    </div>
+                    <div class="similar-job-card" onclick="closeModal()">
+                        <div class="similar-job-title">Mulettista - Peschiera Borromeo</div>
+                        <div class="similar-job-meta">Tempo determinato • 1.600€/mese • Full-time</div>
+                    </div>
+                </div>
+                
+                <button class="action-btn action-secondary" onclick="closeModal()" style="margin-top: 20px;">Chiudi</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JOBS DATA
+        const jobsData = [
+            {
+                id: 1,
+                title: "Magazziniere Mulettista",
+                city: "Milano",
+                category: "logistica",
+                contract: "somministrazione",
+                time: "full-time",
+                salary: "1.450",
+                badge: "urgent",
+                location: "Milano Nord - Sesto San Giovanni",
+                description: "Cerchiamo magazziniere mulettista per importante azienda di logistica. La risorsa si occuperà di movimentazione merce, carico/scarico e gestione inventario.",
+                requirements: ["Patentino muletto valido", "Esperienza minima 1 anno", "Disponibilità immediata", "Conoscenza gestione magazzino"],
+                benefits: ["Mensa aziendale gratuita", "Formazione continua pagata", "Possibilità di assunzione diretta", "Turni flessibili"],
+                branch: "Milano Corsica - Via Pergolesi 8",
+                phone: "02/454320"
+            },
+            {
+                id: 2,
+                title: "Commesso/a Retail",
+                city: "Milano",
+                category: "retail",
+                contract: "tempo-determinato",
+                time: "full-time",
+                salary: "1.350",
+                badge: "top",
+                location: "Milano Centro - Corso Buenos Aires",
+                description: "Per nota catena di abbigliamento ricerchiamo commesso/a con esperienza nella vendita. Ambiente dinamico e giovane.",
+                requirements: ["Esperienza in retail moda", "Ottime capacità comunicative", "Flessibilità oraria", "Italiano fluente"],
+                benefits: ["Sconti dipendenti 30%", "Bonus vendite mensili", "Formazione prodotto", "Ambiente giovane"],
+                branch: "Milano Centro - Piazza Duomo 12",
+                phone: "02/123456"
+            },
+            {
+                id: 3,
+                title: "Operaio di Produzione",
+                city: "Torino",
+                category: "produzione",
+                contract: "tempo-indeterminato",
+                time: "full-time",
+                salary: "1.600",
+                badge: "salary",
+                location: "Torino Sud - Moncalieri",
+                description: "Azienda metalmeccanica cerca operai per linea di produzione. Contratto a tempo indeterminato dopo periodo di prova.",
+                requirements: ["Esperienza nel settore metalmeccanico", "Capacità di lavorare in team", "Disponibilità turni", "Diploma tecnico preferibile"],
+                benefits: ["Contratto indeterminato", "14 mensilità", "Welfare aziendale", "Crescita professionale"],
+                branch: "Torino Centro - Corso Francia 10",
+                phone: "011/123456"
+            },
+            {
+                id: 4,
+                title: "Addetto/a Vendite GDO",
+                city: "Roma",
+                category: "retail",
+                contract: "somministrazione",
+                time: "part-time",
+                salary: "900",
+                badge: "urgent",
+                location: "Roma EUR",
+                description: "Supermercato cerca addetti vendite per reparto ortofrutta. Part-time 20h settimanali, ideale per studenti.",
+                requirements: ["Prima esperienza GDO", "Disponibilità weekend", "Attitudine al cliente", "Flessibilità"],
+                benefits: ["Orari compatibili studio", "Formazione retribuita", "Possibilità full-time", "Ambiente dinamico"],
+                branch: "Roma EUR - Viale Europa 100",
+                phone: "06/789012"
+            },
+            {
+                id: 5,
+                title: "Cameriere di Sala",
+                city: "Milano",
+                category: "ristorazione",
+                contract: "tempo-determinato",
+                time: "full-time",
+                salary: "1.400",
+                badge: "urgent",
+                location: "Milano Centro - Brera",
+                description: "Ristorante rinomato cerca cameriere con esperienza per servizio ai tavoli. Ambiente elegante e professionale.",
+                requirements: ["Esperienza ristoranti", "Conoscenza inglese", "Presenza curata", "Disponibilità serale"],
+                benefits: ["Mance consistenti", "Pasti inclusi", "Formazione sommelier", "Team internazionale"],
+                branch: "Milano Centro - Piazza Duomo 12",
+                phone: "02/123456"
+            },
+            {
+                id: 6,
+                title: "Impiegato/a Amministrativo",
+                city: "Bologna",
+                category: "amministrazione",
+                contract: "tempo-indeterminato",
+                time: "full-time",
+                salary: "1.500",
+                badge: "salary",
+                location: "Bologna Centro",
+                description: "Studio commercialista cerca impiegato amministrativo per gestione contabilità clienti. Richiesta esperienza settore.",
+                requirements: ["Laurea in Economia", "Conoscenza SAP", "Esperienza 2+ anni", "Precisione e puntualità"],
+                benefits: ["Contratto indeterminato", "Smart working 2gg/settimana", "Buoni pasto", "Formazione continua"],
+                branch: "Bologna Centro - Via Indipendenza 30",
+                phone: "051/123456"
+            },
+            {
+                id: 7,
+                title: "Autista Patente C+E",
+                city: "Verona",
+                category: "trasporti",
+                contract: "tempo-indeterminato",
+                time: "full-time",
+                salary: "2.000",
+                badge: "salary",
+                location: "Verona - Zona industriale",
+                description: "Azienda trasporti cerca autista con patente C+E per consegne nazionali. Contratto a tempo indeterminato.",
+                requirements: ["Patente C+E", "CQC merci", "Esperienza 3+ anni", "Conoscenza strade italiane"],
+                benefits: ["RAL 2.000€ + trasferte", "Mezzo aziendale nuovo", "Rimborso spese completo", "Stabilità contrattuale"],
+                branch: "Verona Centro - Piazza Bra 5",
+                phone: "045/123456"
+            },
+            {
+                id: 8,
+                title: "Muratore Specializzato",
+                city: "Roma",
+                category: "edilizia",
+                contract: "tempo-determinato",
+                time: "full-time",
+                salary: "1.800",
+                badge: "urgent",
+                location: "Roma Nord - Flaminio",
+                description: "Impresa edile cerca muratori specializzati per cantieri ristrutturazione. Lavoro continuativo.",
+                requirements: ["Esperienza 5+ anni", "Autonomia operativa", "Precisione nelle rifiniture", "Patente B"],
+                benefits: ["Paga giornaliera puntuale", "Cantieri vicini", "Attrezzatura fornita", "Possibilità crescita"],
+                branch: "Roma Centro - Via Nazionale 20",
+                phone: "06/123456"
+            },
+            {
+                id: 9,
+                title: "Infermiere/a",
+                city: "Napoli",
+                category: "sanita",
+                contract: "tempo-indeterminato",
+                time: "full-time",
+                salary: "1.700",
+                badge: "top",
+                location: "Napoli - Vomero",
+                description: "Casa di riposo cerca infermiere per assistenza anziani. Ambiente sereno e professionale.",
+                requirements: ["Laurea in Infermieristica", "Iscrizione OPI", "Empatia e pazienza", "Disponibilità turni"],
+                benefits: ["Contratto indeterminato", "Formazione specialistica", "Welfare aziendale", "Turni programmati"],
+                branch: "Napoli Vomero - Via Scarlatti 50",
+                phone: "081/789012"
+            },
+            {
+                id: 10,
+                title: "Receptionist Hotel",
+                city: "Firenze",
+                category: "ristorazione",
+                contract: "tempo-determinato",
+                time: "full-time",
+                salary: "1.350",
+                badge: "top",
+                location: "Firenze Centro Storico",
+                description: "Hotel 4 stelle cerca receptionist per turni diurni e notturni. Richiesta conoscenza lingue straniere.",
+                requirements: ["Inglese fluente", "Seconda lingua (tedesco/francese)", "Esperienza reception", "Conoscenza gestionale"],
+                benefits: ["Alloggio disponibile", "Pasti inclusi", "Team internazionale", "Ambiente prestigioso"],
+                branch: "Firenze Centro - Piazza Signoria 8",
+                phone: "055/123456"
+            },
+            {
+                id: 11,
+                title: "Scaffalista Supermercato",
+                city: "Milano",
+                category: "retail",
+                contract: "somministrazione",
+                time: "part-time",
+                salary: "850",
+                badge: "urgent",
+                location: "Milano Sud - Ripamonti",
+                description: "Supermercato cerca scaffalisti per rifornimento corsie. Part-time 24h, turni mattutini.",
+                requirements: ["No esperienza richiesta", "Disponibilità mattina", "Precisione", "Attitudine al lavoro fisico"],
+                benefits: ["Formazione iniziale", "Possibilità full-time", "Ambiente giovane", "Vicinanza mezzi"],
+                branch: "Milano Sud - Via Ripamonti 50",
+                phone: "02/345678"
+            },
+            {
+                id: 12,
+                title: "Elettricista Civile",
+                city: "Torino",
+                category: "edilizia",
+                contract: "tempo-indeterminato",
+                time: "full-time",
+                salary: "1.900",
+                badge: "salary",
+                location: "Torino - Lingotto",
+                description: "Azienda impiantistica cerca elettricista per installazioni civili. Contratto a tempo indeterminato.",
+                requirements: ["Qualifica elettricista", "Patentino PES/PAV", "Esperienza impianti civili", "Automunito"],
+                benefits: ["Indeterminato subito", "Furgone aziendale", "Formazione continua", "Crescita professionale"],
+                branch: "Torino Sud - Via Po 25",
+                phone: "011/789012"
+            },
+            {
+                id: 13,
+                title: "Barista",
+                city: "Bologna",
+                category: "ristorazione",
+                contract: "tempo-determinato",
+                time: "full-time",
+                salary: "1.300",
+                badge: "urgent",
+                location: "Bologna Centro",
+                description: "Bar pasticceria cerca barista esperto. Richiesta passione per il settore e flessibilità.",
+                requirements: ["Esperienza bancone", "Capacità latte art", "Velocità nel servizio", "Presenza curata"],
+                benefits: ["Colazioni incluse", "Turni spezzati", "Domeniche a rotazione", "Ambiente familiare"],
+                branch: "Bologna Centro - Via Indipendenza 30",
+                phone: "051/123456"
+            },
+            {
+                id: 14,
+                title: "Operatore Call Center",
+                city: "Roma",
+                category: "amministrazione",
+                contract: "somministrazione",
+                time: "full-time",
+                salary: "1.200",
+                badge: "urgent",
+                location: "Roma Tiburtina",
+                description: "Contact center cerca operatori per customer service. Formazione retribuita inclusa.",
+                requirements: ["Diploma", "Buona dialettica", "Conoscenza PC", "Disponibilità immediata"],
+                benefits: ["Formazione 2 settimane pagata", "Bonus obiettivi", "Possibilità smart working", "Crescita rapida"],
+                branch: "Roma Tiburtina - Via Tiburtina 500",
+                phone: "06/345678"
+            },
+            {
+                id: 15,
+                title: "Carrellista",
+                city: "Brescia",
+                category: "logistica",
+                contract: "tempo-determinato",
+                time: "full-time",
+                salary: "1.500",
+                badge: "salary",
+                location: "Brescia - Zona industriale",
+                description: "Centro logistico cerca carrellista per movimentazione merci. Turni su 3 fasce orarie.",
+                requirements: ["Patentino carrello elevatore", "Esperienza 2+ anni", "Disponibilità turni", "Precisione"],
+                benefits: ["Indennità turno", "Mensa gratuita", "Possibilità straordinari", "Ambiente climatizzato"],
+                branch: "Brescia Centro - Corso Zanardelli 20",
+                phone: "030/123456"
+            },
+            {
+                id: 16,
+                title: "Addetto Pulizie",
+                city: "Venezia",
+                category: "retail",
+                contract: "tempo-determinato",
+                time: "part-time",
+                salary: "800",
+                badge: "urgent",
+                location: "Venezia Mestre",
+                description: "Azienda pulizie cerca addetti per centri commerciali. Part-time 20h, orario serale.",
+                requirements: ["No esperienza richiesta", "Disponibilità sera", "Affidabilità", "Precisione"],
+                benefits: ["Formazione inclusa", "Attrezzature fornite", "Orari fissi", "Pagamento puntuale"],
+                branch: "Venezia Mestre - Via Torino 15",
+                phone: "041/123456"
+            },
+            {
+                id: 17,
+                title: "Parrucchiere/a",
+                city: "Milano",
+                category: "retail",
+                contract: "tempo-determinato",
+                time: "full-time",
+                salary: "1.400",
+                badge: "top",
+                location: "Milano Centro - Montenapoleone",
+                description: "Salone di alta gamma cerca parrucchiere/a con esperienza. Clientela affezionata e ambiente premium.",
+                requirements: ["Qualifica parrucchiere", "Esperienza 3+ anni", "Conoscenza tecniche moderne", "Presenza curata"],
+                benefits: ["Percentuale su servizi", "Formazione continua", "Prodotti professionali", "Zona prestigiosa"],
+                branch: "Milano Centro - Piazza Duomo 12",
+                phone: "02/123456"
+            },
+            {
+                id: 18,
+                title: "Manutentore Meccanico",
+                city: "Torino",
+                category: "produzione",
+                contract: "tempo-indeterminato",
+                time: "full-time",
+                salary: "1.800",
+                badge: "salary",
+                location: "Torino - Mirafiori",
+                description: "Stabilimento automotive cerca manutentore per macchinari produzione. Contratto indeterminato.",
+                requirements: ["Diploma tecnico", "Esperienza manutenzione", "Conoscenza PLC", "Disponibilità reperibilità"],
+                benefits: ["Indeterminato", "Welfare 200€/mese", "Formazione tecnica", "Mensa aziendale"],
+                branch: "Torino Centro - Corso Francia 10",
+                phone: "011/123456"
+            },
+            {
+                id: 19,
+                title: "Pizzaiolo",
+                city: "Napoli",
+                category: "ristorazione",
+                contract: "tempo-determinato",
+                time: "full-time",
+                salary: "1.500",
+                badge: "top",
+                location: "Napoli Centro",
+                description: "Pizzeria napoletana verace cerca pizzaiolo esperto. Ambiente tradizionale e clientela turistica.",
+                requirements: ["Esperienza pizzeria napoletana", "Conoscenza impasti tradizionali", "Forno a legna", "Velocità servizio"],
+                benefits: ["Mance consistenti", "Pasti inclusi", "1 giorno riposo", "Ambiente storico"],
+                branch: "Napoli Centro - Via Toledo 100",
+                phone: "081/123456"
+            },
+            {
+                id: 20,
+                title: "Addetto Logistica",
+                city: "Bologna",
+                category: "logistica",
+                contract: "somministrazione",
+                time: "full-time",
+                salary: "1.350",
+                badge: "urgent",
+                location: "Bologna - Interporto",
+                description: "Hub logistico cerca addetti per smistamento pacchi. Start immediato, no esperienza richiesta.",
+                requirements: ["Disponibilità immediata", "Capacità lavoro fisico", "Flessibilità oraria", "Precisione"],
+                benefits: ["Formazione primo giorno", "Divisa fornita", "Possibilità assunzione", "Turni fissi"],
+                branch: "Bologna Fiera - Via Stalingrado 45",
+                phone: "051/789012"
+            },
+            {
+                id: 21,
+                title: "Estetista",
+                city: "Milano",
+                category: "retail",
+                contract: "tempo-determinato",
+                time: "part-time",
+                salary: "1.100",
+                badge: "top",
+                location: "Milano Centro - Corso Vercelli",
+                description: "Centro estetico cerca estetista qualificata per trattamenti viso e corpo. Part-time 30h.",
+                requirements: ["Qualifica estetista", "Esperienza trattamenti", "Conoscenza prodotti", "Capacità vendita"],
+                benefits: ["Commissioni vendite", "Formazione nuovi trattamenti", "Prodotti scontati", "Clientela fidelizzata"],
+                branch: "Milano Centro - Piazza Duomo 12",
+                phone: "02/123456"
+            },
+            {
+                id: 22,
+                title: "Saldatore",
+                city: "Brescia",
+                category: "produzione",
+                contract: "tempo-indeterminato",
+                time: "full-time",
+                salary: "2.100",
+                badge: "salary",
+                location: "Brescia - Zona industriale",
+                description: "Carpenteria metallica cerca saldatore specializzato TIG/MIG. Contratto indeterminato.",
+                requirements: ["Qualifica saldatore", "Esperienza TIG/MIG", "Lettura disegno tecnico", "Precisione"],
+                benefits: ["RAL 2.100€", "14 mensilità", "Straordinari pagati", "Ambiente moderno"],
+                branch: "Brescia Centro - Corso Zanardelli 20",
+                phone: "030/123456"
+            },
+            {
+                id: 23,
+                title: "Promoter Eventi",
+                city: "Roma",
+                category: "retail",
+                contract: "somministrazione",
+                time: "part-time",
+                salary: "900",
+                badge: "urgent",
+                location: "Roma - Varie location",
+                description: "Agenzia eventi cerca promoter per fiere e manifestazioni. Weekend e festivi.",
+                requirements: ["Bella presenza", "Ottime doti comunicative", "Disponibilità weekend", "Dinamicità"],
+                benefits: ["Pagamento evento", "Esperienze diverse", "Networking", "Flessibilità totale"],
+                branch: "Roma Centro - Via Nazionale 20",
+                phone: "06/123456"
+            },
+            {
+                id: 24,
+                title: "Addetto Benzinai",
+                city: "Firenze",
+                category: "retail",
+                contract: "tempo-determinato",
+                time: "full-time",
+                salary: "1.250",
+                badge: "urgent",
+                location: "Firenze - Autostrada A1",
+                description: "Stazione servizio autostradale cerca addetto per turni H24. Vitto e alloggio disponibili.",
+                requirements: ["Disponibilità turni notte", "Conoscenza cassa", "Affidabilità", "Patente B"],
+                benefits: ["Alloggio gratuito", "Pasti inclusi", "Turni programmati", "Maggiorazioni notturne"],
+                branch: "Firenze Centro - Piazza Signoria 8",
+                phone: "055/123456"
+            },
+            {
+                id: 25,
+                title: "Cuoco di Linea",
+                city: "Torino",
+                category: "ristorazione",
+                contract: "tempo-determinato",
+                time: "full-time",
+                salary: "1.450",
+                badge: "top",
+                location: "Torino Centro",
+                description: "Ristorante gourmet cerca cuoco di linea. Cucina contemporanea, ambiente professionale.",
+                requirements: ["Esperienza ristoranti", "Conoscenza tecniche moderne", "Velocità esecuzione", "Team work"],
+                benefits: ["Pasti gourmet inclusi", "Formazione chef", "Ambiente stellato", "Crescita professionale"],
+                branch: "Torino Centro - Corso Francia 10",
+                phone: "011/123456"
+            },
+            {
+                id: 26,
+                title: "Corriere Consegne",
+                city: "Milano",
+                category: "trasporti",
+                contract: "somministrazione",
+                time: "full-time",
+                salary: "1.400",
+                badge: "urgent",
+                location: "Milano - Hinterland",
+                description: "Azienda logistica cerca corrieri per consegne last mile. Furgone fornito.",
+                requirements: ["Patente B", "Conoscenza Milano", "Smartphone proprio", "Disponibilità immediata"],
+                benefits: ["Furgone aziendale", "Rimborso carburante", "Compenso per consegna", "Orario flessibile"],
+                branch: "Milano Corsica - Via Pergolesi 8",
+                phone: "02/454320"
+            },
+            {
+                id: 27,
+                title: "OSS - Operatore Socio Sanitario",
+                city: "Bologna",
+                category: "sanita",
+                contract: "tempo-indeterminato",
+                time: "full-time",
+                salary: "1.550",
+                badge: "salary",
+                location: "Bologna - RSA",
+                description: "Residenza sanitaria cerca OSS per assistenza anziani. Contratto indeterminato.",
+                requirements: ["Qualifica OSS", "Esperienza assistenza", "Empatia", "Disponibilità turni"],
+                benefits: ["Contratto indeterminato", "Formazione ECM", "Welfare aziendale", "Stabilità"],
+                branch: "Bologna Centro - Via Indipendenza 30",
+                phone: "051/123456"
+            },
+            {
+                id: 28,
+                title: "Addetto Vendite Telefonia",
+                city: "Roma",
+                category: "retail",
+                contract: "tempo-determinato",
+                time: "full-time",
+                salary: "1.300",
+                badge: "top",
+                location: "Roma - Centro commerciale",
+                description: "Store telefonia cerca addetto vendite. Provvigioni su vendite, formazione prodotto.",
+                requirements: ["Passione tecnologia", "Esperienza vendita", "Capacità consulenza", "Dinamicità"],
+                benefits: ["Provvigioni alte", "Formazione continua", "Sconti prodotti", "Bonus obiettivi"],
+                branch: "Roma EUR - Viale Europa 100",
+                phone: "06/789012"
+            },
+            {
+                id: 29,
+                title: "Facchino Aeroporto",
+                city: "Venezia",
+                category: "logistica",
+                contract: "somministrazione",
+                time: "full-time",
+                salary: "1.400",
+                badge: "urgent",
+                location: "Venezia - Aeroporto Marco Polo",
+                description: "Handling aeroportuale cerca facchini per movimentazione bagagli. Turni H24.",
+                requirements: ["Disponibilità turni", "Capacità lavoro fisico", "Affidabilità", "No esperienza richiesta"],
+                benefits: ["Formazione safety", "Divisa fornita", "Indennità turno", "Ambiente aeroportuale"],
+                branch: "Venezia Mestre - Via Torino 15",
+                phone: "041/123456"
+            },
+            {
+                id: 30,
+                title: "Giardiniere Manutentore",
+                city: "Firenze",
+                category: "edilizia",
+                contract: "tempo-determinato",
+                time: "full-time",
+                salary: "1.350",
+                badge: "urgent",
+                location: "Firenze - Ville storiche",
+                description: "Azienda manutenzioni cerca giardiniere per cura giardini storici. Ambiente prestigioso.",
+                requirements: ["Esperienza giardinaggio", "Patentino fitofarmaci", "Automunito", "Passione piante"],
+                benefits: ["Luoghi prestigiosi", "Attrezzature fornite", "Formazione botanica", "Ambiente tranquillo"],
+                branch: "Firenze Centro - Piazza Signoria 8",
+                phone: "055/123456"
+            },
+            {
+                id: 31,
+                title: "Assistente di Direzione",
+                city: "Milano",
+                category: "amministrazione",
+                contract: "tempo-indeterminato",
+                time: "full-time",
+                salary: "1.800",
+                badge: "salary",
+                location: "Milano Centro - Porta Nuova",
+                description: "Studio legale internazionale cerca assistente direzione. Richiesto inglese fluente.",
+                requirements: ["Laurea", "Inglese C1", "Esperienza segreteria", "Conoscenza Office avanzata"],
+                benefits: ["Contratto indeterminato", "Ticket restaurant", "Smart working", "Ambiente internazionale"],
+                branch: "Milano Centro - Piazza Duomo 12",
+                phone: "02/123456"
+            },
+            {
+                id: 32,
+                title: "Meccanico Auto",
+                city: "Torino",
+                category: "trasporti",
+                contract: "tempo-indeterminato",
+                time: "full-time",
+                salary: "1.700",
+                badge: "salary",
+                location: "Torino - Officina autorizzata",
+                description: "Officina multimarca cerca meccanico auto. Contratto indeterminato, ambiente moderno.",
+                requirements: ["Qualifica meccanico", "Esperienza diagnosi", "Uso strumenti digitali", "Precisione"],
+                benefits: ["Indeterminato", "Formazione case auto", "Attrezzature moderne", "Crescita tecnica"],
+                branch: "Torino Centro - Corso Francia 10",
+                phone: "011/123456"
+            },
+            {
+                id: 33,
+                title: "Addetto Catering",
+                city: "Roma",
+                category: "ristorazione",
+                contract: "somministrazione",
+                time: "part-time",
+                salary: "950",
+                badge: "urgent",
+                location: "Roma - Eventi vari",
+                description: "Azienda catering cerca addetti per eventi. Lavoro su chiamata, weekend e serate.",
+                requirements: ["Esperienza sala/cucina", "Disponibilità weekend", "Presenza curata", "Flessibilità"],
+                benefits: ["Pagamento evento", "Eventi prestigiosi", "Mance", "Networking"],
+                branch: "Roma Centro - Via Nazionale 20",
+                phone: "06/123456"
+            },
+            {
+                id: 34,
+                title: "Tecnico Informatico",
+                city: "Bologna",
+                category: "amministrazione",
+                contract: "tempo-indeterminato",
+                time: "full-time",
+                salary: "1.900",
+                badge: "salary",
+                location: "Bologna - Zona Fiera",
+                description: "Azienda IT cerca tecnico per assistenza sistemistica. Contratto indeterminato.",
+                requirements: ["Diploma tecnico", "Conoscenza reti", "Esperienza help desk", "Problem solving"],
+                benefits: ["Indeterminato", "Certificazioni pagate", "Smart working", "Ambiente tech"],
+                branch: "Bologna Centro - Via Indipendenza 30",
+                phone: "051/123456"
+            },
+            {
+                id: 35,
+                title: "Addetto Controllo Qualità",
+                city: "Brescia",
+                category: "produzione",
+                contract: "tempo-determinato",
+                time: "full-time",
+                salary: "1.550",
+                badge: "top",
+                location: "Brescia - Stabilimento",
+                description: "Azienda meccanica cerca addetto CQ per controlli di processo. Formazione inclusa.",
+                requirements: ["Diploma tecnico", "Precisione misure", "Uso strumenti", "Capacità analisi"],
+                benefits: ["Formazione tecnica", "Ambiente pulito", "Orario giornaliero", "Crescita professionale"],
+                branch: "Brescia Centro - Corso Zanardelli 20",
+                phone: "030/123456"
+            }
+        ];
+
+        // Display all jobs initially
+        let filteredJobs = [...jobsData];
+        
+        function renderJobs(jobs) {
+            const grid = document.getElementById('jobsGrid');
+            const count = document.getElementById('jobsCount');
+            
+            count.textContent = jobs.length;
+            
+            if (jobs.length === 0) {
+                const searchQuery = document.getElementById('heroSearch').value;
+                const heroCity = document.getElementById('heroCity').value;
+                const filterCity = document.getElementById('filterCity').value;
+                const city = filterCity || heroCity; // Prioritize sidebar filter, then hero city
+                
+                // Get top 3 most common job titles in selected city
+                const jobCounts = {};
+                const relevantJobs = city ? jobsData.filter(j => j.city === city) : jobsData;
+                
+                relevantJobs.forEach(job => {
+                    jobCounts[job.title] = (jobCounts[job.title] || 0) + 1;
+                });
+                
+                const topJobs = Object.entries(jobCounts)
+                    .sort((a, b) => b[1] - a[1])
+                    .slice(0, 3);
+                
+                const locationText = city ? `a ${city}` : 'in Italia';
+                
+                grid.innerHTML = `
+                    <div class="zero-results" style="grid-column: 1/-1;">
+                        <div class="zero-results-icon">😔</div>
+                        <h3 class="zero-results-title">Nessuna offerta trovata</h3>
+                        <p class="zero-results-query">
+                            ${searchQuery ? `per "<strong>${searchQuery}</strong>"` : ''} 
+                            ${city ? `a <strong>${city}</strong>` : ''}
+                        </p>
+                        
+                        ${topJobs.length > 0 ? `
+                            <div class="suggestions-section">
+                                <h4 class="suggestions-title">
+                                    💡 Posizioni popolari ${locationText}
+                                </h4>
+                                <div class="suggestions-grid">
+                                    ${topJobs.map(([title, count]) => `
+                                        <div class="suggestion-card" onclick="applySuggestion('${title.replace(/'/g, "\\'")}')">
+                                            <div class="suggestion-title">${title}</div>
+                                            <div class="suggestion-count">${count} ${count === 1 ? 'offerta' : 'offerte'}</div>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        ` : ''}
+                        
+                        <div class="divider">OPPURE</div>
+                        
+                        <div class="alert-section">
+                            <h4 class="alert-title">
+                                🔔 Ti avvisiamo quando troviamo qualcosa?
+                            </h4>
+                            <form class="alert-form" onsubmit="submitAlert(event)">
+                                <input type="email" 
+                                       class="alert-input" 
+                                       placeholder="La tua email" 
+                                       required>
+                                <button type="submit" class="alert-btn">Attiva alert</button>
+                            </form>
+                        </div>
+                        
+                        <button class="fallback-btn" onclick="showAllJobs()">
+                            ← Mostra tutte le ${jobsData.length} offerte
+                        </button>
+                    </div>
+                `;
+                return;
+            }
+            
+            grid.innerHTML = jobs.map(job => {
+                const badgeConfig = {
+                    urgent: { class: 'badge-urgent', emoji: '🔥', text: 'URGENTE' },
+                    top: { class: 'badge-top', emoji: '⭐', text: 'TOP' },
+                    salary: { class: 'badge-salary', emoji: '💰', text: 'RAL' }
+                };
+                
+                const badge = badgeConfig[job.badge];
+                
+                // Generate random but realistic social proof numbers
+                const views = Math.floor(Math.random() * 30) + 8;
+                const applications = Math.floor(Math.random() * 12) + 2;
+                
+                // Calculate start date (random between 1-7 days from now)
+                const daysUntilStart = Math.floor(Math.random() * 7) + 1;
+                const startDate = new Date();
+                startDate.setDate(startDate.getDate() + daysUntilStart);
+                const startDateStr = startDate.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'numeric' });
+                
+                // Capitalize first letter of weekday
+                const formattedStartDate = startDateStr.charAt(0).toUpperCase() + startDateStr.slice(1);
+                
+                return `
+                    <div class="job-card" onclick="openJobModal(${job.id})">
+                        <div class="job-badge ${badge.class}">
+                            ${badge.emoji} ${badge.text}
+                        </div>
+                        
+                        <h3 class="job-title">${job.title}</h3>
+                        
+                        <div class="job-salary">€${job.salary}/mese</div>
+                        
+                        <div class="job-meta">
+                            <span class="job-meta-item">📍 ${job.city}</span>
+                            <span class="job-meta-item">💼 ${job.contract === 'tempo-determinato' ? 'Temp. det.' : job.contract === 'tempo-indeterminato' ? 'Indeterminato' : 'Somministrazione'}</span>
+                            <span class="job-meta-item">⏰ ${job.time === 'full-time' ? 'Full-time' : 'Part-time'}</span>
+                        </div>
+                        
+                        ${job.badge === 'urgent' ? `<div class="job-start-date">🚀 Inizio: ${formattedStartDate}</div>` : ''}
+                        
+                        <div class="job-social-proof">
+                            <span class="social-proof-item">👁️ ${views} viste</span>
+                            <span class="social-proof-item">🔥 ${applications} candidature</span>
+                        </div>
+                        
+                        <button class="job-cta" onclick="event.stopPropagation(); openJobModal(${job.id})">
+                            Candidati in 30 sec →
+                        </button>
+                    </div>
+                `;
+            }).join('');
+        }
+        
+        function filterJobs(shouldScroll = false) {
+            const searchQuery = document.getElementById('heroSearch').value.toLowerCase();
+            const cityHero = document.getElementById('heroCity').value;
+            const cityFilter = document.getElementById('filterCity').value;
+            const category = document.getElementById('filterCategory').value;
+            const contract = document.getElementById('filterContract').value;
+            const time = document.getElementById('filterTime').value;
+            
+            // Use hero city if selected, otherwise use sidebar filter
+            const selectedCity = cityFilter || cityHero;
+            
+            filteredJobs = jobsData.filter(job => {
+                const matchSearch = !searchQuery || 
+                    job.title.toLowerCase().includes(searchQuery) ||
+                    job.location.toLowerCase().includes(searchQuery) ||
+                    job.city.toLowerCase().includes(searchQuery);
+                const matchCity = !selectedCity || job.city === selectedCity;
+                const matchCategory = !category || job.category === category;
+                const matchContract = !contract || job.contract === contract;
+                const matchTime = !time || job.time === time;
+                
+                return matchSearch && matchCity && matchCategory && matchContract && matchTime;
+            });
+            
+            renderJobs(filteredJobs);
+            
+            // Only scroll if explicitly requested (button click)
+            if (shouldScroll) {
+                const jobsSection = document.querySelector('.main-content');
+                if (jobsSection) {
+                    jobsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        }
+        
+        function liveSearch() {
+            // Debounce search for better performance, NO scroll
+            clearTimeout(window.searchTimeout);
+            window.searchTimeout = setTimeout(() => filterJobs(false), 300);
+        }
+        
+        function searchAndScroll() {
+            // Called by button click and Enter key - includes scroll
+            filterJobs(true);
+        }
+        
+        function updateSearchButton() {
+            const searchQuery = document.getElementById('heroSearch').value.trim();
+            const city = document.getElementById('heroCity').value;
+            const button = document.getElementById('searchButton');
+            
+            if (searchQuery) {
+                // User typed a job query
+                button.textContent = 'Cerca lavoro →';
+            } else {
+                // Empty search - browse mode
+                if (city) {
+                    button.textContent = `Sfoglia lavori a ${city}`;
+                } else {
+                    button.textContent = 'Sfoglia tutti i lavori';
+                }
+            }
+        }
+        
+        // Update button text when city changes
+        document.addEventListener('DOMContentLoaded', function() {
+            const citySelect = document.getElementById('heroCity');
+            if (citySelect) {
+                citySelect.addEventListener('change', updateSearchButton);
+            }
+        });
+        
+        function applySuggestion(jobTitle) {
+            // Fill search with suggested job title and search
+            document.getElementById('heroSearch').value = jobTitle;
+            updateSearchButton();
+            searchAndScroll();
+        }
+        
+        function submitAlert(event) {
+            event.preventDefault();
+            const email = event.target.querySelector('input[type="email"]').value;
+            const searchQuery = document.getElementById('heroSearch').value;
+            const city = document.getElementById('heroCity').value || document.getElementById('filterCity').value;
+            
+            // In real app: send to backend API
+            // For mockup: show success message
+            const alertSection = event.target.closest('.alert-section');
+            alertSection.innerHTML = `
+                <div style="text-align: center; padding: 20px;">
+                    <div style="font-size: 48px; margin-bottom: 15px;">✅</div>
+                    <h4 style="color: #16a34a; font-size: 18px; margin-bottom: 10px;">Alert attivato!</h4>
+                    <p style="color: #6b7280; font-size: 14px;">
+                        Ti avviseremo a <strong>${email}</strong> quando troveremo 
+                        ${searchQuery ? `"${searchQuery}"` : 'nuove offerte'} 
+                        ${city ? `a ${city}` : ''}.
+                    </p>
+                </div>
+            `;
+        }
+        
+        function showAllJobs() {
+            // Reset all filters and show everything
+            document.getElementById('heroSearch').value = '';
+            document.getElementById('heroCity').value = '';
+            document.getElementById('filterCity').value = '';
+            document.getElementById('filterCategory').value = '';
+            document.getElementById('filterContract').value = '';
+            document.getElementById('filterTime').value = '';
+            updateSearchButton();
+            filterJobs(false);
+            
+            // Scroll to jobs
+            const jobsSection = document.querySelector('.main-content');
+            if (jobsSection) {
+                jobsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+        
+        function clearFilters() {
+            document.getElementById('heroSearch').value = '';
+            document.getElementById('heroCity').value = 'Milano'; // Reset to detected city
+            document.getElementById('filterCity').value = '';
+            document.getElementById('filterCategory').value = '';
+            document.getElementById('filterContract').value = '';
+            document.getElementById('filterTime').value = '';
+            updateSearchButton();
+            filterJobs();
+        }
+        
+        function sortJobs() {
+            const sortBy = document.getElementById('sortBy').value;
+            
+            if (sortBy === 'salary-high') {
+                filteredJobs.sort((a, b) => parseInt(b.salary) - parseInt(a.salary));
+            } else if (sortBy === 'salary-low') {
+                filteredJobs.sort((a, b) => parseInt(a.salary) - parseInt(b.salary));
+            } else {
+                filteredJobs.sort((a, b) => b.id - a.id); // Most recent
+            }
+            
+            renderJobs(filteredJobs);
+        }
+        
+        function openJobModal(jobId) {
+            const job = jobsData.find(j => j.id === jobId);
+            if (!job) return;
+            
+            const modal = document.getElementById('jobModal');
+            document.getElementById('modalTitle').textContent = job.title;
+            document.getElementById('modalMeta').innerHTML = `
+                <span>${job.contract}</span>
+                <span>${job.salary}€/mese</span>
+                <span>${job.time}</span>
+            `;
+            
+            document.getElementById('modalBody').innerHTML = `
+                <div class="modal-section">
+                    <h3 class="modal-section-title">🎯 La posizione</h3>
+                    <p class="modal-text">${job.description}</p>
+                </div>
+                
+                <div class="modal-section">
+                    <h3 class="modal-section-title">✅ Requisiti</h3>
+                    <ul class="modal-list">
+                        ${job.requirements.map(req => `<li>${req}</li>`).join('')}
+                    </ul>
+                </div>
+                
+                <div class="modal-section">
+                    <h3 class="modal-section-title">💎 Benefit</h3>
+                    <ul class="modal-list">
+                        ${job.benefits.map(ben => `<li>${ben}</li>`).join('')}
+                    </ul>
+                </div>
+                
+                <div class="modal-section">
+                    <h3 class="modal-section-title">📍 Dove lavorerai</h3>
+                    <div class="modal-work-location">
+                        <p style="color: #1f2937; font-weight: 600; margin-bottom: 10px;">${job.location}</p>
+                        <button class="distance-calc-btn" onclick="event.stopPropagation(); calculateDistance(${job.id})">
+                            🚗 Calcola distanza da casa
+                        </button>
+                        <div id="distanceResult-${job.id}" style="display: none; margin-top: 15px; padding: 15px; background: #f0fdf4; border-radius: 8px; border-left: 4px solid #16a34a;">
+                            <div style="color: #16a34a; font-weight: 600; margin-bottom: 5px;">✅ Distanza calcolata</div>
+                            <div style="color: #4b5563; font-size: 14px;">🚗 <strong>15 minuti</strong> in auto (8.3 km)</div>
+                            <div style="color: #4b5563; font-size: 14px; margin-top: 3px;">🚌 <strong>28 minuti</strong> con mezzi pubblici</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-section">
+                    <h3 class="modal-section-title">📞 Filiale di riferimento</h3>
+                    <div class="modal-branch">
+                        <h4>${job.branch}</h4>
+                        <p>📞 ${job.phone}</p>
+                        <p style="font-size: 13px; margin-top: 5px; color: #9ca3af;">Per colloqui e informazioni</p>
+                    </div>
+                </div>
+                
+                <div class="application-box">
+                    <h3>📄 CARICA IL TUO CV</h3>
+                    <p style="color: #6b7280; margin: 15px 0 25px 0;">Trascina il file qui o clicca per selezionare</p>
+                    
+                    <div style="border: 3px dashed #e22721; border-radius: 12px; padding: 50px 30px; background: #fef3f2; cursor: pointer; margin-bottom: 20px; transition: all 0.3s;" 
+                         onclick="document.getElementById('cvUpload').click()"
+                         onmouseover="this.style.background='#fee2e2'"
+                         onmouseout="this.style.background='#fef3f2'">
+                        <div style="font-size: 48px; margin-bottom: 15px;">📎</div>
+                        <div style="font-size: 16px; color: #1f2937; font-weight: 600;">Clicca per caricare il CV</div>
+                        <div style="font-size: 14px; color: #6b7280; margin-top: 5px;">PDF, DOC, DOCX (max 5MB)</div>
+                    </div>
+                    <input type="file" id="cvUpload" accept=".pdf,.doc,.docx" style="display: none;" onchange="submitApplication()">
+                    
+                    <div style="text-align: center; color: #6b7280; font-size: 14px; margin-bottom: 15px;">
+                        ✅ Ti chiamiamo entro 48h garantito
+                    </div>
+                    
+                    <div class="login-link">
+                        Non hai il CV? <a href="#" onclick="event.preventDefault(); alert('Funzione non disponibile nel mockup')">Candidati con LinkedIn →</a>
+                    </div>
+                </div>
+            `;
+            
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal() {
+            document.getElementById('jobModal').style.display = 'none';
+            document.getElementById('successModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        function submitApplication() {
+            const fileInput = document.getElementById('cvUpload');
+            if (!fileInput.files.length) return;
+            
+            // Close job modal immediately
+            document.getElementById('jobModal').style.display = 'none';
+            
+            // Show success modal with slight delay for effect
+            setTimeout(() => {
+                document.getElementById('successModal').style.display = 'flex';
+            }, 200);
+        }
+        
+        function calculateDistance(jobId) {
+            // In a real implementation, this would:
+            // 1. Ask for user's address if not logged in
+            // 2. Call Google Maps Distance Matrix API
+            // 3. Calculate route and display real distances
+            
+            // For mockup: just show the result with animation
+            const resultDiv = document.getElementById('distanceResult-' + jobId);
+            const btn = event.target;
+            
+            // Show loading state
+            btn.innerHTML = '⏳ Calcolo in corso...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                resultDiv.style.display = 'block';
+                btn.style.display = 'none';
+            }, 800);
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const jobModal = document.getElementById('jobModal');
+            const successModal = document.getElementById('successModal');
+            if (event.target === jobModal || event.target === successModal) {
+                closeModal();
+            }
+        }
+        
+        // Initialize page
+        renderJobs(filteredJobs);
+        
+        // Simulate geolocation detection on page load
+        window.addEventListener('load', function() {
+            // Fake geolocation - in real app would use navigator.geolocation
+            setTimeout(() => {
+                const detectedCity = 'Milano'; // Simulated detection
+                document.getElementById('heroCity').value = detectedCity;
+                updateSearchButton();
+                
+                // Show subtle notification
+                const notification = document.createElement('div');
+                notification.style.cssText = `
+                    position: fixed;
+                    bottom: 30px;
+                    right: 30px;
+                    background: white;
+                    padding: 15px 20px;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                    border-left: 4px solid #16a34a;
+                    z-index: 1000;
+                    animation: slideIn 0.3s ease;
+                    font-size: 14px;
+                    color: #1f2937;
+                `;
+                notification.innerHTML = `
+                    📍 Rilevo che sei a <strong>${detectedCity}</strong>
+                `;
+                document.body.appendChild(notification);
+                
+                // Remove notification after 3 seconds
+                setTimeout(() => {
+                    notification.style.animation = 'slideOut 0.3s ease';
+                    setTimeout(() => notification.remove(), 300);
+                }, 3000);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

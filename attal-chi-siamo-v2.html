@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Siamo | ATTAL Group - Nella Tua Città. Da 25 Anni.</title>
+    <meta name="description" content="80 filiali in Italia. Consulenti che vivono dove vivi tu. 25 anni a trovare il lavoro giusto per 13.000 persone ogni giorno.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* HEADER */
+        header {
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 20px 0;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #e22721;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: #1f2937;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #e22721;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* HERO SECTION - Confident e pulito */
+        .hero-chi-siamo {
+            background: linear-gradient(135deg, #e22721 0%, #c91f1a 100%);
+            padding: 120px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-chi-siamo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none"/><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: 50px 50px;
+            opacity: 0.3;
+        }
+        
+        .hero-chi-siamo .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-chi-siamo h1 {
+            font-size: 56px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+        
+        .hero-chi-siamo .subtitle {
+            font-size: 24px;
+            color: rgba(255,255,255,0.95);
+            max-width: 800px;
+            margin: 0 auto 50px;
+            line-height: 1.6;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+        
+        .hero-stat {
+            text-align: center;
+        }
+        
+        .hero-stat-number {
+            font-size: 48px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        .hero-stat-label {
+            font-size: 16px;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        /* INTRO SECTION */
+        .intro-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .intro-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .intro-content h2 {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #1f2937;
+            line-height: 1.3;
+        }
+        
+        .intro-content p {
+            font-size: 20px;
+            color: #4b5563;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+        
+        /* VALORE SECTION - 3 card principali */
+        .valore-section {
+            padding: 100px 0;
+            background: #f9fafb;
+        }
+        
+        .valore-section h2 {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 70px;
+            text-align: center;
+            color: #1f2937;
+        }
+        
+        .valore-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        
+        .valore-card {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid transparent;
+        }
+        
+        .valore-card:hover {
+            border-top-color: #e22721;
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(226, 39, 33, 0.15);
+        }
+        
+        .valore-icon {
+            font-size: 56px;
+            margin-bottom: 30px;
+        }
+        
+        .valore-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 20px;
+        }
+        
+        .valore-desc {
+            font-size: 17px;
+            color: #6b7280;
+            line-height: 1.7;
+        }
+        
+        /* PRESENZA SECTION - Mappa + numeri */
+        .presenza-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .presenza-section h2 {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #1f2937;
+        }
+        
+        .presenza-intro {
+            text-align: center;
+            font-size: 20px;
+            color: #6b7280;
+            max-width: 800px;
+            margin: 0 auto 70px;
+        }
+        
+        .presenza-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .presenza-item {
+            text-align: center;
+            padding: 30px 20px;
+            background: #f9fafb;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .presenza-item:hover {
+            background: #fee2e2;
+            transform: translateY(-5px);
+        }
+        
+        .presenza-citta {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 8px;
+        }
+        
+        .presenza-filiali {
+            font-size: 32px;
+            font-weight: bold;
+            color: #e22721;
+            margin-bottom: 5px;
+        }
+        
+        .presenza-label {
+            font-size: 14px;
+            color: #6b7280;
+        }
+        
+        .presenza-cta {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .presenza-btn {
+            display: inline-block;
+            background: #e22721;
+            color: white;
+            padding: 18px 50px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .presenza-btn:hover {
+            background: #c91f1a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(226, 39, 33, 0.3);
+        }
+        
+        /* STORIA SECTION - Timeline essenziale */
+        .storia-section {
+            padding: 100px 0;
+            background: #f9fafb;
+        }
+        
+        .storia-section h2 {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 70px;
+            text-align: center;
+            color: #1f2937;
+        }
+        
+        .timeline {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 50px;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 60px;
+            top: 80px;
+            bottom: -60px;
+            width: 2px;
+            background: #e5e7eb;
+        }
+        
+        .timeline-item:last-child::before {
+            display: none;
+        }
+        
+        .timeline-year {
+            font-size: 36px;
+            font-weight: bold;
+            color: #e22721;
+            text-align: right;
+            padding-top: 5px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 35px 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-content:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            transform: translateX(8px);
+        }
+        
+        .timeline-text {
+            font-size: 17px;
+            color: #4b5563;
+            line-height: 1.8;
+        }
+        
+        /* TEAM SECTION */
+        .team-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .team-section h2 {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #1f2937;
+        }
+        
+        .team-intro {
+            text-align: center;
+            font-size: 20px;
+            color: #6b7280;
+            max-width: 800px;
+            margin: 0 auto 70px;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        
+        .team-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+            border-color: #e22721;
+        }
+        
+        .team-photo {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, #e22721 0%, #c91f1a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: white;
+        }
+        
+        .team-info {
+            padding: 25px;
+        }
+        
+        .team-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 5px;
+        }
+        
+        .team-role {
+            font-size: 14px;
+            color: #e22721;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .team-location {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 12px;
+        }
+        
+        .team-stat {
+            font-size: 13px;
+            color: #4b5563;
+            line-height: 1.5;
+        }
+        
+        /* RISULTATI SECTION - Social proof pulito */
+        .risultati-section {
+            padding: 100px 0;
+            background: #f9fafb;
+        }
+        
+        .risultati-section h2 {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 70px;
+            text-align: center;
+            color: #1f2937;
+        }
+        
+        .risultati-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto 60px;
+        }
+        
+        .risultato-card {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-left: 4px solid #e22721;
+            transition: all 0.3s ease;
+        }
+        
+        .risultato-card:hover {
+            transform: translateX(8px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        
+        .risultato-stars {
+            color: #fbbf24;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .risultato-text {
+            font-size: 17px;
+            color: #4b5563;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .risultato-author {
+            font-size: 15px;
+            color: #1f2937;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .risultato-role {
+            font-size: 14px;
+            color: #6b7280;
+        }
+        
+        .risultati-stats {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            flex-wrap: wrap;
+            margin-top: 60px;
+        }
+        
+        .risultati-stat-item {
+            text-align: center;
+        }
+        
+        .risultati-stat-number {
+            font-size: 48px;
+            font-weight: bold;
+            color: #e22721;
+            margin-bottom: 10px;
+        }
+        
+        .risultati-stat-label {
+            font-size: 16px;
+            color: #6b7280;
+        }
+        
+        /* CTA SECTION */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none"/><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.03)"/></svg>');
+            background-size: 50px 50px;
+        }
+        
+        .cta-section .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-section h2 {
+            font-size: 48px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 25px;
+        }
+        
+        .cta-section p {
+            font-size: 22px;
+            color: #9ca3af;
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+        
+        .cta-btn-primary {
+            display: inline-block;
+            background: #e22721;
+            color: white;
+            padding: 20px 60px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-btn-primary:hover {
+            background: #c91f1a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(226, 39, 33, 0.4);
+        }
+        
+        .cta-btn-secondary {
+            display: inline-block;
+            background: transparent;
+            color: white;
+            padding: 20px 60px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            border: 2px solid white;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-btn-secondary:hover {
+            background: white;
+            color: #1f2937;
+            transform: translateY(-2px);
+        }
+        
+        .cta-extra-info {
+            color: #9ca3af;
+            font-size: 16px;
+        }
+        
+        /* FOOTER */
+        footer {
+            background: #1f2937;
+            color: white;
+            padding: 60px 0 30px;
+            border-top: 1px solid #374151;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            color: white;
+            font-size: 18px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-column a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 30px;
+            text-align: center;
+            color: #9ca3af;
+            font-size: 14px;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero-chi-siamo h1 {
+                font-size: 36px;
+            }
+            
+            .hero-chi-siamo .subtitle {
+                font-size: 18px;
+            }
+            
+            .hero-stats {
+                gap: 30px;
+            }
+            
+            .hero-stat-number {
+                font-size: 36px;
+            }
+            
+            .intro-content h2 {
+                font-size: 32px;
+            }
+            
+            .intro-content p {
+                font-size: 17px;
+            }
+            
+            .valore-section h2,
+            .presenza-section h2,
+            .storia-section h2,
+            .team-section h2,
+            .risultati-section h2 {
+                font-size: 32px;
+            }
+            
+            .valore-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .presenza-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .timeline-item {
+                grid-template-columns: 80px 1fr;
+                gap: 25px;
+            }
+            
+            .timeline-year {
+                font-size: 24px;
+            }
+            
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .risultati-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .risultati-stats {
+                gap: 40px;
+            }
+            
+            .cta-section h2 {
+                font-size: 32px;
+            }
+            
+            .cta-section p {
+                font-size: 18px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .cta-btn-primary,
+            .cta-btn-secondary {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <nav class="container">
+            <a href="/" class="logo" style="display: inline-block; height: 50px;">
+                <svg viewBox="0 0 296.41 117.38" style="height: 100%; width: auto;">
+                    <g>
+                        <!-- ATTAL Main Logo -->
+                        <path d="M49.98,0h-17.94L.06,82.36h19.82l6.43-16.16h29.54l6.18,16.16h19.84L49.98,0ZM33.38,47.73l7.72-19.61,7.67,19.61h-15.39Z" fill="#e22721"/>
+                        <polygon points="125.17 0 125.17 18.62 110.78 18.62 110.78 82.36 91.6 82.36 91.6 18.62 77.59 18.62 77.59 0 125.17 0" fill="#e22721"/>
+                        <polygon points="174.65 0 174.65 18.62 160.26 18.62 160.26 82.36 141.08 82.36 141.08 18.62 127.07 18.62 127.07 0 174.65 0" fill="#e22721"/>
+                        <path d="M220.14,0h-17.94l-31.98,82.36h19.82l6.42-16.16h29.54l6.18,16.16h19.84L220.14,0ZM218.93,47.73h-15.39l7.72-19.61,7.67,19.61Z" fill="#e22721"/>
+                        <polygon points="296.41 64.22 296.41 82.36 255.54 82.36 255.54 0 274.5 0 274.5 64.22 296.41 64.22" fill="#e22721"/>
+                        
+                        <!-- AGENZIA PER IL LAVORO subtitle -->
+                        <path d="M9.81,91.66h2.88l4.52,18.02h-3.31l-.96-3.83h-7.2l-2.06,3.83H0l9.8-18.02ZM12.1,102.66l-1.45-5.94-3.2,5.94h4.65Z" fill="#e22721"/>
+                        <path d="M38,95.02l-2.84,1.83c-.82-.93-1.62-1.58-2.38-1.94s-1.63-.54-2.6-.54c-2.1,0-3.8.84-5.12,2.51-1.04,1.33-1.57,2.81-1.57,4.44s.54,2.95,1.61,4.03c1.07,1.09,2.4,1.63,3.97,1.63,1.17,0,2.23-.28,3.19-.84.96-.56,1.74-1.4,2.35-2.53h-5.66l.42-3.2h9.18c-.13,2.98-1.07,5.35-2.82,7.1-1.75,1.75-3.97,2.63-6.68,2.63-2.94,0-5.26-1.01-6.95-3.04-1.36-1.62-2.04-3.56-2.04-5.81,0-2.74.99-5.1,2.98-7.09s4.35-2.99,7.1-2.99c1.02,0,2.01.15,2.99.44.97.29,1.85.71,2.63,1.24.78.53,1.53,1.25,2.25,2.14Z" fill="#e22721"/>
+                        <path d="M43.33,91.66h9.76l-.42,3.2h-6.33l-.52,3.72h6.37l-.42,3.17h-6.39l-.67,4.78h6.44l-.41,3.15h-9.88l2.48-18.02Z" fill="#e22721"/>
+                        <path d="M56.68,91.66h2.97l6.54,12.25,1.69-12.25h3.32l-2.47,18.02h-2.91l-6.63-12.39-1.7,12.39h-3.27l2.45-18.02Z" fill="#e22721"/>
+                        <path d="M74.3,91.66h10.24l-7.2,14.89h5.7l-.42,3.14h-10.36l7.21-14.85h-5.62l.44-3.17Z" fill="#e22721"/>
+                        <path d="M87.87,91.66h3.33l-2.54,18.02h-3.27l2.48-18.02Z" fill="#e22721"/>
+                        <path d="M101.24,91.66h2.88l4.52,18.02h-3.31l-.96-3.83h-7.2l-2.06,3.83h-3.66l9.8-18.02ZM103.53,102.66l-1.45-5.94-3.2,5.94h4.65Z" fill="#e22721"/>
+                        <path d="M120.85,91.66h3.18c1.93,0,3.3.17,4.09.5.98.42,1.73,1,2.24,1.74.51.74.76,1.61.76,2.61,0,1.09-.3,2.08-.89,2.97-.59.89-1.39,1.53-2.39,1.94s-2.67.62-5,.66l-1.05,7.61h-3.42l2.48-18.02ZM123.26,98.89c1.85,0,3.05-.2,3.62-.58.56-.38.85-.94.85-1.68,0-.42-.11-.77-.33-1.05-.22-.29-.55-.49-.98-.6s-1.29-.17-2.57-.17l-.59,4.08Z" fill="#e22721"/>
+                        <path d="M134.77,91.66h9.76l-.42,3.2h-6.33l-.52,3.72h6.37l-.42,3.17h-6.39l-.67,4.78h6.44l-.41,3.15h-9.88l2.48-18.02Z" fill="#e22721"/>
+                        <path d="M148.31,91.66h3.15c1.95,0,3.32.17,4.11.5.99.42,1.73.99,2.24,1.73.5.74.75,1.61.75,2.63,0,1.25-.37,2.32-1.12,3.21s-1.88,1.52-3.38,1.87l3.95,8.08h-3.53l-3.87-7.87h-.28l-1.09,7.87h-3.41l2.48-18.02ZM150.74,98.86c1.84,0,3.04-.2,3.6-.57.56-.37.83-.93.83-1.67,0-.42-.11-.78-.33-1.07-.22-.29-.55-.49-.97-.6s-1.28-.17-2.57-.17l-.57,4.08Z" fill="#e22721"/>
+                        <path d="M169.71,91.66h3.33l-2.54,18.02h-3.27l2.48-18.02Z" fill="#e22721"/>
+                        <path d="M176.95,91.66h3.43l-2.08,14.92h5.63l-.4,3.1h-9.07l2.48-18.02Z" fill="#e22721"/>
+                        <path d="M195.13,91.66h3.43l-2.08,14.92h5.63l-.4,3.1h-9.07l2.48-18.02Z" fill="#e22721"/>
+                        <path d="M212.38,91.66h2.88l4.52,18.02h-3.31l-.96-3.83h-7.2l-2.06,3.83h-3.66l9.8-18.02ZM214.67,102.66l-1.45-5.94-3.2,5.94h4.65Z" fill="#e22721"/>
+                        <path d="M222.86,91.66h3.32l3.25,13.01,7.02-13.01h3.67l-9.71,18.02h-3.04l-4.5-18.02Z" fill="#e22721"/>
+                        <path d="M250.92,91.2c2.49,0,4.55.8,6.17,2.39s2.43,3.62,2.43,6.07c0,1.88-.48,3.65-1.44,5.31-.96,1.66-2.23,2.94-3.82,3.83-1.59.89-3.42,1.33-5.48,1.33-2.58,0-4.64-.76-6.19-2.28-1.54-1.52-2.31-3.52-2.31-6,0-2.82.92-5.24,2.76-7.27,2.06-2.25,4.68-3.38,7.88-3.38ZM250.79,94.4c-1.3,0-2.49.31-3.56.94s-1.94,1.52-2.6,2.7c-.66,1.17-.99,2.38-.99,3.63,0,1.48.46,2.73,1.37,3.76.91,1.03,2.22,1.54,3.94,1.54,1.98,0,3.67-.69,5.05-2.08s2.08-3.08,2.08-5.06c0-1.64-.49-2.96-1.46-3.95s-2.25-1.48-3.83-1.48Z" fill="#e22721"/>
+                        <path d="M264,91.66h3.15c1.95,0,3.32.17,4.11.5.99.42,1.73.99,2.24,1.73.5.74.75,1.61.75,2.63,0,1.25-.37,2.32-1.12,3.21s-1.88,1.52-3.38,1.87l3.95,8.08h-3.53l-3.87-7.87h-.28l-1.09,7.87h-3.41l2.48-18.02ZM266.43,98.86c1.84,0,3.04-.2,3.6-.57.56-.37.83-.93.83-1.67,0-.42-.11-.78-.33-1.07-.22-.29-.55-.49-.97-.6s-1.28-.17-2.57-.17l-.57,4.08Z" fill="#e22721"/>
+                        <path d="M286.79,91.2c2.49,0,4.55.8,6.17,2.39s2.43,3.62,2.43,6.07c0,1.88-.48,3.65-1.44,5.31-.96,1.66-2.23,2.94-3.82,3.83-1.59.89-3.42,1.33-5.48,1.33-2.58,0-4.64-.76-6.19-2.28-1.54-1.52-2.31-3.52-2.31-6,0-2.82.92-5.24,2.76-7.27,2.06-2.25,4.68-3.38,7.88-3.38ZM286.67,94.4c-1.3,0-2.49.31-3.56.94s-1.94,1.52-2.6,2.7c-.66,1.17-.99,2.38-.99,3.63,0,1.48.46,2.73,1.37,3.76.91,1.03,2.22,1.54,3.94,1.54,1.98,0,3.67-.69,5.05-2.08s2.08-3.08,2.08-5.06c0-1.64-.49-2.96-1.46-3.95s-2.25-1.48-3.83-1.48Z" fill="#e22721"/>
+                    </g>
+                </svg>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="/offerte">Cerca Lavoro</a></li>
+                <li><a href="/filiali">Filiali</a></li>
+                <li><a href="/aziende">Per Aziende</a></li>
+                <li><a href="/chi-siamo">Chi Siamo</a></li>
+                <li><a href="/contatti">Contatti</a></li>
+            </ul>
+            
+            <div class="mobile-menu">☰</div>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-chi-siamo">
+        <div class="container">
+            <h1>Nella tua città.<br>Da 25 anni.</h1>
+            <p class="subtitle">80 filiali in Italia. Consulenti che vivono dove vivi tu. Aziende che conosciamo personalmente. Questo è ATTAL.</p>
+            
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-number">13.000+</div>
+                    <div class="hero-stat-label">persone al lavoro</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">80</div>
+                    <div class="hero-stat-label">filiali in Italia</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">25</div>
+                    <div class="hero-stat-label">anni di esperienza</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTRO SECTION -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-content">
+                <h2>Facciamo una cosa sola.<br>E la facciamo bene.</h2>
+                <p>Dal 1999 aiutiamo le persone a trovare lavoro. Non siamo un portale online. Non siamo una multinazionale lontana. Siamo nella tua città, con un ufficio vero, consulenti veri, che conoscono le aziende del territorio.</p>
+                <p>Ogni giorno 13.000 persone vanno al lavoro grazie a noi. Famiglie che pagano l'affitto, che mandano i figli a scuola. Questo ci rende orgogliosi.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- VALORE SECTION -->
+    <section class="valore-section">
+        <div class="container">
+            <h2>Come Lavoriamo</h2>
+            
+            <div class="valore-grid">
+                <div class="valore-card">
+                    <div class="valore-icon">📍</div>
+                    <div class="valore-title">Presenza Locale</div>
+                    <div class="valore-desc">Non ti cerchiamo lavoro da Milano via email. I nostri consulenti vivono nella tua città, conoscono le aziende, sanno chi assume e cosa cercano. Matching reale, non algoritmi.</div>
+                </div>
+                
+                <div class="valore-card">
+                    <div class="valore-icon">⚡</div>
+                    <div class="valore-title">Velocità Garantita</div>
+                    <div class="valore-desc">48 ore di risposta su ogni candidatura. Se ti mandiamo a colloquio, è perché c'è un match vero. Il 92% dei candidati che proponiamo viene assunto. Non facciamo sprechi di tempo.</div>
+                </div>
+                
+                <div class="valore-card">
+                    <div class="valore-icon">🤝</div>
+                    <div class="valore-title">Relazioni Vere</div>
+                    <div class="valore-desc">Lavoriamo con oltre 500 aziende in tutta Italia. Non sono nomi su un database. Sono relazioni costruite negli anni, fiducia guadagnata, telefonate dirette. Questo fa la differenza.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRESENZA SECTION -->
+    <section class="presenza-section">
+        <div class="container">
+            <h2>La Nostra Presenza in Italia</h2>
+            <p class="presenza-intro">Non siamo solo a Milano. Siamo in 80 città italiane, con consulenti che conoscono il mercato del lavoro locale meglio di chiunque altro.</p>
+            
+            <div class="presenza-grid">
+                <div class="presenza-item">
+                    <div class="presenza-citta">Milano</div>
+                    <div class="presenza-filiali">12</div>
+                    <div class="presenza-label">filiali</div>
+                </div>
+                
+                <div class="presenza-item">
+                    <div class="presenza-citta">Roma</div>
+                    <div class="presenza-filiali">8</div>
+                    <div class="presenza-label">filiali</div>
+                </div>
+                
+                <div class="presenza-item">
+                    <div class="presenza-citta">Torino</div>
+                    <div class="presenza-filiali">6</div>
+                    <div class="presenza-label">filiali</div>
+                </div>
+                
+                <div class="presenza-item">
+                    <div class="presenza-citta">Bologna</div>
+                    <div class="presenza-filiali">5</div>
+                    <div class="presenza-label">filiali</div>
+                </div>
+                
+                <div class="presenza-item">
+                    <div class="presenza-citta">Napoli</div>
+                    <div class="presenza-filiali">4</div>
+                    <div class="presenza-label">filiali</div>
+                </div>
+                
+                <div class="presenza-item">
+                    <div class="presenza-citta">Firenze</div>
+                    <div class="presenza-filiali">3</div>
+                    <div class="presenza-label">filiali</div>
+                </div>
+                
+                <div class="presenza-item">
+                    <div class="presenza-citta">Genova</div>
+                    <div class="presenza-filiali">3</div>
+                    <div class="presenza-label">filiali</div>
+                </div>
+                
+                <div class="presenza-item">
+                    <div class="presenza-citta">Palermo</div>
+                    <div class="presenza-filiali">2</div>
+                    <div class="presenza-label">filiali</div>
+                </div>
+            </div>
+            
+            <div class="presenza-cta">
+                <a href="/filiali" class="presenza-btn">Trova la Filiale Più Vicina</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- STORIA SECTION -->
+    <section class="storia-section">
+        <div class="container">
+            <h2>25 Anni di Risultati</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1999</div>
+                    <div class="timeline-content">
+                        <div class="timeline-text">Nasce ATTAL a Milano. L'idea è chiara: creare un'agenzia seria, dove le persone contano più dei numeri. Prima filiale, primi 50 inserimenti.</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2005</div>
+                    <div class="timeline-content">
+                        <div class="timeline-text">Apriamo 10 filiali in Nord Italia. Raggiungiamo 2.000 persone al lavoro contemporaneamente. Iniziamo a essere un punto di riferimento locale.</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2012</div>
+                    <div class="timeline-content">
+                        <div class="timeline-text">La crisi colpisce il mercato del lavoro. Molte agenzie chiudono. Noi continuiamo. Zero ritardi nei pagamenti. Mai uno. È il momento che ci definisce.</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2018</div>
+                    <div class="timeline-content">
+                        <div class="timeline-text">80 filiali in tutta Italia. 10.000 persone al lavoro ogni giorno. Diventiamo una delle principali agenzie per il lavoro italiane, mantenendo l'approccio locale.</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2025</div>
+                    <div class="timeline-content">
+                        <div class="timeline-text">13.000+ persone al lavoro. 4.2/5 su Google Reviews. 25 anni di esperienza. Stessa promessa del primo giorno: trovare il lavoro giusto per te.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM SECTION -->
+    <section class="team-section">
+        <div class="container">
+            <h2>I Nostri Consulenti</h2>
+            <p class="team-intro">Non siamo una sede centrale che ti cerca lavoro via computer. Siamo persone che vivono nella tua stessa città e conoscono il mercato del lavoro locale.</p>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-photo">👨‍💼</div>
+                    <div class="team-info">
+                        <div class="team-name">Marco Bellini</div>
+                        <div class="team-role">Consulente Senior</div>
+                        <div class="team-location">📍 Milano Centro</div>
+                        <div class="team-stat">8 anni con noi • 340 persone inserite</div>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-photo">👩‍💼</div>
+                    <div class="team-info">
+                        <div class="team-name">Giulia Esposito</div>
+                        <div class="team-role">Responsabile Filiale</div>
+                        <div class="team-location">📍 Napoli Vomero</div>
+                        <div class="team-stat">12 anni con noi • Esperta logistica e retail</div>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-photo">👨‍💼</div>
+                    <div class="team-info">
+                        <div class="team-name">Luca Romano</div>
+                        <div class="team-role">Consulente</div>
+                        <div class="team-location">📍 Roma EUR</div>
+                        <div class="team-stat">5 anni con noi • Settore industriale</div>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-photo">👩‍💼</div>
+                    <div class="team-info">
+                        <div class="team-name">Sara Colombo</div>
+                        <div class="team-role">Consulente Senior</div>
+                        <div class="team-location">📍 Torino Centro</div>
+                        <div class="team-stat">9 anni con noi • 280 inserimenti</div>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-photo">👨‍💼</div>
+                    <div class="team-info">
+                        <div class="team-name">Andrea Marino</div>
+                        <div class="team-role">Responsabile Filiale</div>
+                        <div class="team-location">📍 Bologna San Donato</div>
+                        <div class="team-stat">15 anni con noi • Conosce ogni azienda locale</div>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-photo">👩‍💼</div>
+                    <div class="team-info">
+                        <div class="team-name">Chiara Rizzo</div>
+                        <div class="team-role">Consulente</div>
+                        <div class="team-location">📍 Firenze Centro</div>
+                        <div class="team-stat">6 anni con noi • Esperta hospitality</div>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-photo">👨‍💼</div>
+                    <div class="team-info">
+                        <div class="team-name">Francesco Greco</div>
+                        <div class="team-role">Consulente Senior</div>
+                        <div class="team-location">📍 Palermo Centro</div>
+                        <div class="team-stat">7 anni con noi • 190 giovani under 30 inseriti</div>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-photo">👩‍💼</div>
+                    <div class="team-info">
+                        <div class="team-name">Elena Ferri</div>
+                        <div class="team-role">Responsabile Filiale</div>
+                        <div class="team-location">📍 Genova Sampierdarena</div>
+                        <div class="team-stat">11 anni con noi • 92% retention candidati</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RISULTATI SECTION -->
+    <section class="risultati-section">
+        <div class="container">
+            <h2>I Risultati Parlano</h2>
+            
+            <div class="risultati-grid">
+                <div class="risultato-card">
+                    <div class="risultato-stars">★★★★★</div>
+                    <div class="risultato-text">"Disoccupato da 7 mesi. ATTAL mi ha trovato lavoro in 12 giorni come magazziniere. Ora ho un contratto indeterminato. La consulente mi ha seguito passo per passo."</div>
+                    <div class="risultato-author">Alessandro M.</div>
+                    <div class="risultato-role">Magazziniere • Torino</div>
+                </div>
+                
+                <div class="risultato-card">
+                    <div class="risultato-stars">★★★★★</div>
+                    <div class="risultato-text">"Prima volta con un'agenzia. Risposte veloci, contratto chiaro, stipendio sempre puntuale. Mi hanno chiamato dopo 2 settimane per chiedermi come andava. Professionalità vera."</div>
+                    <div class="risultato-author">Francesca T.</div>
+                    <div class="risultato-role">Commessa • Milano</div>
+                </div>
+                
+                <div class="risultato-card">
+                    <div class="risultato-stars">★★★★★</div>
+                    <div class="risultato-text">"3 anni tramite ATTAL. Stipendio sempre il 27 del mese, zero problemi. I consulenti ti trattano come una persona. Ho consigliato ATTAL a 5 amici, tutti assunti."</div>
+                    <div class="risultato-author">Giuseppe R.</div>
+                    <div class="risultato-role">Operaio • Napoli</div>
+                </div>
+                
+                <div class="risultato-card">
+                    <div class="risultato-stars">★★★★★</div>
+                    <div class="risultato-text">"A 52 anni pensavo fosse finita. Nessuno mi voleva. ATTAL mi ha trovato lavoro in 3 settimane. La consulente ha creduto in me quando tutti mi scartavano per l'età."</div>
+                    <div class="risultato-author">Roberto C.</div>
+                    <div class="risultato-role">Controllo Qualità • Bologna</div>
+                </div>
+            </div>
+            
+            <div class="risultati-stats">
+                <div class="risultati-stat-item">
+                    <div class="risultati-stat-number">4.2/5</div>
+                    <div class="risultati-stat-label">Google Reviews</div>
+                </div>
+                
+                <div class="risultati-stat-item">
+                    <div class="risultati-stat-number">92%</div>
+                    <div class="risultati-stat-label">Tasso successo candidati</div>
+                </div>
+                
+                <div class="risultati-stat-item">
+                    <div class="risultati-stat-number">96%</div>
+                    <div class="risultati-stat-label">Retention rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Iniziamo</h2>
+            <p>Vieni in filiale. Parliamoci. Ti spieghiamo come funziona, cosa possiamo fare per te, e iniziamo a cercare il lavoro giusto.</p>
+            
+            <div class="cta-buttons">
+                <a href="/filiali" class="cta-btn-primary">Trova la Tua Filiale</a>
+                <a href="/offerte" class="cta-btn-secondary">Vedi le Offerte Attive</a>
+            </div>
+            
+            <p class="cta-extra-info">Servizio completamente gratuito per i candidati • Risposta garantita in 48 ore</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>ATTAL Group</h3>
+                    <ul>
+                        <li><a href="/chi-siamo">Chi Siamo</a></li>
+                        <li><a href="/filiali">Le Nostre Filiali</a></li>
+                        <li><a href="/lavora-con-noi">Lavora con Noi</a></li>
+                        <li><a href="/news">News</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Per Candidati</h3>
+                    <ul>
+                        <li><a href="/offerte">Cerca Offerte</a></li>
+                        <li><a href="/registrati">Registrati</a></li>
+                        <li><a href="/area-riservata">Area Riservata</a></li>
+                        <li><a href="/faq">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Per Aziende</h3>
+                    <ul>
+                        <li><a href="/aziende">Servizi</a></li>
+                        <li><a href="/preventivo">Richiedi Preventivo</a></li>
+                        <li><a href="/settori">Settori</a></li>
+                        <li><a href="/faq-aziende">FAQ Aziende</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contatti</h3>
+                    <ul>
+                        <li><strong>Sede Centrale:</strong><br>Via Pergolesi 8, Milano</li>
+                        <li><strong>Tel:</strong> 02/454320</li>
+                        <li><strong>Email:</strong> info@attalgroup.it</li>
+                        <li><strong>Aziende:</strong> aziende@attalgroup.it</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 ATTAL Group S.p.A. - P.IVA: 12345678901 | Autorizzazione Ministeriale n. XXX</p>
+                <p style="margin-top: 10px;">
+                    <a href="/privacy" style="color: #9ca3af; margin: 0 15px;">Privacy Policy</a> | 
+                    <a href="/cookie" style="color: #9ca3af; margin: 0 15px;">Cookie Policy</a> | 
+                    <a href="/termini" style="color: #9ca3af; margin: 0 15px;">Termini e Condizioni</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
