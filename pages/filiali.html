@@ -224,7 +224,11 @@
         // Carica filiali da JSON
         async function loadFiliali() {
             try {
-                const response = await fetch('../assets/data/filiali.json');
+                // Determina il path base in base all'URL
+                const isInSubfolder = window.location.pathname.includes('/pages/');
+                const basePath = isInSubfolder ? '../' : '/';
+                const response = await fetch(basePath + 'assets/data/filiali.json');
+                if (!response.ok) throw new Error('HTTP ' + response.status);
                 filiali = await response.json();
                 filialiFiltered = [...filiali];
                 console.log(`Caricate ${filiali.length} filiali da JSON`);
