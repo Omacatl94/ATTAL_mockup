@@ -1,1 +1,13 @@
+# Homepage
 /   /pages/index.html   200
+
+# Pagine principali
+/offerte        /pages/careers.html      200
+/careers        /pages/careers.html      200
+/filiali        /pages/filiali.html      200
+/aziende        /pages/aziende.html      200
+/chi-siamo      /pages/chi-siamo.html    200
+/registrazione  /pages/registrazione.html 200
+/login          /pages/profilo.html      200
+/profilo        /pages/profilo.html      200
+/chatbot        /pages/chatbot.html      200
