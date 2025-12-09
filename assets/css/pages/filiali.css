@@ -1,0 +1,1243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header sticky fix */
+#header-placeholder {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #1f2937;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* HERO SECTION */
+.hero {
+    background: #ffffff;
+    padding: 100px 0 80px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 52px;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 15px;
+}
+
+.hero .subtitle {
+    font-size: 22px;
+    color: #4b5563;
+    margin-bottom: 50px;
+}
+
+/* BOTTONE GEOLOCALIZZAZIONE */
+.geo-btn {
+    background: #e22721;
+    color: white;
+    border: none;
+    padding: 20px 50px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 10px 40px rgba(226, 39, 33, 0.3);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.geo-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 50px rgba(226, 39, 33, 0.4);
+    background: #c91f1a;
+}
+
+.geo-btn:active {
+    transform: translateY(-1px);
+}
+
+.geo-icon {
+    display: flex;
+    align-items: center;
+}
+
+.geo-icon i,
+.geo-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: white;
+}
+
+.geo-btn.loading .geo-text::after {
+    content: '...';
+    animation: dots 1.5s infinite;
+}
+
+@keyframes dots {
+    0%, 20% { content: '.'; }
+    40% { content: '..'; }
+    60%, 100% { content: '...'; }
+}
+
+/* ALERT NESSUNA FILIALE VICINA */
+.geo-alert {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    margin: 40px auto 0;
+    max-width: 600px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    display: flex;
+    gap: 20px;
+    text-align: left;
+}
+
+.geo-alert-icon {
+    flex-shrink: 0;
+}
+
+.geo-alert-icon i,
+.geo-alert-icon svg {
+    width: 40px;
+    height: 40px;
+    stroke: #E56E12;
+}
+
+.geo-alert-content h3 {
+    color: #1f2937;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.geo-alert-content p {
+    color: #6b7280;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.geo-alert-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.geo-alert-btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.geo-alert-btn i,
+.geo-alert-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.geo-alert-btn.primary {
+    background: #e22721;
+    color: white;
+    border: none;
+}
+
+.geo-alert-btn.primary i,
+.geo-alert-btn.primary svg {
+    stroke: white;
+}
+
+.geo-alert-btn.primary:hover {
+    background: #c91f1a;
+}
+
+.geo-alert-btn.secondary {
+    background: white;
+    color: #e22721;
+    border: 2px solid #e22721;
+}
+
+.geo-alert-btn.secondary i,
+.geo-alert-btn.secondary svg {
+    stroke: #e22721;
+}
+
+.geo-alert-btn.secondary:hover {
+    background: #fee2e2;
+}
+
+/* SEZIONE RICERCA MANUALE */
+.search-section {
+    background: #f9fafb;
+    padding: 60px 0 40px;
+    text-align: center;
+}
+
+.search-section h2 {
+    font-size: 32px;
+    color: #1f2937;
+    margin-bottom: 10px;
+}
+
+.search-subtitle {
+    font-size: 18px;
+    color: #6b7280;
+    margin-bottom: 40px;
+}
+
+/* SEARCH BAR */
+.search-container {
+    background: white;
+    padding: 8px;
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    display: flex;
+    gap: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search-input {
+    flex: 1;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+}
+
+.search-input:focus {
+    outline: none;
+}
+
+.search-btn {
+    background: #e22721;
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.search-btn i,
+.search-btn svg {
+    width: 18px;
+    height: 18px;
+    stroke: white;
+}
+
+.search-btn:hover {
+    background: #c91f1a;
+    transform: scale(1.05);
+}
+
+/* AUTOCOMPLETE */
+.autocomplete-wrapper {
+    position: relative;
+    flex: 1;
+}
+
+.autocomplete-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+    margin-top: 5px;
+}
+
+.autocomplete-dropdown.show {
+    display: block;
+}
+
+.autocomplete-item {
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background 0.2s;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.autocomplete-item:last-child {
+    border-bottom: none;
+}
+
+.autocomplete-item:hover {
+    background: #f9fafb;
+}
+
+.autocomplete-item strong {
+    color: #e22721;
+}
+
+.autocomplete-item .brand-tag {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 8px;
+    color: white;
+}
+
+/* VANTAGGI SECTION */
+.vantaggi {
+    background: #f9fafb;
+    padding: 60px 0;
+}
+
+.vantaggi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.vantaggio-card {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.vantaggio-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #e22721, #c91f1a);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.vantaggio-icon i,
+.vantaggio-icon svg {
+    width: 32px;
+    height: 32px;
+    stroke: white;
+    color: white;
+}
+
+.vantaggio-icon.icon-primary {
+    background: linear-gradient(135deg, #e22721, #c91f1a);
+}
+
+.vantaggio-icon.icon-warning {
+    background: linear-gradient(135deg, #E56E12, #cc6210);
+}
+
+.vantaggio-icon.icon-success {
+    background: linear-gradient(135deg, #0B8D84, #097a72);
+}
+
+.vantaggio-card h3 {
+    font-size: 20px;
+    color: #1f2937;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.vantaggio-card p {
+    color: #6b7280;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* MAPPA + FILTRI SECTION */
+.filiali-section {
+    background: #ffffff;
+    padding: 60px 0;
+}
+
+.filiali-wrapper {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+/* FILTRI SIDEBAR */
+.filtri-sidebar {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+
+.filtri-sidebar h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #1f2937;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filtri-sidebar h3 i,
+.filtri-sidebar h3 svg {
+    width: 20px;
+    height: 20px;
+    stroke: #e22721;
+}
+
+.filter-group {
+    margin-bottom: 20px;
+}
+
+.filter-group label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #6b7280;
+    margin-bottom: 8px;
+}
+
+.filter-group label i,
+.filter-group label svg {
+    width: 14px;
+    height: 14px;
+    stroke: #e22721;
+}
+
+.filter-group select,
+.filter-group .filter-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.filter-group select:focus,
+.filter-group .filter-input:focus {
+    outline: none;
+    border-color: #e22721;
+}
+
+.filter-group .autocomplete-wrapper {
+    position: relative;
+}
+
+.risultati-counter {
+    background: #f9fafb;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.risultati-counter .number {
+    font-size: 28px;
+    font-weight: bold;
+    color: #e22721;
+    display: block;
+}
+
+.risultati-counter .label {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+/* INFO BOX COMPATTO SIDEBAR */
+.sidebar-info-box {
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    margin-top: 20px;
+    overflow: hidden;
+    display: none;
+}
+
+.sidebar-info-box.show {
+    display: block;
+    animation: fadeInScale 0.3s ease;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.sidebar-info-header {
+    background: transparent;
+    padding: 15px;
+    border-bottom: 2px solid #e22721;
+}
+
+.sidebar-info-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.sidebar-info-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0;
+}
+
+.sidebar-brand-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    color: white;
+    flex-shrink: 0;
+}
+
+.sidebar-rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 8px;
+    font-size: 13px;
+}
+
+.sidebar-stars {
+    color: #fbbf24;
+    font-size: 14px;
+}
+
+.sidebar-rating-num {
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.sidebar-info-body {
+    padding: 15px;
+}
+
+.sidebar-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: #4b5563;
+}
+
+.sidebar-detail:last-child {
+    margin-bottom: 0;
+}
+
+.sidebar-icon {
+    width: 18px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-icon i,
+.sidebar-icon svg {
+    width: 16px;
+    height: 16px;
+    stroke: #e22721;
+}
+
+.sidebar-detail a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.sidebar-detail a:hover {
+    text-decoration: underline;
+}
+
+.sidebar-reviews {
+    background: #f9fafb;
+    padding: 12px 15px;
+    border-top: 1px solid #e5e7eb;
+    font-size: 12px;
+}
+
+.sidebar-review-title {
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.sidebar-review-title i,
+.sidebar-review-title svg {
+    width: 16px;
+    height: 16px;
+    stroke: #e22721;
+}
+
+.sidebar-review-item {
+    background: white;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    border-left: 3px solid #fbbf24;
+}
+
+.sidebar-review-item:last-child {
+    margin-bottom: 0;
+}
+
+.sidebar-review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.sidebar-review-name {
+    font-weight: 600;
+    font-size: 12px;
+    color: #1f2937;
+}
+
+.sidebar-review-stars {
+    color: #fbbf24;
+    font-size: 11px;
+}
+
+.sidebar-review-text {
+    font-size: 11px;
+    color: #6b7280;
+    line-height: 1.4;
+}
+
+.sidebar-actions {
+    padding: 12px 15px;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    gap: 8px;
+}
+
+.sidebar-btn {
+    flex: 1;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.sidebar-btn i,
+.sidebar-btn svg {
+    width: 14px;
+    height: 14px;
+    stroke: white;
+}
+
+.sidebar-btn-maps {
+    background: #4285f4;
+    color: white;
+}
+
+.sidebar-btn-maps:hover {
+    background: #3367d6;
+}
+
+.sidebar-btn-contact {
+    background: #e22721;
+    color: white;
+}
+
+.sidebar-btn-contact:hover {
+    background: #c91f1a;
+}
+
+.reset-btn {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    color: #6b7280;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.reset-btn i,
+.reset-btn svg {
+    width: 16px;
+    height: 16px;
+    stroke: #6b7280;
+    transition: stroke 0.3s;
+}
+
+.reset-btn:hover {
+    border-color: #e22721;
+    color: #e22721;
+}
+
+.reset-btn:hover i,
+.reset-btn:hover svg {
+    stroke: #e22721;
+}
+
+/* MAPPA ITALIA */
+.mappa-container {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    min-height: 500px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/* LISTA FILIALI NELLA CELLA DESTRA */
+.filiali-list-view {
+    width: 100%;
+    height: fit-content;
+}
+
+.list-header {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f3f4f6;
+}
+
+.list-header h3 {
+    font-size: 20px;
+    color: #1f2937;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.list-header h3 i,
+.list-header h3 svg {
+    width: 20px;
+    height: 20px;
+    stroke: #e22721;
+}
+
+.filiali-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+@media (max-width: 1200px) {
+    .filiali-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .filiali-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+.filiale-card {
+    background: #f9fafb;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.filiale-card:hover {
+    border-color: #e22721;
+    background: white;
+    box-shadow: 0 2px 8px rgba(226, 39, 33, 0.1);
+}
+
+.filiale-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.filiale-card-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0;
+}
+
+.filiale-card-brand {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    color: white;
+    flex-shrink: 0;
+}
+
+.filiale-card-btn {
+    width: 100%;
+    padding: 8px 12px;
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #4b5563;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    --brand-color: #e22721;
+    margin-top: auto;
+}
+
+.filiale-card-btn:hover {
+    background: var(--brand-color);
+    border-color: var(--brand-color);
+    color: white;
+}
+
+.filiale-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.filiale-card-detail {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.filiale-card-detail i,
+.filiale-card-detail svg {
+    width: 16px;
+    height: 16px;
+    stroke: #e22721;
+    flex-shrink: 0;
+}
+
+.filiale-card-detail strong {
+    color: #1f2937;
+    font-weight: 600;
+}
+
+/* BADGE DISTANZA */
+.distanza-badge {
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.distanza-badge i,
+.distanza-badge svg {
+    width: 14px;
+    height: 14px;
+}
+
+.distanza-badge.vicina {
+    background: white;
+    color: #0891b2;
+    border: 2px solid #0891b2;
+}
+
+.distanza-badge.vicina i,
+.distanza-badge.vicina svg {
+    stroke: #0891b2;
+}
+
+.distanza-badge.normale {
+    background: #f3f4f6;
+    color: #6b7280;
+    border: 2px solid #e5e7eb;
+}
+
+.distanza-badge.normale i,
+.distanza-badge.normale svg {
+    stroke: #6b7280;
+}
+
+/* DIVISORE */
+.filiali-divider {
+    margin: 25px 0 20px;
+    text-align: center;
+    position: relative;
+}
+
+.filiali-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #e5e7eb;
+}
+
+.filiali-divider span {
+    background: white;
+    padding: 0 15px;
+    position: relative;
+    color: #6b7280;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* LISTA COMPATTA */
+.filiali-list-compact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.filiale-compact-item {
+    padding: 12px 15px;
+    background: #f9fafb;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+}
+
+.filiale-compact-item:hover {
+    background: #f3f4f6;
+    transform: translateX(3px);
+}
+
+.filiale-compact-citta {
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.filiale-compact-divider {
+    color: #d1d5db;
+}
+
+.filiale-compact-distanza {
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.filiale-compact-brand {
+    font-weight: 600;
+    font-size: 12px;
+}
+
+/* BOTTONE TORNA AI RISULTATI */
+.back-to-results-btn {
+    background: #e22721;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.back-to-results-btn i,
+.back-to-results-btn svg {
+    width: 18px;
+    height: 18px;
+    stroke: white;
+}
+
+.back-to-results-btn:hover {
+    background: #c91f1a;
+    transform: translateX(-3px);
+}
+
+.mappa-italia {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+}
+
+/* LISTA FILIALI */
+/* RECAP FILIALI COMPATTO */
+.filiali-recap-compact {
+    margin-top: 60px;
+    text-align: center;
+    background: #f9fafb;
+    padding: 50px 30px;
+    border-radius: 16px;
+}
+
+.filiali-recap-compact h2 {
+    font-size: 28px;
+    color: #1f2937;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.recap-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 25px;
+}
+
+.recap-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.recap-stat-number {
+    font-size: 48px;
+    font-weight: 800;
+    color: #e22721;
+    line-height: 1;
+}
+
+.recap-stat-label {
+    font-size: 16px;
+    color: #6b7280;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.recap-stat-divider {
+    width: 1px;
+    height: 50px;
+    background: #d1d5db;
+}
+
+.recap-cta-text {
+    font-size: 15px;
+    color: #6b7280;
+}
+
+@media (max-width: 480px) {
+    .recap-stats {
+        gap: 20px;
+    }
+
+    .recap-stat-number {
+        font-size: 36px;
+    }
+
+    .recap-stat-label {
+        font-size: 14px;
+    }
+
+    .recap-stat-divider {
+        height: 40px;
+    }
+}
+
+.btn-icon {
+    padding: 8px 12px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    color: #1f2937;
+}
+
+.btn-icon:hover {
+    background: #e5e7eb;
+    transform: translateY(-2px);
+}
+
+/* CTA FINALE */
+.cta-finale {
+    background: linear-gradient(135deg, #e22721 0%, #b91c17 100%);
+    padding: 60px 0;
+    text-align: center;
+    color: white;
+}
+
+.cta-finale h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: white;
+}
+
+.cta-finale h2 i,
+.cta-finale h2 svg {
+    width: 32px;
+    height: 32px;
+    stroke: white;
+}
+
+.cta-finale p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-button {
+    background: white;
+    color: #e22721;
+    padding: 15px 35px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid white;
+}
+
+.cta-button i,
+.cta-button svg {
+    width: 20px;
+    height: 20px;
+    stroke: #e22721;
+}
+
+.cta-button:hover {
+    background: transparent;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.cta-button:hover i,
+.cta-button:hover svg {
+    stroke: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .filiali-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .filtri-sidebar {
+        position: static;
+    }
+
+    .filiale-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 15px 25px;
+    }
+
+    .filiale-actions-row {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero .subtitle {
+        font-size: 16px;
+    }
+
+    .vantaggi-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .filiale-row {
+        padding: 15px 20px;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+}
+
+/* Animazioni */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.filiale-card {
+    animation: fadeIn 0.5s ease forwards;
+}

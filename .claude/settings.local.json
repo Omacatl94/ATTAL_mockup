@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(wc:*)",
+      "Bash(grep:*)",
+      "Bash(cat:*)",
+      "Bash(du:*)",
+      "Bash(done)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

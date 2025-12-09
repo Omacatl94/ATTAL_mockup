@@ -1,0 +1,928 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header sticky fix */
+#header-placeholder {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #1f2937;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* HERO SECTION - Confident e pulito */
+.hero-chi-siamo {
+    background: #ffffff;
+    padding: 120px 0 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-chi-siamo .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-chi-siamo h1 {
+    font-size: 56px;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+.hero-chi-siamo .subtitle {
+    font-size: 24px;
+    color: #4b5563;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    line-height: 1.6;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.hero-stat {
+    text-align: center;
+}
+
+.hero-stat-number {
+    font-size: 48px;
+    font-weight: bold;
+    color: #e22721;
+    margin-bottom: 10px;
+}
+
+.hero-stat-number.color-primary {
+    color: #e22721;
+}
+
+.hero-stat-number.color-success {
+    color: #0B8D84;
+}
+
+.hero-stat-number.color-warning {
+    color: #E56E12;
+}
+
+.hero-stat-label {
+    font-size: 16px;
+    color: #6b7280;
+}
+
+/* INTRO SECTION */
+.intro-section {
+    padding: 100px 0;
+    background: #f9fafb;
+}
+
+.intro-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.intro-content h2 {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #1f2937;
+    line-height: 1.3;
+}
+
+.intro-content p {
+    font-size: 20px;
+    color: #4b5563;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+/* VALORE SECTION - 3 card principali */
+.valore-section {
+    padding: 100px 0;
+    background: #ffffff;
+}
+
+.valore-section h2 {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 70px;
+    text-align: center;
+    color: #1f2937;
+}
+
+.valore-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.valore-card {
+    background: #f9fafb;
+    padding: 50px 40px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    border: 1px solid #e5e7eb;
+}
+
+.valore-card:hover {
+    background: white;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    border-color: transparent;
+}
+
+.valore-icon {
+    font-size: 56px;
+    margin-bottom: 30px;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #e22721, #c91f1a);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.valore-icon i,
+.valore-icon svg {
+    width: 36px;
+    height: 36px;
+    stroke: white;
+    color: white;
+}
+
+.valore-icon.icon-primary {
+    background: linear-gradient(135deg, #e22721, #c91f1a);
+}
+
+.valore-icon.icon-warning {
+    background: linear-gradient(135deg, #E56E12, #cc6210);
+}
+
+.valore-icon.icon-success {
+    background: linear-gradient(135deg, #0B8D84, #097a72);
+}
+
+.location-icon {
+    width: 14px;
+    height: 14px;
+    stroke: #e22721;
+    display: inline;
+    vertical-align: middle;
+}
+
+.valore-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 20px;
+}
+
+.valore-desc {
+    font-size: 17px;
+    color: #6b7280;
+    line-height: 1.7;
+}
+
+/* PRESENZA SECTION - Mappa + numeri */
+.presenza-section {
+    padding: 100px 0;
+    background: #f9fafb;
+}
+
+.presenza-section h2 {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #1f2937;
+}
+
+.presenza-intro {
+    text-align: center;
+    font-size: 20px;
+    color: #6b7280;
+    max-width: 800px;
+    margin: 0 auto 70px;
+}
+
+.presenza-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.presenza-item {
+    text-align: center;
+    padding: 30px 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.presenza-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.presenza-citta {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 8px;
+}
+
+.presenza-filiali {
+    font-size: 32px;
+    font-weight: bold;
+    color: #e22721;
+    margin-bottom: 5px;
+}
+
+.presenza-label {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.presenza-cta {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.presenza-btn {
+    display: inline-block;
+    background: #e22721;
+    color: white;
+    padding: 18px 50px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.presenza-btn:hover {
+    background: #c91f1a;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(226, 39, 33, 0.3);
+}
+
+/* STORIA SECTION - Timeline essenziale */
+.storia-section {
+    padding: 100px 0;
+    background: #ffffff;
+}
+
+.storia-section h2 {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 70px;
+    text-align: center;
+    color: #1f2937;
+}
+
+.timeline {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 50px;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 60px;
+    top: 80px;
+    bottom: -60px;
+    width: 2px;
+    background: #e5e7eb;
+}
+
+.timeline-item:last-child::before {
+    display: none;
+}
+
+.timeline-year {
+    font-size: 36px;
+    font-weight: bold;
+    color: #e22721;
+    text-align: right;
+    padding-top: 5px;
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-content {
+    background: white;
+    padding: 35px 40px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    transform: translateX(8px);
+}
+
+.timeline-text {
+    font-size: 17px;
+    color: #4b5563;
+    line-height: 1.8;
+}
+
+/* TEAM SECTION */
+.team-section {
+    padding: 100px 0;
+    background: #f9fafb;
+}
+
+.team-section h2 {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #1f2937;
+}
+
+.team-intro {
+    text-align: center;
+    font-size: 20px;
+    color: #6b7280;
+    max-width: 800px;
+    margin: 0 auto 70px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+/* FLIP CARD EFFECT */
+.team-card {
+    perspective: 1000px;
+    height: 320px;
+    cursor: pointer;
+}
+
+.team-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.team-card-front,
+.team-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border: 1px solid #e5e7eb;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.team-card-front {
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    background: white;
+    opacity: 1;
+}
+
+.team-card-back {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    color: white;
+    z-index: 1;
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+.team-card:hover .team-card-front {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.team-card:hover .team-card-back {
+    z-index: 3;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.team-card:hover {
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.team-card-back-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.team-card-back-avatar {
+    width: 50px;
+    height: 50px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.team-card-back-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-card-back-avatar i,
+.team-card-back-avatar svg {
+    width: 26px;
+    height: 26px;
+    stroke: white;
+}
+
+.team-card-back-name {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.team-card-back-role {
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+}
+
+.team-card-back-story {
+    flex: 1;
+    font-size: 15px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.95);
+}
+
+.team-card-back-quote {
+    font-style: italic;
+    margin-bottom: 20px;
+    padding-left: 16px;
+    border-left: 3px solid #e22721;
+    line-height: 1.7;
+    word-wrap: break-word;
+}
+
+.team-card-back-evidence {
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.6;
+    word-wrap: break-word;
+}
+
+.team-card-back-footer {
+    margin-top: auto;
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #0B8D84;
+    font-weight: 500;
+}
+
+.team-card-back-footer i,
+.team-card-back-footer svg {
+    width: 18px;
+    height: 18px;
+    stroke: #0B8D84;
+}
+
+.click-hint {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    font-size: 11px;
+    color: #9ca3af;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.click-hint i,
+.click-hint svg {
+    width: 12px;
+    height: 12px;
+    stroke: #9ca3af;
+}
+
+.team-photo {
+    width: 200px;
+    height: 100%;
+    background: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.team-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-photo i,
+.team-photo svg {
+    width: 70px;
+    height: 70px;
+    stroke: #9ca3af;
+}
+
+.team-info {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+.team-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 8px;
+}
+
+.team-role {
+    font-size: 15px;
+    color: #e22721;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.team-location {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.team-stat {
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.6;
+}
+
+/* RISULTATI SECTION - Social proof pulito */
+.risultati-section {
+    padding: 100px 0;
+    background: #ffffff;
+}
+
+.risultati-section h2 {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 70px;
+    text-align: center;
+    color: #1f2937;
+}
+
+.risultati-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto 60px;
+}
+
+.risultato-card {
+    background: #f9fafb;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-left: 4px solid #e22721;
+    transition: all 0.3s ease;
+}
+
+.risultato-card:hover {
+    background: white;
+    transform: translateX(8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.risultato-stars {
+    color: #fbbf24;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.risultato-text {
+    font-size: 17px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.risultato-author {
+    font-size: 15px;
+    color: #1f2937;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.risultato-role {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.risultati-stats {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+
+.risultati-stat-item {
+    text-align: center;
+}
+
+.risultati-stat-number {
+    font-size: 48px;
+    font-weight: bold;
+    color: #e22721;
+    margin-bottom: 10px;
+}
+
+.risultati-stat-label {
+    font-size: 16px;
+    color: #6b7280;
+}
+
+/* CTA SECTION */
+.cta-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none"/><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.03)"/></svg>');
+    background-size: 50px 50px;
+}
+
+.cta-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.cta-section h2 {
+    font-size: 48px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.cta-section p {
+    font-size: 22px;
+    color: #9ca3af;
+    margin-bottom: 50px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.cta-btn-primary {
+    display: inline-block;
+    background: #e22721;
+    color: white;
+    padding: 20px 60px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.cta-btn-primary:hover {
+    background: #c91f1a;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(226, 39, 33, 0.4);
+}
+
+.cta-btn-secondary {
+    display: inline-block;
+    background: transparent;
+    color: white;
+    padding: 20px 60px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    border: 2px solid white;
+    transition: all 0.3s ease;
+}
+
+.cta-btn-secondary:hover {
+    background: white;
+    color: #1f2937;
+    transform: translateY(-2px);
+}
+
+.cta-extra-info {
+    color: #9ca3af;
+    font-size: 16px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .hero-chi-siamo h1 {
+        font-size: 36px;
+    }
+
+    .hero-chi-siamo .subtitle {
+        font-size: 18px;
+    }
+
+    .hero-stats {
+        gap: 30px;
+    }
+
+    .hero-stat-number {
+        font-size: 36px;
+    }
+
+    .intro-content h2 {
+        font-size: 32px;
+    }
+
+    .intro-content p {
+        font-size: 17px;
+    }
+
+    .valore-section h2,
+    .presenza-section h2,
+    .storia-section h2,
+    .team-section h2,
+    .risultati-section h2 {
+        font-size: 32px;
+    }
+
+    .valore-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .presenza-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .timeline-item {
+        grid-template-columns: 80px 1fr;
+        gap: 25px;
+    }
+
+    .timeline-year {
+        font-size: 24px;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .team-card {
+        height: 320px;
+    }
+
+    .team-card-back {
+        padding: 28px;
+    }
+
+    .team-photo {
+        width: 180px;
+    }
+
+    .risultati-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .risultati-stats {
+        gap: 40px;
+    }
+
+    .cta-section h2 {
+        font-size: 32px;
+    }
+
+    .cta-section p {
+        font-size: 18px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .cta-btn-primary,
+    .cta-btn-secondary {
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-card {
+        height: auto;
+        min-height: 420px;
+    }
+
+    .team-card-front {
+        flex-direction: column;
+    }
+
+    .team-photo {
+        width: 100%;
+        height: 160px;
+    }
+
+    .team-card-back {
+        padding: 24px;
+    }
+
+    .team-card-back-quote {
+        font-size: 14px;
+    }
+
+    .team-card-back-evidence {
+        font-size: 13px;
+    }
+}

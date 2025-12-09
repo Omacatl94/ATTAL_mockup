@@ -1,0 +1,363 @@
+/**
+ * ========================================
+ * ATTAL GROUP - CSS VARIABLES
+ * ========================================
+ * Sistema di design unificato per tutti i componenti
+ * del progetto ATTAL. Questo file contiene tutte le
+ * variabili CSS personalizzate utilizzate nell'applicazione.
+ */
+
+:root {
+    /* ========================================
+     * COLORI PRIMARI
+     * ======================================== */
+
+    /* Rosso ATTAL - Colore principale del brand */
+    --attal-red: #e22721;
+    --attal-red-dark: #c91f1a;
+    --attal-red-light: #fee2e2;
+    --attal-red-lighter: #fef3f2;
+
+    /* Gradiente brand */
+    --gradient-primary: linear-gradient(135deg, #e22721, #c91f1a);
+    --gradient-primary-reverse: linear-gradient(180deg, #e22721, #c91f1a);
+    --gradient-primary-soft: linear-gradient(180deg, #e22721, #fee2e2);
+
+    /* ========================================
+     * SCALA DI GRIGI
+     * ======================================== */
+
+    --gray-900: #111827;  /* Dark - Testi primari scuri */
+    --gray-800: #1f2937;  /* Testi primari, headers */
+    --gray-700: #374151;  /* Testi secondari */
+    --gray-600: #4b5563;  /* Testi meno enfatizzati */
+    --gray-500: #6b7280;  /* Testi terziari, labels */
+    --gray-400: #9ca3af;  /* Placeholder, disabled */
+    --gray-300: #d1d5db;  /* Borders, dividers */
+    --gray-200: #e5e7eb;  /* Borders light */
+    --gray-100: #f3f4f6;  /* Background light */
+    --gray-50: #f9fafb;   /* Background extra light */
+
+    /* Bianco e nero */
+    --white: #ffffff;
+    --black: #000000;
+
+    /* ========================================
+     * COLORI DI STATO
+     * ======================================== */
+
+    /* Success - Verde */
+    --success: #10b981;
+    --success-dark: #059669;
+    --success-light: #d1fae5;
+
+    /* Warning - Arancione/Giallo */
+    --warning: #f59e0b;
+    --warning-dark: #d97706;
+    --warning-light: #fef3c7;
+
+    /* Error - Rosso */
+    --error: #ef4444;
+    --error-dark: #dc2626;
+    --error-light: #fee2e2;
+
+    /* Info - Blu */
+    --info: #3b82f6;
+    --info-dark: #2563eb;
+    --info-light: #dbeafe;
+
+    /* ========================================
+     * COLORI SPECIALI
+     * ======================================== */
+
+    /* Purple/Violet - AI/Tech features */
+    --purple: #8b5cf6;
+    --purple-dark: #7c3aed;
+    --purple-light: #ede9fe;
+
+    /* Ally Widget (verde secondario) */
+    --ally-green: #00a884;
+    --ally-green-dark: #008c6d;
+    --ally-green-light: #d1f4e8;
+
+    /* Star rating - Giallo oro */
+    --star-gold: #fbbf24;
+    --star-gold-dark: #f59e0b;
+
+    /* ========================================
+     * FONT FAMILIES
+     * ======================================== */
+
+    /* Font principale - DM Sans con fallback */
+    --font-primary: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+    /* Font di sistema (per performance) */
+    --font-system: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+    /* Font monospace (per codice) */
+    --font-mono: 'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', 'Courier New', monospace;
+
+    /* ========================================
+     * FONT SIZES
+     * ======================================== */
+
+    --font-xs: 12px;      /* Extra small */
+    --font-sm: 14px;      /* Small */
+    --font-base: 16px;    /* Base/default */
+    --font-lg: 18px;      /* Large */
+    --font-xl: 20px;      /* Extra large */
+    --font-2xl: 24px;     /* 2X large */
+    --font-3xl: 28px;     /* 3X large */
+    --font-4xl: 32px;     /* 4X large */
+    --font-5xl: 36px;     /* 5X large */
+    --font-6xl: 48px;     /* 6X large - Hero */
+
+    /* ========================================
+     * FONT WEIGHTS
+     * ======================================== */
+
+    --font-light: 300;
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-extrabold: 800;
+
+    /* ========================================
+     * LINE HEIGHTS
+     * ======================================== */
+
+    --leading-none: 1;
+    --leading-tight: 1.2;
+    --leading-snug: 1.4;
+    --leading-normal: 1.6;
+    --leading-relaxed: 1.8;
+    --leading-loose: 2;
+
+    /* ========================================
+     * SPACING SCALE (4px base)
+     * ======================================== */
+
+    --space-0: 0;
+    --space-1: 4px;       /* 4px */
+    --space-2: 8px;       /* 8px */
+    --space-3: 12px;      /* 12px */
+    --space-4: 16px;      /* 16px */
+    --space-5: 20px;      /* 20px */
+    --space-6: 24px;      /* 24px */
+    --space-7: 28px;      /* 28px */
+    --space-8: 32px;      /* 32px */
+    --space-9: 36px;      /* 36px */
+    --space-10: 40px;     /* 40px */
+    --space-11: 44px;     /* 44px */
+    --space-12: 48px;     /* 48px */
+    --space-14: 56px;     /* 56px */
+    --space-16: 64px;     /* 64px */
+    --space-20: 80px;     /* 80px */
+    --space-24: 96px;     /* 96px */
+    --space-28: 112px;    /* 112px */
+    --space-32: 128px;    /* 128px */
+
+    /* ========================================
+     * BORDER RADIUS
+     * ======================================== */
+
+    --radius-none: 0;
+    --radius-sm: 4px;     /* Small - Input, buttons piccoli */
+    --radius-md: 8px;     /* Medium - Card, buttons standard */
+    --radius-lg: 12px;    /* Large - Card grandi, modali */
+    --radius-xl: 16px;    /* Extra large - Feature cards */
+    --radius-2xl: 24px;   /* 2X large - Container principali */
+    --radius-3xl: 32px;   /* 3X large - Hero sections */
+    --radius-full: 9999px; /* Pill/circle - Badges, avatar */
+
+    /* ========================================
+     * BORDER WIDTHS
+     * ======================================== */
+
+    --border-1: 1px;
+    --border-2: 2px;
+    --border-3: 3px;
+    --border-4: 4px;
+
+    /* ========================================
+     * SHADOWS
+     * ======================================== */
+
+    /* Shadows standard */
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.04);
+    --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.25);
+
+    /* Shadows con colore brand */
+    --shadow-red-sm: 0 4px 12px rgba(226, 39, 33, 0.25);
+    --shadow-red-md: 0 5px 15px rgba(226, 39, 33, 0.3);
+    --shadow-red-lg: 0 6px 20px rgba(226, 39, 33, 0.3);
+
+    /* Shadow purple per AI features */
+    --shadow-purple-sm: 0 4px 15px rgba(139, 92, 246, 0.25);
+    --shadow-purple-md: 0 4px 20px rgba(139, 92, 246, 0.4);
+    --shadow-purple-lg: 0 6px 30px rgba(139, 92, 246, 0.5);
+
+    /* Shadow per elevazione */
+    --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+    --shadow-outline: 0 0 0 3px rgba(226, 39, 33, 0.1);
+    --shadow-outline-purple: 0 0 0 2px rgba(139, 92, 246, 0.2);
+
+    /* ========================================
+     * TRANSITIONS
+     * ======================================== */
+
+    /* Durate */
+    --duration-fastest: 0.1s;
+    --duration-fast: 0.15s;
+    --duration-normal: 0.2s;
+    --duration-medium: 0.3s;
+    --duration-slow: 0.4s;
+    --duration-slowest: 0.6s;
+
+    /* Easing curves */
+    --ease-linear: linear;
+    --ease-in: ease-in;
+    --ease-out: ease-out;
+    --ease-in-out: ease-in-out;
+
+    /* Transition preset completi */
+    --transition-fastest: 0.1s ease;
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.2s ease;
+    --transition-medium: 0.3s ease;
+    --transition-slow: 0.4s ease;
+    --transition-slowest: 0.6s ease;
+
+    /* Transition specifiche */
+    --transition-all: all 0.2s ease;
+    --transition-colors: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+    --transition-transform: transform 0.2s ease;
+    --transition-opacity: opacity 0.2s ease;
+
+    /* ========================================
+     * Z-INDEX SCALE
+     * ======================================== */
+
+    --z-base: 0;          /* Base layer */
+    --z-dropdown: 100;    /* Dropdown menus */
+    --z-sticky: 200;      /* Sticky header/nav */
+    --z-fixed: 300;       /* Fixed positioned elements */
+    --z-overlay: 400;     /* Overlay backgrounds */
+    --z-modal: 1000;      /* Modal dialogs */
+    --z-popover: 1100;    /* Popovers, tooltips */
+    --z-toast: 1200;      /* Toast notifications */
+    --z-tooltip: 1300;    /* Tooltips (highest) */
+
+    /* ========================================
+     * BREAKPOINTS
+     * ======================================== */
+
+    --breakpoint-xs: 320px;
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1536px;
+
+    /* ========================================
+     * CONTAINER WIDTHS
+     * ======================================== */
+
+    --container-sm: 640px;
+    --container-md: 768px;
+    --container-lg: 1024px;
+    --container-xl: 1200px;
+    --container-2xl: 1400px;
+
+    /* ========================================
+     * OPACITÀ
+     * ======================================== */
+
+    --opacity-0: 0;
+    --opacity-10: 0.1;
+    --opacity-20: 0.2;
+    --opacity-30: 0.3;
+    --opacity-40: 0.4;
+    --opacity-50: 0.5;
+    --opacity-60: 0.6;
+    --opacity-70: 0.7;
+    --opacity-80: 0.8;
+    --opacity-90: 0.9;
+    --opacity-100: 1;
+
+    /* ========================================
+     * MISURE COMUNI
+     * ======================================== */
+
+    /* Header */
+    --header-height: 72px;
+    --header-height-mobile: 64px;
+
+    /* Footer */
+    --footer-height: auto;
+
+    /* Sidebar */
+    --sidebar-width: 280px;
+    --sidebar-collapsed-width: 80px;
+
+    /* Input heights */
+    --input-height-sm: 32px;
+    --input-height-md: 40px;
+    --input-height-lg: 48px;
+
+    /* Button heights */
+    --button-height-sm: 32px;
+    --button-height-md: 40px;
+    --button-height-lg: 48px;
+    --button-height-xl: 56px;
+
+    /* ========================================
+     * GRADIENTI DECORATIVI
+     * ======================================== */
+
+    --gradient-dark: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    --gradient-light: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+    --gradient-gray: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+
+    /* Gradienti overlay */
+    --gradient-overlay-dark: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+    --gradient-overlay-light: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.7));
+}
+
+/* ========================================
+ * UTILITY CLASSES
+ * ========================================
+ * Classi utility per applicare rapidamente
+ * le variabili CSS ai componenti
+ */
+
+/* Reset universale */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Temi (per future implementazioni dark mode) */
+:root[data-theme="light"] {
+    --bg-primary: var(--white);
+    --bg-secondary: var(--gray-50);
+    --text-primary: var(--gray-900);
+    --text-secondary: var(--gray-600);
+    --border-color: var(--gray-200);
+}
+
+:root[data-theme="dark"] {
+    --bg-primary: var(--gray-900);
+    --bg-secondary: var(--gray-800);
+    --text-primary: var(--white);
+    --text-secondary: var(--gray-300);
+    --border-color: var(--gray-700);
+}

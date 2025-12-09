@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATTAL Chat - Trova Lavoro Vicino a Te</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/pages/chatbot.css">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- HEADER -->
+        <div class="chat-header">
+            <div class="header-avatar">🅰️</div>
+            <div class="header-info">
+                <div class="header-title">ATTAL Assistente</div>
+                <div class="header-status">
+                    <span class="status-dot"></span>
+                    Ti aiuto a trovare lavoro
+                </div>
+            </div>
+        </div>
+
+        <!-- MESSAGES -->
+        <div class="chat-messages" id="chatMessages">
+            <!-- Messages will be inserted here -->
+        </div>
+
+        <!-- INPUT -->
+        <div class="chat-input-area">
+            <input
+                type="text"
+                class="chat-input"
+                id="chatInput"
+                placeholder="Scrivi un messaggio..."
+                autocomplete="off"
+            >
+            <button class="send-btn" id="sendBtn" onclick="sendMessage()">
+                <svg viewBox="0 0 24 24">
+                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // ==========================================
+        // DATABASE OFFERTE DI LAVORO
+        // ==========================================
+        const jobsData = [
+            {
+                id: 1,
+                title: "Magazziniere Mulettista",
+                city: "Milano",
+                category: "logistica",
+                contract: "somministrazione",
+                time: "full-time",
+                salary: "1.450",
+                badge: "urgent",
+                location: "Milano Sud - Assago",
+                description: "Cerchiamo magazziniere mulettista per importante azienda di logistica. La risorsa si occuperà di movimentazione merce, carico/scarico e gestione inventario.",
+                requirements: ["Patentino muletto valido", "Esperienza minima 1 anno", "Disponibilità immediata", "Conoscenza gestione magazzino"],
+                benefits: ["Mensa aziendale gratuita", "Formazione continua pagata", "Possibilità di assunzione diretta", "Turni flessibili"],
+                branch: "Milano Corsica - Via Pergolesi 8",
+                phone: "02/454320"
+            },
+            {
+                id: 2,
+                title: "Commesso/a Retail",
+                city: "Milano",
+                category: "retail",
+                contract: "tempo-determinato",
+                time: "full-time",
+                salary: "1.350",
+                badge: "top",
+                location: "Milano Centro - Corso Buenos Aires",
+                description: "Per nota catena di abbigliamento ricerchiamo commesso/a con esperienza nella vendita. Ambiente dinamico e giovane.",
+                requirements: ["Esperienza in retail moda", "Ottime capacità comunicative", "Flessibilità oraria", "Italiano fluente"],
+                benefits: ["Sconti dipendenti 30%", "Bonus vendite mensili", "Formazione prodotto", "Ambiente giovane"],
+                branch: "Milano Centro - Piazza Duomo 12",
+                phone: "02/123456"
+            },
+            {
+                id: 3,
+                title: "Operaio di Produzione",
+                city: "Torino",
+                category: "produzione",
+                contract: "tempo-indeterminato",
+                time: "full-time",
+                salary: "1.600",
+                badge: "salary",
+                location: "Torino Sud - Moncalieri",
+                description: "Azienda metalmeccanica cerca operai per linea di produzione. Contratto a tempo indeterminato dopo periodo di prova.",
+                requirements: ["Esperienza nel settore metalmeccanico", "Capacità di lavorare in team", "Disponibilità turni", "Diploma tecnico preferibile"],
+                benefits: ["Contratto indeterminato", "14 mensilità", "Welfare aziendale", "Crescita professionale"],
+                branch: "Torino Centro - Corso Francia 10",
+                phone: "011/123456"
+            },
+            {
+                id: 4,
+                title: "Addetto/a Vendite GDO",
+                city: "Roma",
+                category: "retail",
+                contract: "somministrazione",
+                time: "part-time",
+                salary: "900",
+                badge: "urgent",
+                location: "Roma EUR",
+                description: "Supermercato cerca addetti vendite per reparto ortofrutta. Part-time 20h settimanali, ideale per studenti.",
+                requirements: ["Prima esperienza GDO", "Disponibilità weekend", "Attitudine al cliente", "Flessibilità"],
+                benefits: ["Orari compatibili studio", "Formazione retribuita", "Possibilità full-time", "Ambiente dinamico"],
+                branch: "Roma EUR - Viale Europa 100",
+                phone: "06/789012"
+            },
+            {
+                id: 5,
+                title: "Cameriere di Sala",
+                city: "Milano",
+                category: "ristorazione",
+                contract: "tempo-determinato",
+                time: "full-time",
+                salary: "1.400",
+                badge: "urgent",
+                location: "Milano Centro - Brera",
+                description: "Ristorante rinomato cerca cameriere con esperienza per servizio ai tavoli. Ambiente elegante e professionale.",
+                requirements: ["Esperienza ristoranti", "Conoscenza inglese", "Presenza curata", "Disponibilità serale"],
+                benefits: ["Mance consistenti", "Pasti inclusi", "Formazione sommelier", "Team internazionale"],
+                branch: "Milano Centro - Piazza Duomo 12",
+                phone: "02/123456"
+            },
+            {
+                id: 6,
+                title: "Impiegato/a Amministrativo",
+                city: "Bologna",
+                category: "amministrazione",
+                contract: "tempo-indeterminato",
+                time: "full-time",
+                salary: "1.500",
+                badge: "salary",
+                location: "Bologna Centro",
+                description: "Studio commercialista cerca impiegato amministrativo per gestione contabilità clienti. Richiesta esperienza settore.",
+                requirements: ["Laurea in Economia", "Conoscenza SAP", "Esperienza 2+ anni", "Precisione e puntualità"],
+                benefits: ["Contratto indeterminato", "Smart working 2gg/settimana", "Buoni pasto", "Formazione continua"],
+                branch: "Bologna Centro - Via Indipendenza 30",
+                phone: "051/123456"
+            },
+            {
+                id: 7,
+                title: "Autista Patente C+E",
+                city: "Verona",
+                category: "trasporti",
+                contract: "tempo-indeterminato",
+                time: "full-time",
+                salary: "2.000",
+                badge: "salary",
+                location: "Verona - Zona industriale",
+                description: "Azienda trasporti cerca autista con patente C+E per consegne nazionali. Contratto a tempo indeterminato.",
+                requirements: ["Patente C+E", "CQC merci", "Esperienza 3+ anni", "Conoscenza strade italiane"],
+                benefits: ["RAL 2.000€ + trasferte", "Mezzo aziendale nuovo", "Rimborso spese completo", "Stabilità contrattuale"],
+                branch: "Verona Centro - Piazza Bra 5",
+                phone: "045/123456"
+            },
+            {
+                id: 8,
+                title: "Muratore Specializzato",
+                city: "Roma",
+                category: "edilizia",
+                contract: "tempo-determinato",
+                time: "full-time",
+                salary: "1.800",
+                badge: "urgent",
+                location: "Roma Nord - Flaminio",
+                description: "Impresa edile cerca muratori specializzati per cantieri ristrutturazione. Lavoro continuativo.",
+                requirements: ["Esperienza 5+ anni", "Autonomia operativa", "Precisione nelle rifiniture", "Patente B"],
+                benefits: ["Paga giornaliera puntuale", "Cantieri vicini", "Attrezzatura fornita", "Possibilità crescita"],
+                branch: "Roma Centro - Via Nazionale 20",
+                phone: "06/123456"
+            },
+            {
+                id: 9,
+                title: "Infermiere/a",
+                city: "Napoli",
+                category: "sanita",
+                contract: "tempo-indeterminato",
+                time: "full-time",
+                salary: "1.700",
+                badge: "top",
+                location: "Napoli - Vomero",
+                description: "Casa di riposo cerca infermiere per assistenza anziani. Ambiente sereno e professionale.",
+                requirements: ["Laurea in Infermieristica", "Iscrizione OPI", "Empatia e pazienza", "Disponibilità turni"],
+                benefits: ["Contratto indeterminato", "Formazione specialistica", "Welfare aziendale", "Turni programmati"],
+                branch: "Napoli Vomero - Via Scarlatti 50",
+                phone: "081/789012"
+            },
+            {
+                id: 10,
+                title: "Receptionist Hotel",
+                city: "Firenze",
+                category: "ristorazione",
+                contract: "tempo-determinato",
+                time: "full-time",
+                salary: "1.350",
+                badge: "top",
+                location: "Firenze Centro Storico",
+                description: "Hotel 4 stelle cerca receptionist per turni diurni e notturni. Richiesta conoscenza lingue straniere.",
+                requirements: ["Inglese fluente", "Seconda lingua (tedesco/francese)", "Esperienza reception", "Conoscenza gestionale"],
+                benefits: ["Alloggio disponibile", "Pasti inclusi", "Team internazionale", "Ambiente prestigioso"],
+                branch: "Firenze Centro - Piazza Signoria 8",
+                phone: "055/123456"
+            },
+            {
+                id: 11,
+                title: "Scaffalista Supermercato",
+                city: "Milano",
+                category: "retail",
+                contract: "somministrazione",
+                time: "part-time",
+                salary: "850",
+                badge: "urgent",
+                location: "Milano Sud - Ripamonti",
+                description: "Supermercato cerca scaffalisti per rifornimento corsie. Part-time 24h, turni mattutini.",
+                requirements: ["No esperienza richiesta", "Disponibilità mattina", "Precisione", "Attitudine al lavoro fisico"],
+                benefits: ["Formazione iniziale", "Possibilità full-time", "Ambiente giovane", "Vicinanza mezzi"],
+                branch: "Milano Sud - Via Ripamonti 50",
+                phone: "02/345678"
+            },
+            {
+                id: 12,
+                title: "Elettricista Civile",
+                city: "Torino",
+                category: "edilizia",
+                contract: "tempo-indeterminato",
+                time: "full-time",
+                salary: "1.900",
+                badge: "salary",
+                location: "Torino - Lingotto",
+                description: "Azienda impiantistica cerca elettricista per installazioni civili. Contratto a tempo indeterminato.",
+                requirements: ["Qualifica elettricista", "Patentino PES/PAV", "Esperienza impianti civili", "Automunito"],
+                benefits: ["Indeterminato subito", "Furgone aziendale", "Formazione continua", "Crescita professionale"],
+                branch: "Torino Sud - Via Po 25",
+                phone: "011/789012"
+            },
+            {
+                id: 13,
+                title: "Barista",
+                city: "Bologna",
+                category: "ristorazione",
+                contract: "tempo-determinato",
+                time: "full-time",
+                salary: "1.300",
+                badge: "urgent",
+                location: "Bologna Centro",
+                description: "Bar pasticceria cerca barista esperto. Richiesta passione per il settore e flessibilità.",
+                requirements: ["Esperienza bancone", "Capacità latte art", "Velocità nel servizio", "Presenza curata"],
+                benefits: ["Colazioni incluse", "Turni spezzati", "Domeniche a rotazione", "Ambiente familiare"],
+                branch: "Bologna Centro - Via Indipendenza 30",
+                phone: "051/123456"
+            },
+            {
+                id: 14,
+                title: "Operatore Call Center",
+                city: "Roma",
+                category: "amministrazione",
+                contract: "somministrazione",
+                time: "full-time",
+                salary: "1.200",
+                badge: "urgent",
+                location: "Roma Tiburtina",
+                description: "Contact center cerca operatori per customer service. Formazione retribuita inclusa.",
+                requirements: ["Diploma", "Buona dialettica", "Conoscenza PC", "Disponibilità immediata"],
+                benefits: ["Formazione 2 settimane pagata", "Bonus obiettivi", "Possibilità smart working", "Crescita rapida"],
+                branch: "Roma Tiburtina - Via Tiburtina 500",
+                phone: "06/345678"
+            },
+            {
+                id: 15,
+                title: "Carrellista",
+                city: "Brescia",
+                category: "logistica",
+                contract: "tempo-determinato",
+                time: "full-time",
+                salary: "1.500",
+                badge: "salary",
+                location: "Brescia - Zona industriale",
+                description: "Centro logistico cerca carrellista per movimentazione merci. Turni su 3 fasce orarie.",
+                requirements: ["Patentino carrello elevatore", "Esperienza 2+ anni", "Disponibilità turni", "Precisione"],
+                benefits: ["Indennità turno", "Mensa gratuita", "Possibilità straordinari", "Ambiente climatizzato"],
+                branch: "Brescia Centro - Corso Zanardelli 20",
+                phone: "030/123456"
+            },
+            {
+                id: 16,
+                title: "Addetto Pulizie",
+                city: "Venezia",
+                category: "retail",
+                contract: "tempo-determinato",
+                time: "part-time",
+                salary: "800",
+                badge: "urgent",
+                location: "Venezia Mestre",
+                description: "Azienda pulizie cerca addetti per centri commerciali. Part-time 20h, orario serale.",
+                requirements: ["No esperienza richiesta", "Disponibilità sera", "Affidabilità", "Precisione"],
+                benefits: ["Formazione inclusa", "Attrezzature fornite", "Orari fissi", "Pagamento puntuale"],
+                branch: "Venezia Mestre - Via Torino 15",
+                phone: "041/123456"
+            },
+            {
+                id: 17,
+                title: "Parrucchiere/a",
+                city: "Milano",
+                category: "retail",
+                contract: "tempo-determinato",
+                time: "full-time",
+                salary: "1.400",
+                badge: "top",
+                location: "Milano Centro - Montenapoleone",
+                description: "Salone di alta gamma cerca parrucchiere/a con esperienza. Clientela affezionata e ambiente premium.",
+                requirements: ["Qualifica parrucchiere", "Esperienza 3+ anni", "Conoscenza tecniche moderne", "Presenza curata"],
+                benefits: ["Percentuale su servizi", "Formazione continua", "Prodotti professionali", "Zona prestigiosa"],
+                branch: "Milano Centro - Piazza Duomo 12",
+                phone: "02/123456"
+            },
+            {
+                id: 18,
+                title: "Manutentore Meccanico",
+                city: "Torino",
+                category: "produzione",
+                contract: "tempo-indeterminato",
+                time: "full-time",
+                salary: "1.800",
+                badge: "salary",
+                location: "Torino - Mirafiori",
+                description: "Stabilimento automotive cerca manutentore per macchinari produzione. Contratto indeterminato.",
+                requirements: ["Diploma tecnico", "Esperienza manutenzione", "Conoscenza PLC", "Disponibilità reperibilità"],
+                benefits: ["Indeterminato", "Welfare 200€/mese", "Formazione tecnica", "Mensa aziendale"],
+                branch: "Torino Centro - Corso Francia 10",
+                phone: "011/123456"
+            },
+            {
+                id: 19,
+                title: "Pizzaiolo",
+                city: "Napoli",
+                category: "ristorazione",
+                contract: "tempo-determinato",
+                time: "full-time",
+                salary: "1.500",
+                badge: "top",
+                location: "Napoli Centro",
+                description: "Pizzeria napoletana verace cerca pizzaiolo esperto. Ambiente tradizionale e clientela turistica.",
+                requirements: ["Esperienza pizzeria napoletana", "Conoscenza impasti tradizionali", "Forno a legna", "Velocità servizio"],
+                benefits: ["Mance consistenti", "Pasti inclusi", "1 giorno riposo", "Ambiente storico"],
+                branch: "Napoli Centro - Via Toledo 100",
+                phone: "081/123456"
+            },
+            {
+                id: 20,
+                title: "Addetto Logistica",
+                city: "Bologna",
+                category: "logistica",
+                contract: "somministrazione",
+                time: "full-time",
+                salary: "1.350",
+                badge: "urgent",
+                location: "Bologna - Interporto",
+                description: "Hub logistico cerca addetti per smistamento pacchi. Start immediato, no esperienza richiesta.",
+                requirements: ["Disponibilità immediata", "Capacità lavoro fisico", "Flessibilità oraria", "Precisione"],
+                benefits: ["Formazione primo giorno", "Divisa fornita", "Possibilità assunzione", "Turni fissi"],
+                branch: "Bologna Fiera - Via Stalingrado 45",
+                phone: "051/789012"
+            },
+            {
+                id: 21,
+                title: "Estetista",
+                city: "Milano",
+                category: "retail",
+                contract: "tempo-determinato",
+                time: "part-time",
+                salary: "1.100",
+                badge: "top",
+                location: "Milano Centro - Corso Vercelli",
+                description: "Centro estetico cerca estetista qualificata per trattamenti viso e corpo. Part-time 30h.",
+                requirements: ["Qualifica estetista", "Esperienza trattamenti", "Conoscenza prodotti", "Capacità vendita"],
+                benefits: ["Commissioni vendite", "Formazione nuovi trattamenti", "Prodotti scontati", "Clientela fidelizzata"],
+                branch: "Milano Centro - Piazza Duomo 12",
+                phone: "02/123456"
+            },
+            {
+                id: 22,
+                title: "Saldatore",
+                city: "Brescia",
+                category: "produzione",
+                contract: "tempo-indeterminato",
+                time: "full-time",
+                salary: "2.100",
+                badge: "salary",
+                location: "Brescia - Zona industriale",
+                description: "Carpenteria metallica cerca saldatore specializzato TIG/MIG. Contratto indeterminato.",
+                requirements: ["Qualifica saldatore", "Esperienza TIG/MIG", "Lettura disegno tecnico", "Precisione"],
+                benefits: ["RAL 2.100€", "14 mensilità", "Straordinari pagati", "Ambiente moderno"],
+                branch: "Brescia Centro - Corso Zanardelli 20",
+                phone: "030/123456"
+            },
+            {
+                id: 23,
+                title: "Corriere Consegne",
+                city: "Milano",
+                category: "trasporti",
+                contract: "somministrazione",
+                time: "full-time",
+                salary: "1.400",
+                badge: "urgent",
+                location: "Milano - Hinterland",
+                description: "Azienda logistica cerca corrieri per consegne last mile. Furgone fornito.",
+                requirements: ["Patente B", "Conoscenza Milano e provincia", "Puntualità", "Capacità gestione tempo"],
+                benefits: ["Furgone fornito", "Carburante pagato", "Bonus consegne", "Turni flessibili"],
+                branch: "Milano Corsica - Via Pergolesi 8",
+                phone: "02/454320"
+            },
+            {
+                id: 24,
+                title: "Addetto Catering",
+                city: "Roma",
+                category: "ristorazione",
+                contract: "somministrazione",
+                time: "part-time",
+                salary: "950",
+                badge: "urgent",
+                location: "Roma - Eventi vari",
+                description: "Azienda catering cerca addetti per eventi. Lavoro su chiamata, weekend e serate.",
+                requirements: ["Esperienza sala/cucina", "Disponibilità weekend", "Presenza curata", "Flessibilità"],
+                benefits: ["Pagamento evento", "Eventi prestigiosi", "Mance", "Networking"],
+                branch: "Roma Centro - Via Nazionale 20",
+                phone: "06/123456"
+            },
+            {
+                id: 25,
+                title: "Tecnico Informatico",
+                city: "Bologna",
+                category: "amministrazione",
+                contract: "tempo-indeterminato",
+                time: "full-time",
+                salary: "1.900",
+                badge: "salary",
+                location: "Bologna - Zona Fiera",
+                description: "Azienda IT cerca tecnico per assistenza sistemistica. Contratto indeterminato.",
+                requirements: ["Diploma tecnico", "Conoscenza reti", "Esperienza help desk", "Problem solving"],
+                benefits: ["Indeterminato", "Certificazioni pagate", "Smart working", "Ambiente tech"],
+                branch: "Bologna Centro - Via Indipendenza 30",
+                phone: "051/123456"
+            }
+        ];
+
+        // ==========================================
+        // DATABASE FILIALI
+        // ==========================================
+        const filialiData = [
+            // TEMPUS
+            { citta: "Acqui Terme", brand: "Tempus", regione: "Piemonte", indirizzo: "Via Roma 45", tel: "0144/322456" },
+            { citta: "Alessandria", brand: "Tempus", regione: "Piemonte", indirizzo: "Via Milano 67", tel: "0131/234567" },
+            { citta: "Firenze", brand: "Tempus", regione: "Toscana", indirizzo: "Via Cavour 52", tel: "055/2345678" },
+            { citta: "Verona", brand: "Tempus", regione: "Veneto", indirizzo: "Via Leoncino 23", tel: "045/8001234" },
+            { citta: "Lecco", brand: "Tempus", regione: "Lombardia", indirizzo: "Via Amendola 32", tel: "0341/363456" },
+            // TEMPORARY
+            { citta: "Milano Corsica", brand: "Temporary", regione: "Lombardia", indirizzo: "Via Pergolesi 8", tel: "02/454320" },
+            { citta: "Milano Navigli", brand: "Temporary", regione: "Lombardia", indirizzo: "Ripa di Porta Ticinese 55", tel: "02/89401234" },
+            { citta: "Bergamo", brand: "Temporary", regione: "Lombardia", indirizzo: "Via XX Settembre 78", tel: "035/237890" },
+            { citta: "Brescia", brand: "Temporary", regione: "Lombardia", indirizzo: "Corso Zanardelli 34", tel: "030/2929345" },
+            { citta: "Torino", brand: "Temporary", regione: "Piemonte", indirizzo: "Via Giolitti 24/B", tel: "011/7640242" },
+            { citta: "Genova", brand: "Temporary", regione: "Liguria", indirizzo: "Via XX Settembre 41", tel: "010/5701234" },
+            { citta: "Bari", brand: "Temporary", regione: "Puglia", indirizzo: "Via Sparano 128", tel: "080/5211234" },
+            { citta: "Palermo", brand: "Temporary", regione: "Sicilia", indirizzo: "Via Libertà 189", tel: "091/6251234" },
+            // TEMPOR
+            { citta: "Roma", brand: "Tempor", regione: "Lazio", indirizzo: "Via Livorno 41/B", tel: "06/77208232" },
+            { citta: "Bologna", brand: "Tempor", regione: "Emilia-Romagna", indirizzo: "Via Leonetto Cipriani 13", tel: "051/6810640" },
+            { citta: "Napoli", brand: "Lavorint", regione: "Campania", indirizzo: "Via Toledo 256", tel: "081/5521234" },
+            { citta: "Cagliari", brand: "Tempor", regione: "Sardegna", indirizzo: "Viale Bonaria 56", tel: "070/3328707" },
+            { citta: "Salerno", brand: "Tempor", regione: "Campania", indirizzo: "Via S. Leonardo 52", tel: "089/2851172" },
+            // LAVORINT
+            { citta: "Ancona", brand: "Lavorint", regione: "Marche", indirizzo: "Via Marconi 45", tel: "071/2071234" },
+            { citta: "Pescara", brand: "Lavorint", regione: "Abruzzo", indirizzo: "Corso Umberto 123", tel: "085/4211234" },
+            { citta: "Perugia", brand: "Lavorint", regione: "Umbria", indirizzo: "Corso Vannucci 34", tel: "075/5721234" },
+            { citta: "Padova", brand: "Lavorint", regione: "Veneto", indirizzo: "Via Roma 89", tel: "049/8761234" },
+            { citta: "Modena", brand: "Lavorint", regione: "Emilia-Romagna", indirizzo: "Via Emilia Centro 78", tel: "059/222345" },
+            { citta: "Parma", brand: "Lavorint", regione: "Emilia-Romagna", indirizzo: "Via della Repubblica 56", tel: "0521/234567" },
+            { citta: "Reggio Emilia", brand: "Lavorint", regione: "Emilia-Romagna", indirizzo: "Via Emilia San Pietro 67", tel: "0522/431234" }
+        ];
+
+        // ==========================================
+        // DATI AZIENDALI
+        // ==========================================
+        const companyInfo = {
+            name: "ATTAL Group",
+            founded: 1998,
+            years: 27,
+            branches: 88,
+            workers: 13000,
+            companies: 3000,
+            responseTime: "48 ore",
+            applicationTime: "2 minuti",
+            brands: ["Temporary", "Lavorint", "Tempus", "Tempor", "Abea", "Intelliform", "Attalferr"],
+            services: ["Somministrazione lavoro", "Ricerca e selezione", "Formazione professionale", "Outsourcing"],
+            headquarters: {
+                address: "Via Pergolesi 8, 20123 Milano",
+                phone: "02/454320",
+                email: "info@attalgroup.it"
+            }
+        };
+
+        // ==========================================
+        // STATO CONVERSAZIONE
+        // ==========================================
+        let conversationHistory = [];
+        let userContext = {
+            city: null,
+            jobType: null,
+            experience: null
+        };
+
+        // ==========================================
+        // FUNZIONI UI
+        // ==========================================
+        function addMessage(content, isBot = true, quickReplies = null) {
+            const messagesContainer = document.getElementById('chatMessages');
+
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isBot ? 'bot' : 'user'}`;
+
+            const avatar = isBot ? '🅰️' : '👤';
+
+            messageDiv.innerHTML = `
+                <div class="message-avatar">${avatar}</div>
+                <div class="message-content">${content}</div>
+            `;
+
+            messagesContainer.appendChild(messageDiv);
+
+            if (quickReplies && quickReplies.length > 0) {
+                const quickRepliesDiv = document.createElement('div');
+                quickRepliesDiv.className = 'quick-replies';
+                quickReplies.forEach(reply => {
+                    const btn = document.createElement('button');
+                    btn.className = 'quick-reply';
+                    btn.textContent = reply;
+                    btn.onclick = () => handleQuickReply(reply);
+                    quickRepliesDiv.appendChild(btn);
+                });
+                messagesContainer.appendChild(quickRepliesDiv);
+            }
+
+            scrollToBottom();
+        }
+
+        function addJobCard(job) {
+            const messagesContainer = document.getElementById('chatMessages');
+
+            const badgeText = {
+                'urgent': '🔥 URGENTE',
+                'top': '⭐ TOP',
+                'salary': '💰 RAL'
+            };
+
+            const cardDiv = document.createElement('div');
+            cardDiv.className = 'job-card';
+            cardDiv.innerHTML = `
+                <div class="job-card-header">
+                    <div class="job-card-title">${job.title}</div>
+                    <div class="job-card-badge">${badgeText[job.badge] || ''}</div>
+                </div>
+                <div class="job-card-meta">
+                    <span>📍 ${job.city}</span>
+                    <span>⏰ ${job.time === 'full-time' ? 'Full-time' : 'Part-time'}</span>
+                    <span>📄 ${job.contract === 'tempo-indeterminato' ? 'Indeterminato' : job.contract === 'tempo-determinato' ? 'Determinato' : 'Somministrazione'}</span>
+                </div>
+                <div class="job-card-salary">€${job.salary}/mese</div>
+                <a href="#" class="job-card-cta" onclick="showJobDetails(${job.id}); return false;">Vedi dettagli →</a>
+            `;
+
+            messagesContainer.appendChild(cardDiv);
+            scrollToBottom();
+        }
+
+        function addFilialeCard(filiale) {
+            const messagesContainer = document.getElementById('chatMessages');
+
+            const cardDiv = document.createElement('div');
+            cardDiv.className = 'filiale-card';
+            cardDiv.innerHTML = `
+                <div class="filiale-card-header">📍 ${filiale.citta} (${filiale.brand})</div>
+                <div class="filiale-card-info">
+                    <div>📌 ${filiale.indirizzo}</div>
+                    <div>📞 <a href="tel:${filiale.tel}">${filiale.tel}</a></div>
+                    <div>🕐 Lun-Ven 9:00-18:00</div>
+                </div>
+            `;
+
+            messagesContainer.appendChild(cardDiv);
+            scrollToBottom();
+        }
+
+        function showTyping() {
+            const messagesContainer = document.getElementById('chatMessages');
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'typing-indicator';
+            typingDiv.id = 'typingIndicator';
+            typingDiv.innerHTML = `
+                <div class="typing-avatar">🅰️</div>
+                <div class="typing-bubble">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                </div>
+            `;
+            messagesContainer.appendChild(typingDiv);
+            scrollToBottom();
+        }
+
+        function hideTyping() {
+            const typingDiv = document.getElementById('typingIndicator');
+            if (typingDiv) typingDiv.remove();
+        }
+
+        function scrollToBottom() {
+            const messagesContainer = document.getElementById('chatMessages');
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        // ==========================================
+        // LOGICA CHATBOT
+        // ==========================================
+        function processMessage(userMessage) {
+            const msg = userMessage.toLowerCase().trim();
+
+            // Saluti
+            if (msg.match(/^(ciao|salve|buongiorno|buonasera|hey|ehi|hola)/)) {
+                return {
+                    text: `Ciao! 👋 Sono l'assistente ATTAL. Ti aiuto a trovare lavoro vicino a te.\n\nAbbiamo <strong>500+ offerte attive</strong> in tutta Italia e <strong>88 filiali</strong>.\n\nCosa ti interessa?`,
+                    quickReplies: ['🔍 Cerco lavoro', '📍 Trova filiale', '❓ Come funziona']
+                };
+            }
+
+            // Come funziona
+            if (msg.includes('come funziona') || msg.includes('come faccio') || msg.includes('procedura')) {
+                return {
+                    text: `È semplicissimo! 3 step:\n\n<strong>1. 🔍 CERCA</strong> - Guarda le offerte nella tua zona\n\n<strong>2. 📄 CANDIDATI</strong> - Mandi il CV in 2 minuti\n\n<strong>3. ✅ LAVORA</strong> - Ti chiamiamo entro 48 ore. Garantito.\n\nVuoi cercare offerte nella tua città?`,
+                    quickReplies: ['🔍 Cerca offerte', '📍 Trova filiale vicina']
+                };
+            }
+
+            // Cerca lavoro generico
+            if (msg.match(/(cerco lavoro|cerca lavoro|offerte|lavoro|impiego|occupazione)/)) {
+                return {
+                    text: `Perfetto! In quale <strong>città</strong> cerchi lavoro?`,
+                    quickReplies: ['Milano', 'Roma', 'Torino', 'Bologna', 'Napoli', 'Altra città']
+                };
+            }
+
+            // Città specifiche
+            const cities = ['milano', 'roma', 'torino', 'bologna', 'napoli', 'firenze', 'brescia', 'verona', 'venezia', 'genova', 'bari', 'palermo'];
+            const matchedCity = cities.find(city => msg.includes(city));
+
+            if (matchedCity) {
+                userContext.city = matchedCity.charAt(0).toUpperCase() + matchedCity.slice(1);
+                const cityJobs = jobsData.filter(j => j.city.toLowerCase() === matchedCity);
+
+                if (cityJobs.length > 0) {
+                    return {
+                        text: `Ho trovato <strong>${cityJobs.length} offerte</strong> a ${userContext.city}! 🎉\n\nEcco le più richieste:`,
+                        jobs: cityJobs.slice(0, 3),
+                        quickReplies: ['Vedi tutte le offerte', 'Altra città', '📍 Filiale vicina']
+                    };
+                } else {
+                    return {
+                        text: `Al momento non ho offerte attive a ${userContext.city}, ma ho <strong>500+ offerte</strong> in altre città vicine.\n\nPuoi anche venire in una delle nostre <strong>88 filiali</strong> per un colloquio di persona!`,
+                        quickReplies: ['Vedi altre città', '📍 Trova filiale']
+                    };
+                }
+            }
+
+            // Filiali
+            if (msg.match(/(filiale|filiali|sede|ufficio|dove siete|venire di persona)/)) {
+                return {
+                    text: `Abbiamo <strong>88 filiali</strong> in tutta Italia! 🇮🇹\n\nIn quale città cerchi la filiale più vicina?`,
+                    quickReplies: ['Milano', 'Roma', 'Torino', 'Bologna', 'Napoli']
+                };
+            }
+
+            // Ricerca filiale per città
+            if (msg.includes('filiale') && matchedCity) {
+                const cityFiliali = filialiData.filter(f => f.citta.toLowerCase().includes(matchedCity));
+                if (cityFiliali.length > 0) {
+                    return {
+                        text: `Ecco le filiali a ${userContext.city}:`,
+                        filiali: cityFiliali.slice(0, 3)
+                    };
+                }
+            }
+
+            // Categorie lavoro
+            const categories = {
+                'magazziniere': 'logistica',
+                'muletto': 'logistica',
+                'logistica': 'logistica',
+                'operaio': 'produzione',
+                'produzione': 'produzione',
+                'fabbrica': 'produzione',
+                'commesso': 'retail',
+                'vendita': 'retail',
+                'negozio': 'retail',
+                'cameriere': 'ristorazione',
+                'ristorante': 'ristorazione',
+                'barista': 'ristorazione',
+                'cuoco': 'ristorazione',
+                'pizzaiolo': 'ristorazione',
+                'impiegato': 'amministrazione',
+                'ufficio': 'amministrazione',
+                'segretaria': 'amministrazione',
+                'autista': 'trasporti',
+                'corriere': 'trasporti',
+                'muratore': 'edilizia',
+                'elettricista': 'edilizia',
+                'edilizia': 'edilizia'
+            };
+
+            for (const [keyword, category] of Object.entries(categories)) {
+                if (msg.includes(keyword)) {
+                    const categoryJobs = jobsData.filter(j => j.category === category);
+                    if (categoryJobs.length > 0) {
+                        return {
+                            text: `Ho trovato <strong>${categoryJobs.length} offerte</strong> nel settore ${category}! Ecco alcune:`,
+                            jobs: categoryJobs.slice(0, 3),
+                            quickReplies: ['Vedi tutte', 'Filtra per città', 'Altra categoria']
+                        };
+                    }
+                }
+            }
+
+            // Part-time
+            if (msg.includes('part-time') || msg.includes('part time') || msg.includes('mezza giornata')) {
+                const partTimeJobs = jobsData.filter(j => j.time === 'part-time');
+                return {
+                    text: `Ho <strong>${partTimeJobs.length} offerte part-time</strong> disponibili! Perfette se studi o hai altri impegni. Ecco alcune:`,
+                    jobs: partTimeJobs.slice(0, 3),
+                    quickReplies: ['Vedi tutte', 'Solo Milano', 'Solo Roma']
+                };
+            }
+
+            // Tempo indeterminato
+            if (msg.includes('indeterminato') || msg.includes('fisso') || msg.includes('stabile')) {
+                const indeterminatoJobs = jobsData.filter(j => j.contract === 'tempo-indeterminato');
+                return {
+                    text: `Cerchi stabilità? Ho <strong>${indeterminatoJobs.length} offerte a tempo indeterminato</strong>! 🎯\n\nEcco le migliori:`,
+                    jobs: indeterminatoJobs.slice(0, 3),
+                    quickReplies: ['Vedi tutte', 'Filtra per città']
+                };
+            }
+
+            // Stipendio alto
+            if (msg.match(/(stipendio alto|paga bene|quanto si guadagna|stipendio|ral|salario)/)) {
+                const highSalaryJobs = jobsData.filter(j => parseInt(j.salary.replace('.', '')) >= 1700);
+                return {
+                    text: `Ecco le offerte con <strong>stipendi più alti</strong> (da €1.700/mese in su):`,
+                    jobs: highSalaryJobs.slice(0, 3),
+                    quickReplies: ['Vedi tutte', 'Come candidarsi']
+                };
+            }
+
+            // Candidatura
+            if (msg.match(/(candidarmi|candidatura|come mi candido|inviare cv|mandare curriculum)/)) {
+                return {
+                    text: `Candidarsi è facilissimo! 📄\n\n<strong>1.</strong> Scegli un'offerta che ti interessa\n<strong>2.</strong> Clicca "Candidati"\n<strong>3.</strong> Carica il tuo CV (bastano 2 minuti!)\n\n✅ <strong>Ti chiamiamo entro 48 ore. Garantito.</strong>\n\nNon hai il CV? Nessun problema, puoi anche venire in filiale!`,
+                    quickReplies: ['🔍 Cerca offerte', '📍 Trova filiale']
+                };
+            }
+
+            // Registrazione
+            if (msg.match(/(registrazione|registrarmi|creare account|iscrivermi)/)) {
+                return {
+                    text: `La registrazione è <strong>velocissima</strong>! ⚡\n\nTi servono solo:\n• Email\n• Password\n• CV (puoi caricarlo dopo)\n\nIn <strong>2 minuti</strong> sei dentro e puoi candidarti a tutte le offerte con un click!\n\n👉 <a href="registrazione.html" style="color: #e22721; font-weight: 600;">Registrati ora</a>`,
+                    quickReplies: ['Prima cerco offerte', '📍 Vengo in filiale']
+                };
+            }
+
+            // Chi siete / Info azienda
+            if (msg.match(/(chi siete|cosa fate|attal|agenzia|informazioni|storia)/)) {
+                return {
+                    text: `Siamo <strong>ATTAL Group</strong>, un'agenzia per il lavoro 100% italiana! 🇮🇹\n\n📅 <strong>Dal 1998</strong> - 27 anni di esperienza\n📍 <strong>88 filiali</strong> in tutta Italia\n👥 <strong>13.000+ persone</strong> al lavoro ogni giorno\n🏢 <strong>3.000+ aziende</strong> clienti\n\nNon siamo un portale online freddo. Siamo nella tua città, con consulenti veri che ti seguono fino all'assunzione.`,
+                    quickReplies: ['🔍 Cerco lavoro', '📍 Trova filiale']
+                };
+            }
+
+            // Contatti
+            if (msg.match(/(contatt|telefono|chiamare|email|numero)/)) {
+                return {
+                    text: `Ecco come contattarci:\n\n📞 <strong>02/454320</strong> (sede centrale Milano)\n📧 info@attalgroup.it\n📍 Via Pergolesi 8, 20123 Milano\n\nOppure trova la filiale più vicina a te e chiamaci direttamente!`,
+                    quickReplies: ['📍 Trova filiale', '🔍 Cerca offerte']
+                };
+            }
+
+            // Urgente / Immediato
+            if (msg.match(/(urgente|immediat|subito|oggi|domani)/)) {
+                const urgentJobs = jobsData.filter(j => j.badge === 'urgent');
+                return {
+                    text: `Hai fretta? Ho <strong>${urgentJobs.length} offerte URGENTI</strong> con inizio immediato! 🔥`,
+                    jobs: urgentJobs.slice(0, 3),
+                    quickReplies: ['Vedi tutte urgenti', 'Candidati ora']
+                };
+            }
+
+            // Grazie
+            if (msg.match(/(grazie|thanks|thx)/)) {
+                return {
+                    text: `Di nulla! 😊 Sono qui per aiutarti.\n\nIn bocca al lupo per la ricerca! 🍀`,
+                    quickReplies: ['🔍 Cerca altro', '📍 Trova filiale']
+                };
+            }
+
+            // Default - non capito
+            return {
+                text: `Non ho capito bene... 🤔\n\nPosso aiutarti a:\n• <strong>Cercare offerte di lavoro</strong> nella tua città\n• <strong>Trovare la filiale</strong> più vicina\n• <strong>Spiegarti come candidarti</strong>\n\nCosa ti serve?`,
+                quickReplies: ['🔍 Cerco lavoro', '📍 Trova filiale', '❓ Come funziona']
+            };
+        }
+
+        function handleQuickReply(reply) {
+            addMessage(reply, false);
+
+            setTimeout(() => {
+                showTyping();
+                setTimeout(() => {
+                    hideTyping();
+                    handleBotResponse(reply);
+                }, 800);
+            }, 300);
+        }
+
+        function handleBotResponse(userMessage) {
+            const response = processMessage(userMessage);
+
+            addMessage(response.text, true, response.quickReplies);
+
+            if (response.jobs) {
+                response.jobs.forEach(job => addJobCard(job));
+            }
+
+            if (response.filiali) {
+                response.filiali.forEach(filiale => addFilialeCard(filiale));
+            }
+        }
+
+        function showJobDetails(jobId) {
+            const job = jobsData.find(j => j.id === jobId);
+            if (!job) return;
+
+            const detailsHtml = `
+                <strong>${job.title}</strong> - ${job.city}\n\n
+                📍 ${job.location}\n
+                💰 €${job.salary}/mese\n
+                📄 ${job.contract === 'tempo-indeterminato' ? 'Tempo indeterminato' : job.contract === 'tempo-determinato' ? 'Tempo determinato' : 'Somministrazione'}\n\n
+                <strong>Descrizione:</strong>\n${job.description}\n\n
+                <strong>Requisiti:</strong>\n${job.requirements.map(r => '• ' + r).join('\n')}\n\n
+                <strong>Benefit:</strong>\n${job.benefits.map(b => '• ' + b).join('\n')}\n\n
+                📞 Filiale: ${job.branch}\nTel: ${job.phone}
+            `;
+
+            addMessage(detailsHtml, true, ['📄 Candidati ora', '🔍 Altre offerte', '📞 Chiama filiale']);
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+
+            if (!message) return;
+
+            addMessage(message, false);
+            input.value = '';
+
+            setTimeout(() => {
+                showTyping();
+                setTimeout(() => {
+                    hideTyping();
+                    handleBotResponse(message);
+                }, 1000 + Math.random() * 500);
+            }, 300);
+        }
+
+        // ==========================================
+        // EVENT LISTENERS
+        // ==========================================
+        document.getElementById('chatInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+
+        // ==========================================
+        // MESSAGGIO DI BENVENUTO
+        // ==========================================
+        window.onload = () => {
+            setTimeout(() => {
+                addMessage(
+                    `Ciao! 👋 Sono l'assistente ATTAL.\n\nTi aiuto a trovare lavoro vicino a te. Abbiamo <strong>500+ offerte attive</strong> e <strong>88 filiali</strong> in tutta Italia.\n\nCome posso aiutarti?`,
+                    true,
+                    ['🔍 Cerco lavoro', '📍 Trova filiale', '❓ Come funziona']
+                );
+            }, 500);
+        };
+    </script>
+</body>
+</html>

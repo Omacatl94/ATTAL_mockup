@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Nostre Filiali - ATTAL Group | 88 Sedi in Tutta Italia</title>
+    <meta name="description" content="Trova la filiale ATTAL più vicina a te. 88 sedi in Italia tra Temporary, Tempor, Tempus e Lavorint. Vieni a trovarci per colloqui e consulenza gratuita.">
+
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/pages/filiali.css">
+</head>
+<body>
+    <!-- Header incluso dinamicamente -->
+    <div id="header-placeholder"></div>
+
+    <!-- HERO SECTION - GEOLOCALIZZAZIONE -->
+    <section class="hero">
+        <div class="container">
+            <h1>Trova la filiale più vicina a te</h1>
+            <p class="subtitle">88 sedi in Italia, scopri quella vicino a casa tua</p>
+
+            <button class="geo-btn" id="geoBtn" onclick="trovaFilialeVicina()">
+                <span class="geo-icon"><i data-lucide="map-pin"></i></span>
+                <span class="geo-text">Trova filiale vicina</span>
+            </button>
+
+            <!-- Alert se nessuna filiale vicina -->
+            <div class="geo-alert" id="geoAlert" style="display: none;">
+                <div class="geo-alert-icon"><i data-lucide="alert-triangle"></i></div>
+                <div class="geo-alert-content">
+                    <h3>Nessuna filiale nei dintorni immediati</h3>
+                    <p>Ma non preoccuparti! Abbiamo <strong>1331 offerte di lavoro</strong> disponibili.</p>
+                    <div class="geo-alert-actions">
+                        <a href="attal-careers_8.html" class="geo-alert-btn primary"><i data-lucide="search"></i> Cerca offerte vicine</a>
+                        <button class="geo-alert-btn secondary" onclick="scrollToManualSearch()"><i data-lucide="map-pin"></i> Sfoglia tutte le filiali</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- MAPPA + FILTRI -->
+    <section class="filiali-section">
+        <div class="container">
+            <div class="filiali-wrapper">
+                <!-- SIDEBAR FILTRI -->
+                <aside class="filtri-sidebar">
+                    <h3><i data-lucide="sliders-horizontal"></i> Cerca e filtra</h3>
+
+                    <div class="filter-group">
+                        <label><i data-lucide="search"></i> Cerca</label>
+                        <div class="autocomplete-wrapper">
+                            <input type="text" class="filter-input" id="searchInput" placeholder="Città o provincia..." autocomplete="off">
+                            <div class="autocomplete-dropdown" id="autocompleteDropdown"></div>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <label><i data-lucide="map-pin"></i> Regione</label>
+                        <select id="regioneFilter" onchange="filterFiliali()">
+                            <option value="">Tutte le regioni</option>
+                            <option value="Lombardia">Lombardia</option>
+                            <option value="Lazio">Lazio</option>
+                            <option value="Piemonte">Piemonte</option>
+                            <option value="Veneto">Veneto</option>
+                            <option value="Emilia-Romagna">Emilia-Romagna</option>
+                            <option value="Toscana">Toscana</option>
+                            <option value="Puglia">Puglia</option>
+                            <option value="Campania">Campania</option>
+                            <option value="Liguria">Liguria</option>
+                            <option value="Marche">Marche</option>
+                            <option value="Calabria">Calabria</option>
+                            <option value="Sicilia">Sicilia</option>
+                            <option value="Sardegna">Sardegna</option>
+                            <option value="Abruzzo">Abruzzo</option>
+                            <option value="Friuli-Venezia Giulia">Friuli-Venezia Giulia</option>
+                            <option value="Umbria">Umbria</option>
+                            <option value="Basilicata">Basilicata</option>
+                            <option value="Molise">Molise</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label><i data-lucide="building-2"></i> Brand</label>
+                        <select id="brandFilter" onchange="filterFiliali()">
+                            <option value="">Tutti i brand</option>
+                            <option value="Temporary">Temporary</option>
+                            <option value="Tempor">Tempor</option>
+                            <option value="Tempus">Tempus</option>
+                            <option value="Lavorint">Lavorint</option>
+                        </select>
+                    </div>
+
+                    <!-- INFO BOX FILIALE SIDEBAR -->
+                    <div class="sidebar-info-box" id="sidebarInfoBox">
+                        <div class="sidebar-info-header">
+                            <div class="sidebar-info-title-row">
+                                <div class="sidebar-info-title" id="sidebarTitle">Seleziona una filiale</div>
+                                <span class="sidebar-brand-badge" id="sidebarBrand" style="background: #e22721">-</span>
+                            </div>
+                            <div class="sidebar-rating">
+                                <span class="sidebar-stars" id="sidebarStars">★★★★★</span>
+                                <span class="sidebar-rating-num" id="sidebarRating">-</span>
+                                <span style="color: #9ca3af; font-size: 11px;" id="sidebarCount">(-)</span>
+                            </div>
+                        </div>
+                        <div class="sidebar-info-body">
+                            <div class="sidebar-detail">
+                                <span class="sidebar-icon"><i data-lucide="map-pin"></i></span>
+                                <span id="sidebarAddress">-</span>
+                            </div>
+                            <div class="sidebar-detail">
+                                <span class="sidebar-icon"><i data-lucide="phone"></i></span>
+                                <a href="tel:" id="sidebarPhone">-</a>
+                            </div>
+                            <div class="sidebar-detail">
+                                <span class="sidebar-icon"><i data-lucide="clock"></i></span>
+                                <span>Lun-Ven 9:00-18:00</span>
+                            </div>
+                        </div>
+                        <div class="sidebar-reviews">
+                            <div class="sidebar-review-title"><i data-lucide="message-circle"></i> Recensioni</div>
+                            <div id="sidebarReviewsList">
+                                <!-- Recensioni generate da JS -->
+                            </div>
+                        </div>
+                        <div class="sidebar-actions">
+                            <a href="#" class="sidebar-btn sidebar-btn-maps" id="sidebarMapsBtn" style="pointer-events: none; opacity: 0.5;" title="Funzionalità non disponibile in locale"><i data-lucide="map"></i> Maps</a>
+                            <a href="#" class="sidebar-btn sidebar-btn-contact" id="sidebarContactBtn" style="pointer-events: none; opacity: 0.5;" title="Funzionalità non disponibile in locale"><i data-lucide="mail"></i> Email</a>
+                        </div>
+                    </div>
+
+                    <button class="reset-btn" onclick="resetFilters()"><i data-lucide="refresh-cw"></i> Reset filtri</button>
+                </aside>
+
+                <!-- CONTENITORE DINAMICO: LISTA O MAPPA -->
+                <div class="mappa-container" id="dinamicContainer">
+                    <!-- Lista filiali (default) -->
+                    <div id="filialiListView" class="filiali-list-view">
+                        <div class="list-header">
+                            <h3 id="listHeaderTitle"><i data-lucide="map-pin"></i> Filiali trovate</h3>
+                        </div>
+                        <div id="filialiCards" class="filiali-cards">
+                            <!-- Cards generate da JS -->
+                        </div>
+                        <div id="filialiAltreContainer">
+                            <!-- Altre filiali generate da JS -->
+                        </div>
+                    </div>
+
+                    <!-- Mappa (nascosta di default) -->
+                    <div id="mapViewContainer" style="display: none; width: 100%;">
+                        <button class="back-to-results-btn" onclick="showListInRightPanel()">
+                            <i data-lucide="arrow-left"></i> Torna ai risultati
+                        </button>
+                        <iframe
+                            id="googleMap"
+                            width="100%"
+                            height="550"
+                            style="border:0; border-radius: 12px;"
+                            loading="lazy"
+                            allowfullscreen
+                            referrerpolicy="no-referrer-when-downgrade"
+                            src="">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- VANTAGGI -->
+    <section class="vantaggi">
+        <div class="container">
+            <div class="vantaggi-grid">
+                <div class="vantaggio-card">
+                    <div class="vantaggio-icon icon-primary"><i data-lucide="users"></i></div>
+                    <h3>Consulenza Gratuita</h3>
+                    <p>Parlaci delle tue competenze e aspettative, ti indirizziamo verso le migliori opportunità</p>
+                </div>
+                <div class="vantaggio-card">
+                    <div class="vantaggio-icon icon-warning"><i data-lucide="zap"></i></div>
+                    <h3>Colloquio in Giornata</h3>
+                    <p>Vieni senza appuntamento, i nostri consulenti ti ricevono subito per valutare il tuo profilo</p>
+                </div>
+                <div class="vantaggio-card">
+                    <div class="vantaggio-icon icon-success"><i data-lucide="check-circle"></i></div>
+                    <h3>Ti Chiamiamo in 48h</h3>
+                    <p>Lasci il CV e ti richiamiamo entro 2 giorni lavorativi con proposte concrete</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINALE -->
+    <section class="cta-finale">
+        <div class="container">
+            <h2><i data-lucide="smartphone"></i> Non trovi la tua città?</h2>
+            <p>Chiamaci o scrivici, ti aiutiamo noi a trovare la soluzione più vicina</p>
+            <div class="cta-buttons">
+                <a href="tel:02454320" class="cta-button">
+                    <i data-lucide="phone"></i> 02/454320
+                </a>
+                <a href="mailto:info@attal.it" class="cta-button">
+                    <i data-lucide="mail"></i> info@attal.it
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer incluso dinamicamente -->
+    <div id="footer-placeholder"></div>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script>
+        // Database completo filiali (88 totali)
+        const filiali = [
+            // TEMPUS (17 filiali)
+            { citta: "Acqui Terme", brand: "Tempus", regione: "Piemonte", indirizzo: "Via Roma 45", tel: "0144/322456", email: "acqui@tempusitalia.it", orari: "Lun-Ven 9:00-18:00", lat: 44.6753, lng: 8.4711 },
+            { citta: "Albenga", brand: "Tempus", regione: "Liguria", indirizzo: "Corso Italia 23", tel: "0182/543210", email: "albenga@tempusitalia.it", orari: "Lun-Ven 9:00-18:00", lat: 44.0495, lng: 8.2113 },
+            { citta: "Alessandria", brand: "Tempus", regione: "Piemonte", indirizzo: "Via Milano 67", tel: "0131/234567", email: "alessandria@tempusitalia.it", orari: "Lun-Ven 9:00-18:00", lat: 44.9134, lng: 8.6153 },
+            { citta: "Bassano del Grappa", brand: "Tempus", regione: "Veneto", indirizzo: "Via Jacopo da Ponte 12", tel: "0424/523456", email: "bassano@tempusitalia.it", orari: "Lun-Ven 9:00-18:00", lat: 45.7664, lng: 11.7314 },
+            { citta: "Cinisello Balsamo", brand: "Tempus", regione: "Lombardia", indirizzo: "Viale Fulvio Testi 128", tel: "02/66014523", email: "cinisello@tempusitalia.it", orari: "Lun-Ven 9:00-18:00", lat: 45.5579, lng: 9.2170 },
+            { citta: "Cornaredo", brand: "Tempus", regione: "Lombardia", indirizzo: "Via Magenta 18", tel: "02/93666789", email: "cornaredo@tempusitalia.it", orari: "Lun-Ven 9:00-18:00", lat: 45.4985, lng: 8.9458 },
+            { citta: "Erba", brand: "Tempus", regione: "Lombardia", indirizzo: "Via Como 34", tel: "031/645678", email: "erba@tempusitalia.it", orari: "Lun-Ven 9:00-18:00", lat: 45.8112, lng: 9.2291 },
+            { citta: "Fabriano", brand: "Tempus", regione: "Marche", indirizzo: "Piazza del Comune 8", tel: "0732/625789", email: "fabriano@tempusitalia.it", orari: "Lun-Ven 9:00-18:00", lat: 43.3357, lng: 12.9045 },
+            { citta: "Firenze", brand: "Tempus", regione: "Toscana", indirizzo: "Via Cavour 52", tel: "055/2345678", email: "firenze@tempusitalia.it", orari: "Lun-Ven 9:00-18:00", lat: 43.7696, lng: 11.2558 },
+            { citta: "Gallarate", brand: "Tempus", regione: "Lombardia", indirizzo: "Corso Italia 89", tel: "0331/776543", email: "gallarate@tempusitalia.it", orari: "Lun-Ven 9:00-18:00", lat: 45.6587, lng: 8.7914 },
+            { citta: "Lainate", brand: "Tempus", regione: "Lombardia", indirizzo: "Via Milano 156", tel: "02/93570123", email: "lainate@tempusitalia.it", orari: "Lun-Ven 9:00-18:00", lat: 45.5705, lng: 9.0247 },
+            { citta: "Latina", brand: "Tempus", regione: "Lazio", indirizzo: "Corso della Repubblica 45", tel: "0773/662345", email: "latina@tempusitalia.it", orari: "Lun-Ven 9:00-18:00", lat: 41.4677, lng: 12.9036 },
+            { citta: "Lecco", brand: "Tempus", regione: "Lombardia", indirizzo: "Via Amendola 32", tel: "0341/363456", email: "lecco@tempusitalia.it", orari: "Lun-Ven 9:00-18:00", lat: 45.8567, lng: 9.3988 },
+            { citta: "Merate", brand: "Tempus", regione: "Lombardia", indirizzo: "Piazza Prinetti 5", tel: "039/9902345", email: "merate@tempusitalia.it", orari: "Lun-Ven 9:00-18:00", lat: 45.6948, lng: 9.4233 },
+            { citta: "Pomezia", brand: "Tempus", regione: "Lazio", indirizzo: "Via Pontina Vecchia 78", tel: "06/91195678", email: "pomezia@tempusitalia.it", orari: "Lun-Ven 9:00-18:00", lat: 41.6689, lng: 12.5009 },
+            { citta: "Verona", brand: "Tempus", regione: "Veneto", indirizzo: "Via Leoncino 23", tel: "045/8001234", email: "verona@tempusitalia.it", orari: "Lun-Ven 9:00-18:00", lat: 45.4384, lng: 10.9916 },
+            { citta: "Vigevano", brand: "Tempus", regione: "Lombardia", indirizzo: "Corso Cavour 67", tel: "0381/74523", email: "vigevano@tempusitalia.it", orari: "Lun-Ven 9:00-18:00", lat: 45.3143, lng: 8.8545 },
+
+            // TEMPORARY (20 filiali)
+            { citta: "Bari", brand: "Temporary", regione: "Puglia", indirizzo: "Via Sparano 128", tel: "080/5211234", email: "bari@temporary.it", orari: "Lun-Ven 9:00-18:00", lat: 41.1171, lng: 16.8719 },
+            { citta: "Battipaglia", brand: "Temporary", regione: "Campania", indirizzo: "Via Roma 45", tel: "0828/301234", email: "battipaglia@temporary.it", orari: "Lun-Ven 9:00-18:00", lat: 40.6102, lng: 14.9819 },
+            { citta: "Bergamo", brand: "Temporary", regione: "Lombardia", indirizzo: "Via XX Settembre 78", tel: "035/237890", email: "bergamo@temporary.it", orari: "Lun-Ven 9:00-18:00", lat: 45.6983, lng: 9.6773 },
+            { citta: "Brescia", brand: "Temporary", regione: "Lombardia", indirizzo: "Corso Zanardelli 34", tel: "030/2929345", email: "brescia@temporary.it", orari: "Lun-Ven 9:00-18:00", lat: 45.5416, lng: 10.2118 },
+            { citta: "Cuneo", brand: "Temporary", regione: "Piemonte", indirizzo: "Via Roma 12", tel: "0171/693456", email: "cuneo@temporary.it", orari: "Lun-Ven 9:00-18:00", lat: 44.3841, lng: 7.5426 },
+            { citta: "Frosinone", brand: "Temporary", regione: "Lazio", indirizzo: "Viale Roma 234", tel: "0775/270123", email: "frosinone@temporary.it", orari: "Lun-Ven 9:00-18:00", lat: 41.6401, lng: 13.3403 },
+            { citta: "Lecce", brand: "Temporary", regione: "Puglia", indirizzo: "Via Palmieri 67", tel: "0832/241234", email: "lecce@temporary.it", orari: "Lun-Ven 9:00-18:00", lat: 40.3515, lng: 18.1750 },
+            { citta: "Lodi", brand: "Temporary", regione: "Lombardia", indirizzo: "Corso Umberto I 23", tel: "0371/421345", email: "lodi@temporary.it", orari: "Lun-Ven 9:00-18:00", lat: 45.3141, lng: 9.5034 },
+            { citta: "Mestre", brand: "Temporary", regione: "Veneto", indirizzo: "Via Piave 45", tel: "041/951234", email: "mestre@temporary.it", orari: "Lun-Ven 9:00-18:00", lat: 45.4895, lng: 12.2422 },
+            { citta: "Milano Corsica", brand: "Temporary", regione: "Lombardia", indirizzo: "Via Pergolesi 8", tel: "02/454320", email: "milano.corsica@temporary.it", orari: "Lun-Ven 9:00-18:00", lat: 45.4773, lng: 9.2066 },
+            { citta: "Milano Navigli", brand: "Temporary", regione: "Lombardia", indirizzo: "Ripa di Porta Ticinese 55", tel: "02/89401234", email: "milano.navigli@temporary.it", orari: "Lun-Ven 9:00-18:00", lat: 45.4485, lng: 9.1779 },
+            { citta: "Milano Lecco", brand: "Temporary", regione: "Lombardia", indirizzo: "Via Lecco 23", tel: "02/26826789", email: "milano.lecco@temporary.it", orari: "Lun-Ven 9:00-18:00", lat: 45.4926, lng: 9.2167 },
+            { citta: "Milano Monza", brand: "Temporary", regione: "Lombardia", indirizzo: "Viale Monza 140", tel: "02/26410345", email: "milano.monza@temporary.it", orari: "Lun-Ven 9:00-18:00", lat: 45.5032, lng: 9.2235 },
+            { citta: "Novara", brand: "Temporary", regione: "Piemonte", indirizzo: "Corso Cavour 12", tel: "0321/623456", email: "novara@temporary.it", orari: "Lun-Ven 9:00-18:00", lat: 45.4469, lng: 8.6218 },
+            { citta: "Palermo", brand: "Temporary", regione: "Sicilia", indirizzo: "Via Libertà 189", tel: "091/6251234", email: "palermo@temporary.it", orari: "Lun-Ven 9:00-18:00", lat: 38.1157, lng: 13.3615 },
+            { citta: "Pavia", brand: "Temporary", regione: "Lombardia", indirizzo: "Corso Cavour 34", tel: "0382/530123", email: "pavia@temporary.it", orari: "Lun-Ven 9:00-18:00", lat: 45.1847, lng: 9.1582 },
+            { citta: "Piacenza", brand: "Temporary", regione: "Emilia-Romagna", indirizzo: "Via Roma 67", tel: "0523/334567", email: "piacenza@temporary.it", orari: "Lun-Ven 9:00-18:00", lat: 45.0526, lng: 9.6929 },
+            { citta: "Torino", brand: "Temporary", regione: "Piemonte", indirizzo: "Via Giolitti 24/B", tel: "011/7640242", email: "torino@temporary.it", orari: "Lun-Ven 9:00-18:00", lat: 45.0703, lng: 7.6869 },
+            { citta: "Voghera", brand: "Temporary", regione: "Lombardia", indirizzo: "Via Emilia 89", tel: "0383/368901", email: "voghera@temporary.it", orari: "Lun-Ven 9:00-18:00", lat: 44.9938, lng: 9.0096 },
+            { citta: "Genova", brand: "Temporary", regione: "Liguria", indirizzo: "Via XX Settembre 41", tel: "010/5701234", email: "genova@temporary.it", orari: "Lun-Ven 9:00-18:00", lat: 44.4056, lng: 8.9463 },
+
+            // TEMPOR (22 filiali)
+            { citta: "Bergamo", brand: "Tempor", regione: "Lombardia", indirizzo: "Via Nazario Sauro 2/D", tel: "035/249752", email: "temporbergamo@tempor.it", orari: "Lun-Ven 9:00-18:00", lat: 45.6983, lng: 9.6773 },
+            { citta: "Bologna", brand: "Tempor", regione: "Emilia-Romagna", indirizzo: "Via Leonetto Cipriani 13", tel: "051/6810640", email: "temporbologna@tempor.it", orari: "Lun-Ven 9:00-18:00", lat: 44.4949, lng: 11.3426 },
+            { citta: "Cagliari", brand: "Tempor", regione: "Sardegna", indirizzo: "Viale Bonaria 56", tel: "070/3328707", email: "tempor.cagliari@tempor.it", orari: "Lun-Ven 9:00-18:00", lat: 39.2238, lng: 9.1217 },
+            { citta: "Codroipo", brand: "Tempor", regione: "Friuli-Venezia Giulia", indirizzo: "Via Candotti 4", tel: "0432/1903230", email: "temporfvg@tempor.it", orari: "Lun-Ven 9:00-18:00", lat: 45.9619, lng: 12.9809 },
+            { citta: "Cosenza", brand: "Tempor", regione: "Calabria", indirizzo: "Via Pasquale Rossi 49", tel: "0984/414774", email: "temporcosenza@tempor.it", orari: "Lun-Ven 9:00-18:00", lat: 39.2990, lng: 16.2518 },
+            { citta: "Crema", brand: "Tempor", regione: "Lombardia", indirizzo: "Via Cadorna 22", tel: "0373/476074", email: "temporcrema@tempor.it", orari: "Lun-Ven 9:00-18:00", lat: 45.3625, lng: 9.6853 },
+            { citta: "Frosinone", brand: "Tempor", regione: "Lazio", indirizzo: "Via Licinio Refice 24", tel: "0775/271112", email: "temporfrosinone@tempor.it", orari: "Lun-Ven 9:00-18:00", lat: 41.6401, lng: 13.3403 },
+            { citta: "Ivrea", brand: "Tempor", regione: "Piemonte", indirizzo: "Via Natalia Ginzburg 3/A", tel: "0125/642832", email: "temporivrea@tempor.it", orari: "Lun-Ven 9:00-18:00", lat: 45.4669, lng: 7.8754 },
+            { citta: "Latina", brand: "Tempor", regione: "Lazio", indirizzo: "Via Piave 829", tel: "0773/474268", email: "temporlatina@tempor.it", orari: "Lun-Ven 9:00-18:00", lat: 41.4677, lng: 12.9036 },
+            { citta: "La Spezia", brand: "Tempor", regione: "Liguria", indirizzo: "Via Giacomo Doria 53", tel: "0187/1866645", email: "temporlaspezia@tempor.it", orari: "Lun-Ven 9:00-18:00", lat: 44.1025, lng: 9.8247 },
+            { citta: "Lecce", brand: "Tempor", regione: "Puglia", indirizzo: "Via Manzoni 32/d", tel: "0832/279967", email: "temporlecce@tempor.it", orari: "Lun-Ven 9:00-18:00", lat: 40.3515, lng: 18.1750 },
+            { citta: "Melfi", brand: "Tempor", regione: "Basilicata", indirizzo: "Viale Aldo Moro 22", tel: "0972/086323", email: "tempormelfi@tempor.it", orari: "Lun-Ven 9:00-18:00", lat: 40.9959, lng: 15.6533 },
+            { citta: "Modena", brand: "Tempor", regione: "Emilia-Romagna", indirizzo: "Via Divisione Acqui 137/b", tel: "059/370766", email: "tempormodena@tempor.it", orari: "Lun-Ven 9:00-18:00", lat: 44.6471, lng: 10.9252 },
+            { citta: "Olbia", brand: "Tempor", regione: "Sardegna", indirizzo: "Via Capotesta 1/50", tel: "345/8857504", email: "temporolbia@tempor.it", orari: "Lun-Ven 9:00-18:00", lat: 40.9216, lng: 9.4959 },
+            { citta: "Parma", brand: "Tempor", regione: "Emilia-Romagna", indirizzo: "Via Giovanni Lanfranco 9", tel: "0521/982777", email: "temporparma@tempor.it", orari: "Lun-Ven 9:00-18:00", lat: 44.8015, lng: 10.3279 },
+            { citta: "Potenza", brand: "Tempor", regione: "Basilicata", indirizzo: "Corso Garibaldi 82", tel: "0971/274736", email: "temporpotenza@tempor.it", orari: "Lun-Ven 9:00-18:00", lat: 40.6389, lng: 15.8054 },
+            { citta: "Rieti", brand: "Tempor", regione: "Lazio", indirizzo: "Piazza Vittorio Bachelet 27", tel: "0746/1973227", email: "temporrieti@tempor.it", orari: "Lun-Ven 9:00-18:00", lat: 42.4041, lng: 12.8565 },
+            { citta: "Roma", brand: "Tempor", regione: "Lazio", indirizzo: "Via Livorno 41/B", tel: "06/77208232", email: "tempor.roma@tempor.it", orari: "Lun-Ven 9:00-18:00", lat: 41.9028, lng: 12.4964 },
+            { citta: "Salerno", brand: "Tempor", regione: "Campania", indirizzo: "Via S. Leonardo 52", tel: "089/2851172", email: "temporsalerno@tempor.it", orari: "Lun-Ven 9:00-18:00", lat: 40.6824, lng: 14.7681 },
+            { citta: "Thiene", brand: "Tempor", regione: "Veneto", indirizzo: "Viale Europa 95", tel: "0445/1650997", email: "temporthiene@tempor.it", orari: "Lun-Ven 9:00-18:00", lat: 45.7080, lng: 11.4781 },
+            { citta: "Torino", brand: "Tempor", regione: "Piemonte", indirizzo: "Via Susa 40", tel: "011/5069446", email: "tempor.torino@tempor.it", orari: "Lun-Ven 9:00-18:00", lat: 45.0703, lng: 7.6869 },
+            { citta: "Vasto", brand: "Tempor", regione: "Abruzzo", indirizzo: "Via Maddalena 63/b", tel: "0873/471100", email: "temporvasto@tempor.it", orari: "Lun-Ven 9:00-18:00", lat: 42.1114, lng: 14.7078 },
+
+            // LAVORINT (29 filiali)
+            { citta: "Ancona", brand: "Lavorint", regione: "Marche", indirizzo: "Via Marconi 45", tel: "071/2071234", email: "ancona@lavorint.it", orari: "Lun-Ven 9:00-18:00", lat: 43.6158, lng: 13.5189 },
+            { citta: "Ascoli Piceno", brand: "Lavorint", regione: "Marche", indirizzo: "Corso Mazzini 78", tel: "0736/253456", email: "ascoli@lavorint.it", orari: "Lun-Ven 9:00-18:00", lat: 42.8534, lng: 13.5759 },
+            { citta: "Avellino", brand: "Lavorint", regione: "Campania", indirizzo: "Corso Vittorio Emanuele II 101", tel: "0825/36789", email: "avellino@lavorint.it", orari: "Lun-Ven 9:00-18:00", lat: 40.9142, lng: 14.7906 },
+            { citta: "Bari", brand: "Lavorint", regione: "Puglia", indirizzo: "Via Dante 134", tel: "080/5242345", email: "bari@lavorint.it", orari: "Lun-Ven 9:00-18:00", lat: 41.1171, lng: 16.8719 },
+            { citta: "Bergamo", brand: "Lavorint", regione: "Lombardia", indirizzo: "Via Paleocapa 23", tel: "035/242567", email: "bergamo@lavorint.it", orari: "Lun-Ven 9:00-18:00", lat: 45.6983, lng: 9.6773 },
+            { citta: "Biella", brand: "Lavorint", regione: "Piemonte", indirizzo: "Via Italia 56", tel: "015/8492345", email: "biella@lavorint.it", orari: "Lun-Ven 9:00-18:00", lat: 45.5629, lng: 8.0580 },
+            { citta: "Bologna", brand: "Lavorint", regione: "Emilia-Romagna", indirizzo: "Via Rizzoli 12", tel: "051/236789", email: "bologna@lavorint.it", orari: "Lun-Ven 9:00-18:00", lat: 44.4949, lng: 11.3426 },
+            { citta: "Bra", brand: "Lavorint", regione: "Piemonte", indirizzo: "Via Vittorio Emanuele 34", tel: "0172/413456", email: "bra@lavorint.it", orari: "Lun-Ven 9:00-18:00", lat: 44.6979, lng: 7.8555 },
+            { citta: "Campobasso", brand: "Lavorint", regione: "Molise", indirizzo: "Corso Vittorio Emanuele 89", tel: "0874/91234", email: "campobasso@lavorint.it", orari: "Lun-Ven 9:00-18:00", lat: 41.5630, lng: 14.6569 },
+            { citta: "Canosa di Puglia", brand: "Lavorint", regione: "Puglia", indirizzo: "Via Roma 23", tel: "0883/661234", email: "canosa@lavorint.it", orari: "Lun-Ven 9:00-18:00", lat: 41.2229, lng: 16.0653 },
+            { citta: "Carrara", brand: "Lavorint", regione: "Toscana", indirizzo: "Viale XX Settembre 45", tel: "0585/71234", email: "carrara@lavorint.it", orari: "Lun-Ven 9:00-18:00", lat: 44.0810, lng: 10.0970 },
+            { citta: "Fidenza", brand: "Lavorint", regione: "Emilia-Romagna", indirizzo: "Via Berenini 12", tel: "0524/523456", email: "fidenza@lavorint.it", orari: "Lun-Ven 9:00-18:00", lat: 44.8665, lng: 10.0632 },
+            { citta: "Foligno", brand: "Lavorint", regione: "Umbria", indirizzo: "Via Mazzini 67", tel: "0742/340123", email: "foligno@lavorint.it", orari: "Lun-Ven 9:00-18:00", lat: 42.9565, lng: 12.7035 },
+            { citta: "Genova", brand: "Lavorint", regione: "Liguria", indirizzo: "Via Fiume 34", tel: "010/5461234", email: "genova@lavorint.it", orari: "Lun-Ven 9:00-18:00", lat: 44.4056, lng: 8.9463 },
+            { citta: "Mantova", brand: "Lavorint", regione: "Lombardia", indirizzo: "Corso Vittorio Emanuele 45", tel: "0376/323456", email: "mantova@lavorint.it", orari: "Lun-Ven 9:00-18:00", lat: 45.1564, lng: 10.7914 },
+            { citta: "Modena", brand: "Lavorint", regione: "Emilia-Romagna", indirizzo: "Via Emilia Centro 78", tel: "059/222345", email: "modena@lavorint.it", orari: "Lun-Ven 9:00-18:00", lat: 44.6471, lng: 10.9252 },
+            { citta: "Monselice", brand: "Lavorint", regione: "Veneto", indirizzo: "Via San Marco 23", tel: "0429/73456", email: "monselice@lavorint.it", orari: "Lun-Ven 9:00-18:00", lat: 45.2405, lng: 11.7505 },
+            { citta: "Montecassiano", brand: "Lavorint", regione: "Marche", indirizzo: "Via Roma 12", tel: "0733/598123", email: "montecassiano@lavorint.it", orari: "Lun-Ven 9:00-18:00", lat: 43.3588, lng: 13.4368 },
+            { citta: "Monza", brand: "Lavorint", regione: "Lombardia", indirizzo: "Via Eva Segre 3", tel: "039/2303456", email: "monza@lavorint.it", orari: "Lun-Ven 9:00-18:00", lat: 45.5845, lng: 9.2744 },
+            { citta: "Napoli", brand: "Lavorint", regione: "Campania", indirizzo: "Via Toledo 256", tel: "081/5521234", email: "napoli@lavorint.it", orari: "Lun-Ven 9:00-18:00", lat: 40.8518, lng: 14.2681 },
+            { citta: "Padova", brand: "Lavorint", regione: "Veneto", indirizzo: "Via Roma 89", tel: "049/8761234", email: "padova@lavorint.it", orari: "Lun-Ven 9:00-18:00", lat: 45.4064, lng: 11.8768 },
+            { citta: "Parma", brand: "Lavorint", regione: "Emilia-Romagna", indirizzo: "Via della Repubblica 56", tel: "0521/234567", email: "parma@lavorint.it", orari: "Lun-Ven 9:00-18:00", lat: 44.8015, lng: 10.3279 },
+            { citta: "Perugia", brand: "Lavorint", regione: "Umbria", indirizzo: "Corso Vannucci 34", tel: "075/5721234", email: "perugia@lavorint.it", orari: "Lun-Ven 9:00-18:00", lat: 43.1107, lng: 12.3908 },
+            { citta: "Pescara", brand: "Lavorint", regione: "Abruzzo", indirizzo: "Corso Umberto 123", tel: "085/4211234", email: "pescara@lavorint.it", orari: "Lun-Ven 9:00-18:00", lat: 42.4618, lng: 14.2158 },
+            { citta: "Piombino", brand: "Lavorint", regione: "Toscana", indirizzo: "Via Roma 45", tel: "0565/221234", email: "piombino@lavorint.it", orari: "Lun-Ven 9:00-18:00", lat: 42.9259, lng: 10.5267 },
+            { citta: "Reggio Emilia", brand: "Lavorint", regione: "Emilia-Romagna", indirizzo: "Via Emilia San Pietro 67", tel: "0522/431234", email: "reggio@lavorint.it", orari: "Lun-Ven 9:00-18:00", lat: 44.6989, lng: 10.6297 },
+            { citta: "Roma", brand: "Lavorint", regione: "Lazio", indirizzo: "Via Nazionale 243", tel: "06/47821234", email: "roma@lavorint.it", orari: "Lun-Ven 9:00-18:00", lat: 41.9028, lng: 12.4964 },
+            { citta: "Teramo", brand: "Lavorint", regione: "Abruzzo", indirizzo: "Corso San Giorgio 78", tel: "0861/241234", email: "teramo@lavorint.it", orari: "Lun-Ven 9:00-18:00", lat: 42.6589, lng: 13.7040 },
+            { citta: "Torino", brand: "Lavorint", regione: "Piemonte", indirizzo: "Via Garibaldi 45", tel: "011/5621234", email: "torino@lavorint.it", orari: "Lun-Ven 9:00-18:00", lat: 45.0703, lng: 7.6869 }
+        ];
+
+        let filialiFiltered = [...filiali];
+
+        // Brand colors
+        const brandColors = {
+            'Tempus': '#df1d1d',
+            'Temporary': '#f18f03',
+            'Lavorint': '#4b95cf',
+            'Tempor': '#c1172a'
+        };
+
+        // Recensioni template
+        const recensioniTemplate = [
+            { nome: "Marco R.", testo: "Professionali e veloci. Trovato lavoro in 3 giorni!", stelle: 5 },
+            { nome: "Laura B.", testo: "Consulenti preparati, mi hanno seguito fino all'assunzione.", stelle: 5 },
+            { nome: "Giuseppe M.", testo: "Finalmente un'agenzia seria! Consigliatissimi!", stelle: 5 },
+            { nome: "Francesca T.", testo: "Personale cordiale e competente. Ottima esperienza.", stelle: 5 },
+            { nome: "Alessandro P.", testo: "Mi hanno aiutato a trovare il lavoro perfetto!", stelle: 5 },
+            { nome: "Chiara S.", testo: "Ambiente accogliente, consulenti top.", stelle: 4 },
+            { nome: "Roberto V.", testo: "Esperienza positiva. Buona assistenza.", stelle: 4 },
+            { nome: "Simona L.", testo: "Finalmente ho trovato stabilità lavorativa!", stelle: 5 }
+        ];
+
+        // Posizione simulata: Milano centro
+        const MOCK_POSITION = { lat: 45.4642, lng: 9.1900 };
+
+        // Formula Haversine
+        function calculateDistance(lat1, lng1, lat2, lng2) {
+            const R = 6371;
+            const dLat = (lat2 - lat1) * Math.PI / 180;
+            const dLng = (lng2 - lng1) * Math.PI / 180;
+            const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                      Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                      Math.sin(dLng/2) * Math.sin(dLng/2);
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+            return R * c;
+        }
+
+        function trovaFilialeVicina() {
+            const btn = document.getElementById('geoBtn');
+            const alert = document.getElementById('geoAlert');
+            btn.classList.add('loading');
+            btn.querySelector('.geo-text').textContent = 'Rilevamento posizione';
+
+            setTimeout(() => {
+                const filialiConDistanza = filiali.map(f => {
+                    if (f.lat && f.lng) {
+                        const distanza = calculateDistance(MOCK_POSITION.lat, MOCK_POSITION.lng, f.lat, f.lng);
+                        return { ...f, distanza: distanza };
+                    }
+                    return { ...f, distanza: 9999 };
+                });
+                filialiConDistanza.sort((a, b) => a.distanza - b.distanza);
+                const filialiVicine = filialiConDistanza.slice(0, 10);
+                const hasFilialeVicina = filialiVicine[0].distanza <= 10;
+
+                if (hasFilialeVicina) {
+                    filialiFiltered = filialiVicine;
+                    generateFilialiCardsWithDistance();
+                    document.querySelector('.filiali-section').scrollIntoView({ behavior: 'smooth' });
+                    alert.style.display = 'none';
+                } else {
+                    alert.style.display = 'flex';
+                }
+                btn.classList.remove('loading');
+                btn.querySelector('.geo-text').textContent = 'Trova filiale vicina';
+            }, 800);
+        }
+
+        function generateFilialiCardsWithDistance() {
+            const container = document.getElementById('filialiCards');
+            const headerTitle = document.getElementById('listHeaderTitle');
+
+            if (filialiFiltered.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: #9ca3af; padding: 40px 0;">Nessuna filiale trovata</p>';
+                headerTitle.innerHTML = '<i data-lucide="map-pin"></i> Nessuna filiale trovata';
+                return;
+            }
+
+            headerTitle.innerHTML = `<i data-lucide="map-pin"></i> ${filialiFiltered.length} ${filialiFiltered.length === 1 ? 'filiale trovata' : 'filiali trovate'}`;
+
+            const top3 = filialiFiltered.slice(0, 3);
+            const resto = filialiFiltered.slice(3);
+            const altreContainer = document.getElementById('filialiAltreContainer');
+
+            // Cards principali nella griglia
+            container.innerHTML = top3.map(f => {
+                const filialeJson = JSON.stringify(f).replace(/"/g, '&quot;');
+                const distanzaBadge = f.distanza && f.distanza < 9999 ?
+                    (f.distanza <= 10 ?
+                        `<div class="distanza-badge vicina"><i data-lucide="navigation"></i> A soli ${f.distanza.toFixed(1)} km da te</div>` :
+                        `<div class="distanza-badge normale"><i data-lucide="map-pin"></i> ${f.distanza.toFixed(1)} km da te</div>`
+                    ) : '';
+
+                return `
+                    <div class="filiale-card" onclick='selectFiliale(${filialeJson})'>
+                        ${distanzaBadge}
+                        <div class="filiale-card-header">
+                            <div class="filiale-card-title">${f.citta}</div>
+                            <span class="filiale-card-brand" style="background: ${brandColors[f.brand]}">${f.brand}</span>
+                        </div>
+                        <button class="filiale-card-btn" style="--brand-color: ${brandColors[f.brand]}">Scopri dettagli</button>
+                    </div>
+                `;
+            }).join('');
+
+            // Altre filiali sotto la griglia
+            if (resto.length > 0) {
+                altreContainer.innerHTML = `
+                    <div class="filiali-divider"><span>Altre filiali nelle vicinanze</span></div>
+                    <div class="filiali-list-compact">
+                        ${resto.map(f => {
+                            const filialeJson = JSON.stringify(f).replace(/"/g, '&quot;');
+                            const distanzaText = f.distanza && f.distanza < 9999 ? `${f.distanza.toFixed(1)} km` : '-';
+                            return `
+                                <div class="filiale-compact-item" onclick='selectFiliale(${filialeJson})'>
+                                    <span class="filiale-compact-citta">${f.citta}</span>
+                                    <span class="filiale-compact-divider">•</span>
+                                    <span class="filiale-compact-distanza">${distanzaText}</span>
+                                    <span class="filiale-compact-divider">•</span>
+                                    <span class="filiale-compact-brand" style="color: ${brandColors[f.brand]}">${f.brand}</span>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                `;
+            } else {
+                altreContainer.innerHTML = '';
+            }
+
+            lucide.createIcons();
+        }
+
+        function scrollToManualSearch() {
+            document.getElementById('manualSearchSection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showFilialeInfo(filiale) {
+            const infoBox = document.getElementById('sidebarInfoBox');
+            const rating = (4.2 + Math.random() * 0.6).toFixed(1);
+            const reviewCount = Math.floor(80 + Math.random() * 150);
+            const fullStars = Math.floor(parseFloat(rating));
+            const stars = '★'.repeat(fullStars) + '☆'.repeat(5 - fullStars);
+            const shuffled = [...recensioniTemplate].sort(() => 0.5 - Math.random());
+            const selectedReviews = shuffled.slice(0, 2);
+
+            document.getElementById('sidebarTitle').textContent = filiale.citta;
+            document.getElementById('sidebarBrand').textContent = filiale.brand;
+            document.getElementById('sidebarBrand').style.background = brandColors[filiale.brand];
+
+            const headerElement = document.querySelector('.sidebar-info-header');
+            const brandColor = brandColors[filiale.brand];
+
+            headerElement.style.background = 'transparent';
+            headerElement.style.borderBottomColor = brandColor;
+
+            document.getElementById('sidebarStars').textContent = stars;
+            document.getElementById('sidebarRating').textContent = rating;
+            document.getElementById('sidebarCount').textContent = `(${reviewCount})`;
+            document.getElementById('sidebarAddress').textContent = filiale.indirizzo;
+            document.getElementById('sidebarPhone').href = `tel:${filiale.tel.replace(/\//g, '')}`;
+            document.getElementById('sidebarPhone').textContent = filiale.tel;
+
+            const reviewsHTML = selectedReviews.map(r => `
+                <div class="sidebar-review-item">
+                    <div class="sidebar-review-header">
+                        <span class="sidebar-review-name">${r.nome}</span>
+                        <span class="sidebar-review-stars">${'★'.repeat(r.stelle)}${'☆'.repeat(5-r.stelle)}</span>
+                    </div>
+                    <div class="sidebar-review-text">"${r.testo}"</div>
+                </div>
+            `).join('');
+
+            document.getElementById('sidebarReviewsList').innerHTML = reviewsHTML;
+
+            const mapsBtn = document.getElementById('sidebarMapsBtn');
+            mapsBtn.href = '#';
+            mapsBtn.onclick = (e) => { e.preventDefault(); showMapInRightPanel(filiale); };
+            document.getElementById('sidebarContactBtn').href = `mailto:${filiale.email}`;
+
+            infoBox.classList.add('show');
+
+            if (filiale.lat && filiale.lng) {
+                const iframe = document.getElementById('googleMap');
+                iframe.src = `https://www.google.com/maps/embed/v1/view?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&center=${filiale.lat},${filiale.lng}&zoom=15&maptype=roadmap`;
+            }
+        }
+
+        function setupAutocomplete() {
+            const input = document.getElementById('searchInput');
+            const dropdown = document.getElementById('autocompleteDropdown');
+
+            input.addEventListener('input', (e) => {
+                const value = e.target.value.toLowerCase().trim();
+                if (value.length < 2) { dropdown.classList.remove('show'); return; }
+
+                const matches = filiali.filter(f => f.citta.toLowerCase().includes(value)).slice(0, 8);
+                if (matches.length === 0) { dropdown.classList.remove('show'); return; }
+
+                dropdown.innerHTML = matches.map(f => {
+                    const highlighted = f.citta.replace(new RegExp(value, 'gi'), match => `<strong>${match}</strong>`);
+                    return `<div class="autocomplete-item" onclick="selectCity('${f.citta}')">${highlighted}<span class="brand-tag" style="background: ${brandColors[f.brand]}">${f.brand}</span></div>`;
+                }).join('');
+                dropdown.classList.add('show');
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.autocomplete-wrapper')) dropdown.classList.remove('show');
+            });
+        }
+
+        function selectCity(citta) {
+            document.getElementById('searchInput').value = citta;
+            document.getElementById('autocompleteDropdown').classList.remove('show');
+            const filiale = filiali.find(f => f.citta === citta);
+            if (filiale) showFilialeInfo(filiale);
+            filterFiliali();
+        }
+
+
+        let hasSearched = false;
+
+        function generateFilialiCards() {
+            const container = document.getElementById('filialiCards');
+            const headerTitle = document.getElementById('listHeaderTitle');
+            const altreContainer = document.getElementById('filialiAltreContainer');
+
+            // Pulisci la sezione "altre filiali" (usata solo per geolocalizzazione)
+            altreContainer.innerHTML = '';
+
+            if (filialiFiltered.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: #9ca3af; padding: 40px 0;">Nessuna filiale trovata</p>';
+                headerTitle.innerHTML = '<i data-lucide="map-pin"></i> Nessuna filiale trovata';
+                return;
+            }
+
+            if (hasSearched) {
+                headerTitle.innerHTML = `<i data-lucide="map-pin"></i> ${filialiFiltered.length} ${filialiFiltered.length === 1 ? 'filiale trovata' : 'filiali trovate'}`;
+            } else {
+                headerTitle.innerHTML = '<i data-lucide="map-pin"></i> Tutte le filiali';
+            }
+
+            container.innerHTML = filialiFiltered.map(f => {
+                const filialeJson = JSON.stringify(f).replace(/"/g, '&quot;');
+                return `
+                    <div class="filiale-card" onclick='selectFiliale(${filialeJson})'>
+                        <div class="filiale-card-header">
+                            <div class="filiale-card-title">${f.citta}</div>
+                            <span class="filiale-card-brand" style="background: ${brandColors[f.brand]}">${f.brand}</span>
+                        </div>
+                        <button class="filiale-card-btn" style="--brand-color: ${brandColors[f.brand]}">Scopri dettagli</button>
+                    </div>
+                `;
+            }).join('');
+            lucide.createIcons();
+        }
+
+        function selectFiliale(filiale) { showFilialeInfo(filiale); }
+
+        function showMapInRightPanel(filiale) {
+            const listView = document.getElementById('filialiListView');
+            const mapContainer = document.getElementById('mapViewContainer');
+            const mapIframe = document.getElementById('googleMap');
+            listView.style.display = 'none';
+            mapContainer.style.display = 'block';
+            const mapsQuery = encodeURIComponent(`${filiale.indirizzo}, ${filiale.citta}`);
+            mapIframe.src = `https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${mapsQuery}&zoom=15`;
+        }
+
+        function showListInRightPanel() {
+            document.getElementById('filialiListView').style.display = 'block';
+            document.getElementById('mapViewContainer').style.display = 'none';
+        }
+
+        function filterFiliali() {
+            const searchText = document.getElementById('searchInput').value.toLowerCase();
+            const regioneFilter = document.getElementById('regioneFilter').value;
+            const brandFilter = document.getElementById('brandFilter').value;
+
+            hasSearched = true;
+
+            filialiFiltered = filiali.filter(filiale => {
+                const matchSearch = !searchText || filiale.citta.toLowerCase().includes(searchText) || filiale.indirizzo.toLowerCase().includes(searchText);
+                const matchRegione = !regioneFilter || filiale.regione === regioneFilter;
+                const matchBrand = !brandFilter || filiale.brand === brandFilter;
+                return matchSearch && matchRegione && matchBrand;
+            });
+
+            generateFilialiCards();
+            showListInRightPanel();
+        }
+
+        function resetFilters() {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('regioneFilter').value = '';
+            document.getElementById('brandFilter').value = '';
+            hasSearched = false;
+            filialiFiltered = [...filiali];
+            generateFilialiCards();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setupAutocomplete();
+            generateFilialiCards();
+            document.getElementById('searchInput').addEventListener('keyup', (e) => {
+                if (e.key === 'Enter') filterFiliali();
+            });
+            document.getElementById('searchInput').addEventListener('input', () => {
+                filterFiliali();
+            });
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+        });
+    </script>
+
+    <!-- Componenti Header e Footer -->
+    <script src="../assets/js/attal-components.js"></script>
+</body>
+</html>

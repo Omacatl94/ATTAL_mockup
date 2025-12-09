@@ -1,0 +1,600 @@
+[
+  {
+    "id": 1,
+    "title": "Magazziniere Mulettista",
+    "city": "Milano",
+    "category": "logistica",
+    "contract": "somministrazione",
+    "time": "full-time",
+    "salary": "1.450",
+    "badge": "urgent",
+    "location": "Milano Nord - Sesto San Giovanni",
+    "description": "Cerchiamo magazziniere mulettista per importante azienda di logistica. La risorsa si occuperà di movimentazione merce, carico/scarico e gestione inventario.",
+    "requirements": [
+      "Patentino muletto valido",
+      "Esperienza minima 1 anno",
+      "Disponibilità immediata",
+      "Conoscenza gestione magazzino"
+    ],
+    "benefits": [
+      "Mensa aziendale gratuita",
+      "Formazione continua pagata",
+      "Possibilità di assunzione diretta",
+      "Turni flessibili"
+    ],
+    "branch": "Milano Corsica - Via Pergolesi 8",
+    "phone": "02/454320"
+  },
+  {
+    "id": 2,
+    "title": "Commesso/a Retail",
+    "city": "Milano",
+    "category": "retail",
+    "contract": "tempo-determinato",
+    "time": "full-time",
+    "salary": "1.350",
+    "badge": "top",
+    "location": "Milano Centro - Corso Buenos Aires",
+    "description": "Per nota catena di abbigliamento ricerchiamo commesso/a con esperienza nella vendita. Ambiente dinamico e giovane.",
+    "requirements": [
+      "Esperienza in retail moda",
+      "Ottime capacità comunicative",
+      "Flessibilità oraria",
+      "Italiano fluente"
+    ],
+    "benefits": [
+      "Sconti dipendenti 30%",
+      "Bonus vendite mensili",
+      "Formazione prodotto",
+      "Ambiente giovane"
+    ],
+    "branch": "Milano Centro - Piazza Duomo 12",
+    "phone": "02/123456"
+  },
+  {
+    "id": 3,
+    "title": "Operaio di Produzione",
+    "city": "Torino",
+    "category": "produzione",
+    "contract": "tempo-indeterminato",
+    "time": "full-time",
+    "salary": "1.600",
+    "badge": "salary",
+    "location": "Torino Sud - Moncalieri",
+    "description": "Azienda metalmeccanica cerca operai per linea di produzione. Contratto a tempo indeterminato dopo periodo di prova.",
+    "requirements": [
+      "Esperienza nel settore metalmeccanico",
+      "Capacità di lavorare in team",
+      "Disponibilità turni",
+      "Diploma tecnico preferibile"
+    ],
+    "benefits": [
+      "Contratto indeterminato",
+      "14 mensilità",
+      "Welfare aziendale",
+      "Crescita professionale"
+    ],
+    "branch": "Torino Centro - Corso Francia 10",
+    "phone": "011/123456"
+  },
+  {
+    "id": 4,
+    "title": "Addetto/a Vendite GDO",
+    "city": "Roma",
+    "category": "retail",
+    "contract": "somministrazione",
+    "time": "part-time",
+    "salary": "900",
+    "badge": "urgent",
+    "location": "Roma EUR",
+    "description": "Supermercato cerca addetti vendite per reparto ortofrutta. Part-time 20h settimanali, ideale per studenti.",
+    "requirements": [
+      "Prima esperienza GDO",
+      "Disponibilità weekend",
+      "Attitudine al cliente",
+      "Flessibilità"
+    ],
+    "benefits": [
+      "Orari compatibili studio",
+      "Formazione retribuita",
+      "Possibilità full-time",
+      "Ambiente dinamico"
+    ],
+    "branch": "Roma EUR - Viale Europa 100",
+    "phone": "06/789012"
+  },
+  {
+    "id": 5,
+    "title": "Cameriere di Sala",
+    "city": "Milano",
+    "category": "ristorazione",
+    "contract": "tempo-determinato",
+    "time": "full-time",
+    "salary": "1.400",
+    "badge": "urgent",
+    "location": "Milano Centro - Brera",
+    "description": "Ristorante rinomato cerca cameriere con esperienza per servizio ai tavoli. Ambiente elegante e professionale.",
+    "requirements": [
+      "Esperienza ristoranti",
+      "Conoscenza inglese",
+      "Presenza curata",
+      "Disponibilità serale"
+    ],
+    "benefits": [
+      "Mance consistenti",
+      "Pasti inclusi",
+      "Formazione sommelier",
+      "Team internazionale"
+    ],
+    "branch": "Milano Centro - Piazza Duomo 12",
+    "phone": "02/123456"
+  },
+  {
+    "id": 6,
+    "title": "Impiegato/a Amministrativo",
+    "city": "Bologna",
+    "category": "amministrazione",
+    "contract": "tempo-indeterminato",
+    "time": "full-time",
+    "salary": "1.500",
+    "badge": "salary",
+    "location": "Bologna Centro",
+    "description": "Studio commercialista cerca impiegato amministrativo per gestione contabilità clienti. Richiesta esperienza settore.",
+    "requirements": [
+      "Laurea in Economia",
+      "Conoscenza SAP",
+      "Esperienza 2+ anni",
+      "Precisione e puntualità"
+    ],
+    "benefits": [
+      "Contratto indeterminato",
+      "Smart working 2gg/settimana",
+      "Buoni pasto",
+      "Formazione continua"
+    ],
+    "branch": "Bologna Centro - Via Indipendenza 30",
+    "phone": "051/123456"
+  },
+  {
+    "id": 7,
+    "title": "Autista Patente C+CQC",
+    "city": "Milano",
+    "category": "logistica",
+    "contract": "somministrazione",
+    "time": "full-time",
+    "salary": "1.700",
+    "badge": "top",
+    "location": "Milano - Hinterland Nord",
+    "description": "Azienda di trasporti cerca autista con patente C e CQC per consegne urbane ed extraurbane.",
+    "requirements": [
+      "Patente C + CQC in corso di validità",
+      "Esperienza minima 2 anni",
+      "Carta tachigrafica",
+      "Disponibilità immediata"
+    ],
+    "benefits": [
+      "Mezzi aziendali nuovi",
+      "Straordinari pagati",
+      "Bonus produttività",
+      "Stabilità lavorativa"
+    ],
+    "branch": "Milano Corsica - Via Pergolesi 8",
+    "phone": "02/454320"
+  },
+  {
+    "id": 8,
+    "title": "Elettricista Industriale",
+    "city": "Torino",
+    "category": "produzione",
+    "contract": "tempo-indeterminato",
+    "time": "full-time",
+    "salary": "1.800",
+    "badge": "salary",
+    "location": "Torino - Zona Industriale",
+    "description": "Importante realtà industriale cerca elettricista per manutenzione impianti. Ottima retribuzione e prospettive di crescita.",
+    "requirements": [
+      "Qualifica professionale elettricista",
+      "Esperienza impianti industriali",
+      "Conoscenza normative sicurezza",
+      "Patentino PES PAV"
+    ],
+    "benefits": [
+      "Contratto indeterminato",
+      "Formazione tecnica avanzata",
+      "Welfare completo",
+      "Premi di produzione"
+    ],
+    "branch": "Torino Centro - Corso Francia 10",
+    "phone": "011/123456"
+  },
+  {
+    "id": 9,
+    "title": "Receptionist Hotel 4*",
+    "city": "Roma",
+    "category": "turismo",
+    "contract": "tempo-determinato",
+    "time": "full-time",
+    "salary": "1.400",
+    "badge": "top",
+    "location": "Roma Centro Storico",
+    "description": "Hotel 4 stelle cerca receptionist con ottima conoscenza inglese. Ambiente internazionale e stimolante.",
+    "requirements": [
+      "Conoscenza inglese fluente",
+      "Seconda lingua (francese/spagnolo)",
+      "Esperienza reception",
+      "Disponibilità turni"
+    ],
+    "benefits": [
+      "Ambiente internazionale",
+      "Formazione linguistica",
+      "Mance",
+      "Crescita nel settore"
+    ],
+    "branch": "Roma EUR - Viale Europa 100",
+    "phone": "06/789012"
+  },
+  {
+    "id": 10,
+    "title": "Scaffalista Notturno",
+    "city": "Milano",
+    "category": "retail",
+    "contract": "somministrazione",
+    "time": "part-time",
+    "salary": "950",
+    "badge": "urgent",
+    "location": "Milano - Varie Sedi",
+    "description": "Catena GDO cerca scaffalisti per turno notturno. Part-time 24h settimanali con maggiorazioni notturne.",
+    "requirements": [
+      "Disponibilità turno notturno",
+      "Buona forma fisica",
+      "Puntualità",
+      "Teamwork"
+    ],
+    "benefits": [
+      "Maggiorazioni notturne +30%",
+      "3 notti a settimana",
+      "Trasporto aziendale",
+      "Assunzione rapida"
+    ],
+    "branch": "Milano Centro - Piazza Duomo 12",
+    "phone": "02/123456"
+  },
+  {
+    "id": 11,
+    "title": "Saldatore Certificato",
+    "city": "Bologna",
+    "category": "produzione",
+    "contract": "tempo-indeterminato",
+    "time": "full-time",
+    "salary": "1.900",
+    "badge": "salary",
+    "location": "Bologna - Zona Industriale",
+    "description": "Carpenteria metallica cerca saldatore qualificato con certificazioni. Ottima opportunità di crescita professionale.",
+    "requirements": [
+      "Certificazioni saldatura",
+      "Esperienza carpenteria",
+      "Lettura disegni tecnici",
+      "Precisione"
+    ],
+    "benefits": [
+      "Retribuzione competitiva",
+      "Formazione continua",
+      "Stabilità contrattuale",
+      "Ambiente meritocratico"
+    ],
+    "branch": "Bologna Centro - Via Indipendenza 30",
+    "phone": "051/123456"
+  },
+  {
+    "id": 12,
+    "title": "Barista - Caffetteria",
+    "city": "Milano",
+    "category": "ristorazione",
+    "contract": "tempo-determinato",
+    "time": "full-time",
+    "salary": "1.300",
+    "badge": "urgent",
+    "location": "Milano Centro - Zona Duomo",
+    "description": "Caffetteria di prestigio cerca barista esperto per servizio colazioni e pranzi. Richiesta passione per il settore.",
+    "requirements": [
+      "Esperienza come barista",
+      "Conoscenza macchine professionali",
+      "Velocità e precisione",
+      "Disponibilità mattutina"
+    ],
+    "benefits": [
+      "Mance quotidiane",
+      "Pasti inclusi",
+      "Formazione latte art",
+      "Ambiente dinamico"
+    ],
+    "branch": "Milano Centro - Piazza Duomo 12",
+    "phone": "02/123456"
+  },
+  {
+    "id": 13,
+    "title": "Magazziniere - Interporto",
+    "city": "Napoli",
+    "category": "logistica",
+    "contract": "somministrazione",
+    "time": "full-time",
+    "salary": "1.350",
+    "badge": "urgent",
+    "location": "Napoli - Interporto di Nola",
+    "description": "Grande azienda logistica cerca magazzinieri per centro di distribuzione. Ambiente dinamico con possibilità di crescita.",
+    "requirements": [
+      "Esperienza in magazzino",
+      "Disponibilità immediata",
+      "Capacità di lavorare in team",
+      "Patentino muletto gradito"
+    ],
+    "benefits": [
+      "Mensa aziendale",
+      "Straordinari pagati",
+      "Possibilità assunzione diretta",
+      "Formazione retribuita"
+    ],
+    "branch": "Napoli - Via Toledo 256",
+    "phone": "081/5521234"
+  },
+  {
+    "id": 14,
+    "title": "Addetto/a Vendite - Centro Commerciale",
+    "city": "Napoli",
+    "category": "retail",
+    "contract": "tempo-determinato",
+    "time": "full-time",
+    "salary": "1.250",
+    "badge": "top",
+    "location": "Napoli - Centro Commerciale Campania",
+    "description": "Nota catena di abbigliamento cerca addetti vendite per nuova apertura. Formazione completa e ambiente giovane.",
+    "requirements": [
+      "Passione per la moda",
+      "Ottime doti comunicative",
+      "Flessibilità oraria",
+      "Disponibilità weekend"
+    ],
+    "benefits": [
+      "Sconti dipendenti 40%",
+      "Bonus vendite",
+      "Formazione continua",
+      "Ambiente giovane e dinamico"
+    ],
+    "branch": "Napoli - Via Toledo 256",
+    "phone": "081/5521234"
+  },
+  {
+    "id": 15,
+    "title": "Cameriere/a Ristorazione",
+    "city": "Napoli",
+    "category": "ristorazione",
+    "contract": "tempo-determinato",
+    "time": "full-time",
+    "salary": "1.300",
+    "badge": "urgent",
+    "location": "Napoli Centro - Lungomare",
+    "description": "Ristorante sul lungomare di Napoli cerca cameriere con esperienza. Ambiente elegante e clientela internazionale.",
+    "requirements": [
+      "Esperienza ristorazione",
+      "Conoscenza inglese base",
+      "Presenza curata",
+      "Disponibilità serale e weekend"
+    ],
+    "benefits": [
+      "Mance elevate",
+      "Pasti inclusi",
+      "Vista mare",
+      "Ambiente internazionale"
+    ],
+    "branch": "Napoli - Via Toledo 256",
+    "phone": "081/5521234"
+  },
+  {
+    "id": 16,
+    "title": "Operaio/a Settore Alimentare",
+    "city": "Salerno",
+    "category": "produzione",
+    "contract": "somministrazione",
+    "time": "full-time",
+    "salary": "1.400",
+    "badge": "urgent",
+    "location": "Salerno - Zona Industriale",
+    "description": "Azienda alimentare cerca operai per linea di confezionamento. Ambiente climatizzato e turni regolari.",
+    "requirements": [
+      "Disponibilità immediata",
+      "Buona manualità",
+      "Capacità di lavorare in team",
+      "Disponibilità turni"
+    ],
+    "benefits": [
+      "Mensa aziendale",
+      "Prodotti aziendali scontati",
+      "Ambiente climatizzato",
+      "Possibilità assunzione"
+    ],
+    "branch": "Salerno - Via S. Leonardo 52",
+    "phone": "089/2851172"
+  },
+  {
+    "id": 17,
+    "title": "Receptionist Albergo",
+    "city": "Napoli",
+    "category": "turismo",
+    "contract": "tempo-determinato",
+    "time": "full-time",
+    "salary": "1.350",
+    "badge": "top",
+    "location": "Napoli Centro Storico",
+    "description": "Hotel boutique nel centro storico di Napoli cerca receptionist. Ambiente elegante e clientela internazionale.",
+    "requirements": [
+      "Inglese fluente",
+      "Esperienza in hotel",
+      "Conoscenza sistemi gestionali",
+      "Disponibilità turni"
+    ],
+    "benefits": [
+      "Ambiente di pregio",
+      "Formazione continua",
+      "Mance",
+      "Crescita professionale"
+    ],
+    "branch": "Napoli - Via Toledo 256",
+    "phone": "081/5521234"
+  },
+  {
+    "id": 18,
+    "title": "Autista Consegne",
+    "city": "Napoli",
+    "category": "logistica",
+    "contract": "somministrazione",
+    "time": "full-time",
+    "salary": "1.500",
+    "badge": "salary",
+    "location": "Napoli - Area Metropolitana",
+    "description": "Azienda di e-commerce cerca autisti per consegne last mile. Furgone aziendale e itinerari ottimizzati.",
+    "requirements": [
+      "Patente B da almeno 2 anni",
+      "Conoscenza territorio napoletano",
+      "Smartphone per app consegne",
+      "Puntualità"
+    ],
+    "benefits": [
+      "Furgone aziendale",
+      "Carburante incluso",
+      "Bonus consegne",
+      "Orari flessibili"
+    ],
+    "branch": "Napoli - Via Toledo 256",
+    "phone": "081/5521234"
+  },
+  {
+    "id": 19,
+    "title": "Addetto/a Call Center",
+    "city": "Napoli",
+    "category": "amministrazione",
+    "contract": "tempo-determinato",
+    "time": "part-time",
+    "salary": "850",
+    "badge": "urgent",
+    "location": "Napoli - Centro Direzionale",
+    "description": "Call center inbound cerca operatori per assistenza clienti. Part-time 20h con possibilità di full-time.",
+    "requirements": [
+      "Buona dialettica",
+      "Conoscenza base PC",
+      "Flessibilità oraria",
+      "Predisposizione al cliente"
+    ],
+    "benefits": [
+      "Formazione retribuita",
+      "Orari flessibili",
+      "Possibilità full-time",
+      "Ambiente climatizzato"
+    ],
+    "branch": "Napoli - Via Toledo 256",
+    "phone": "081/5521234"
+  },
+  {
+    "id": 20,
+    "title": "Pizzaiolo Esperto",
+    "city": "Napoli",
+    "category": "ristorazione",
+    "contract": "tempo-indeterminato",
+    "time": "full-time",
+    "salary": "1.600",
+    "badge": "top",
+    "location": "Napoli - Quartieri Spagnoli",
+    "description": "Storica pizzeria napoletana cerca pizzaiolo con esperienza. Forno a legna tradizionale e ingredienti DOP.",
+    "requirements": [
+      "Esperienza pizza napoletana",
+      "Conoscenza forno a legna",
+      "Velocità e precisione",
+      "Passione per la tradizione"
+    ],
+    "benefits": [
+      "Contratto indeterminato",
+      "Retribuzione elevata",
+      "Mance",
+      "Ambiente storico"
+    ],
+    "branch": "Napoli - Via Toledo 256",
+    "phone": "081/5521234"
+  },
+  {
+    "id": 21,
+    "title": "Operatore Turistico",
+    "city": "Napoli",
+    "category": "turismo",
+    "contract": "tempo-determinato",
+    "time": "full-time",
+    "salary": "1.400",
+    "badge": "top",
+    "location": "Napoli - Molo Beverello",
+    "description": "Tour operator cerca operatori per escursioni Capri, Pompei, Costiera. Lingue straniere fondamentali.",
+    "requirements": [
+      "Inglese fluente",
+      "Seconda lingua gradita",
+      "Conoscenza storia locale",
+      "Ottime doti relazionali"
+    ],
+    "benefits": [
+      "Lavoro all'aperto",
+      "Contatto con turisti",
+      "Escursioni gratuite",
+      "Mance frequenti"
+    ],
+    "branch": "Napoli - Via Toledo 256",
+    "phone": "081/5521234"
+  },
+  {
+    "id": 22,
+    "title": "Addetto/a Banco Gastronomia",
+    "city": "Battipaglia",
+    "category": "retail",
+    "contract": "somministrazione",
+    "time": "full-time",
+    "salary": "1.250",
+    "badge": "urgent",
+    "location": "Battipaglia - Centro Città",
+    "description": "Supermercato cerca addetto banco gastronomia. Esperienza nel taglio salumi e formaggi richiesta.",
+    "requirements": [
+      "Esperienza banco gastronomia",
+      "Conoscenza prodotti tipici",
+      "Igiene alimentare (HACCP)",
+      "Buona manualità"
+    ],
+    "benefits": [
+      "Formazione prodotti DOP",
+      "Orari regolari",
+      "Prodotti scontati",
+      "Ambiente familiare"
+    ],
+    "branch": "Battipaglia - Via Roma 45",
+    "phone": "0828/301234"
+  },
+  {
+    "id": 23,
+    "title": "Manutentore Elettrico",
+    "city": "Avellino",
+    "category": "produzione",
+    "contract": "tempo-indeterminato",
+    "time": "full-time",
+    "salary": "1.700",
+    "badge": "salary",
+    "location": "Avellino - Zona Industriale",
+    "description": "Azienda manifatturiera cerca manutentore elettrico per impianti industriali. Contratto stabile e benefit.",
+    "requirements": [
+      "Diploma tecnico elettrico",
+      "Esperienza manutenzione",
+      "Lettura schemi elettrici",
+      "Disponibilità reperibilità"
+    ],
+    "benefits": [
+      "Contratto indeterminato",
+      "Welfare aziendale",
+      "Formazione continua",
+      "Premio produzione"
+    ],
+    "branch": "Avellino - C.so Vittorio Emanuele II 101",
+    "phone": "0825/36789"
+  }
+]
