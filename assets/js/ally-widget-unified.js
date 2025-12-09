@@ -50,9 +50,8 @@
     // ==========================================
     // CONFIGURAZIONE
     // ==========================================
-    // IMPORTANTE: Questa API key deve essere spostata su backend per sicurezza!
-    // Non esporre mai API keys nel codice frontend in produzione.
-    const OPENAI_API_KEY = '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'; // ATTENZIONE: Spostare su backend per produzione!
+    // API endpoint - la chiave API è gestita in modo sicuro dal backend (Netlify Functions)
+    const API_ENDPOINT = '/.netlify/functions/chat';
 
     // ==========================================
     // LOAD EXTERNAL CSS
@@ -559,10 +558,6 @@
 
         // Generate smart proactive message with GPT
         async function generateSmartProactiveMessage() {
-            if (OPENAI_API_KEY === 'YOUR_API_KEY_HERE') {
-                return null; // Skip GPT if no API key
-            }
-
             const { pageType, pageContext } = analyzeCurrentPage();
             const pageTitle = document.title;
             const h1Text = document.querySelector('h1')?.textContent || '';
@@ -582,11 +577,10 @@ ${pageContext.jobCount ? `Numero offerte visibili: ${pageContext.jobCount}` : ''
 ${userContext}`.trim();
 
             try {
-                const response = await fetch('https://api.openai.com/v1/chat/completions', {
+                const response = await fetch(API_ENDPOINT, {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${OPENAI_API_KEY}`
+                        'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
                         model: 'gpt-4o-mini',
@@ -609,6 +603,11 @@ Esempi: "Ehi, quella offerta è urgente 👀", "Posso aiutarti a cercare?", "88 
                         max_tokens: 50
                     })
                 });
+
+                if (!response.ok) {
+                    console.error('Ally proactive API error:', response.status);
+                    return null;
+                }
 
                 const data = await response.json();
                 return data.choices[0].message.content.replace(/"/g, '').trim();
@@ -1000,20 +999,15 @@ Quick replies: {"quickReplies": ["Opzione 1", "Opzione 2"]}`;
             return systemPrompt;
         }
 
-        // Call GPT
+        // Call GPT via backend proxy
         async function callGPT(userMessage) {
-            if (OPENAI_API_KEY === 'YOUR_API_KEY_HERE') {
-                return "Mi dispiace, la chat GPT non è configurata. Per favore contatta il 02/454320.";
-            }
-
             conversationHistory.push({ role: 'user', content: userMessage });
 
             try {
-                const response = await fetch('https://api.openai.com/v1/chat/completions', {
+                const response = await fetch(API_ENDPOINT, {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${OPENAI_API_KEY}`
+                        'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
                         model: 'gpt-4o-mini',
@@ -1025,6 +1019,11 @@ Quick replies: {"quickReplies": ["Opzione 1", "Opzione 2"]}`;
                         max_tokens: 500
                     })
                 });
+
+                if (!response.ok) {
+                    console.error('Ally API Error:', response.status);
+                    return "Mi dispiace, c'è stato un problema. Prova a riscrivere o chiama il 02/454320.";
+                }
 
                 const data = await response.json();
                 const assistantMessage = data.choices[0].message.content;

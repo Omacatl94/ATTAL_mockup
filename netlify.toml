@@ -1,0 +1,13 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+# Redirect root to pages/index.html
+[[redirects]]
+  from = "/"
+  to = "/pages/index.html"
+  status = 200
+
+# Node.js version for functions
+[functions]
+  node_bundler = "esbuild"
