@@ -23,24 +23,564 @@ body {
     padding: 0 20px;
 }
 
-/* HERO SECTION */
-.hero {
-    background: #ffffff;
+/* ============================================
+   HERO LIGHT THEME - Filiali
+   ============================================ */
+.hero-light {
+    background: linear-gradient(135deg, #fafafa 0%, #f3f4f6 100%);
+    padding: 80px 0;
+}
+
+.hero-light-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.hero-light-content {
+    max-width: 560px;
+}
+
+.hero-badge-light {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 24px;
+}
+
+.hero-light-title {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #111827;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+.hero-light-subtitle {
+    font-size: 18px;
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+/* Geo Card */
+.hero-geo-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    margin-bottom: 24px;
+}
+
+.geo-btn-light {
+    width: 100%;
+    background: linear-gradient(135deg, #e22721 0%, #c91f1a 100%);
+    color: white;
+    border: none;
+    padding: 16px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: all 0.3s ease;
+}
+
+.geo-btn-light:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(226, 39, 33, 0.3);
+}
+
+.geo-btn-icon-light {
+    width: 48px;
+    height: 48px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.geo-btn-text-light {
+    flex: 1;
+    text-align: left;
+}
+
+.geo-btn-text-light .geo-main {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.geo-btn-text-light .geo-sub {
+    display: block;
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+.geo-arrow {
+    flex-shrink: 0;
+}
+
+.geo-alt-light {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 16px;
+    font-size: 14px;
+    color: #9ca3af;
+}
+
+.geo-alt-light a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #e22721;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.geo-alt-light a:hover {
+    text-decoration: underline;
+}
+
+/* Geo Alert */
+.geo-alert-light {
+    background: #fffbeb;
+    border: 1px solid #fcd34d;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.geo-alert-icon-light {
+    flex-shrink: 0;
+}
+
+.geo-alert-content-light strong {
+    display: block;
+    color: #92400e;
+    margin-bottom: 4px;
+}
+
+.geo-alert-content-light p {
+    font-size: 14px;
+    color: #78716c;
+    margin-bottom: 12px;
+}
+
+.geo-alert-btns {
+    display: flex;
+    gap: 10px;
+}
+
+.geo-alert-btn {
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.geo-alert-btn.primary {
+    background: #e22721;
+    color: white;
+}
+
+.geo-alert-btn.secondary {
+    background: white;
+    color: #374151;
+    border: 1px solid #d1d5db;
+}
+
+/* Stats */
+.hero-light-stats {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.hero-light-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-light-stat .stat-number {
+    font-size: 32px;
+    font-weight: 800;
+    color: #111827;
+}
+
+.hero-light-stat .stat-label {
+    font-size: 13px;
+    color: #9ca3af;
+}
+
+.stat-divider-light {
+    width: 1px;
+    height: 40px;
+    background: #e5e7eb;
+}
+
+/* Hero Image */
+.hero-light-image {
+    position: relative;
+}
+
+.hero-light-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .hero-light-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .hero-light-content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .hero-light-stats {
+        justify-content: center;
+    }
+
+    .hero-light-image img {
+        height: 350px;
+    }
+
+    .geo-btn-text-light {
+        text-align: center;
+    }
+
+    .geo-alert-light {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .geo-alert-btns {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-light {
+        padding: 60px 0;
+    }
+
+    .hero-light-title {
+        font-size: 36px;
+    }
+
+    .hero-light-image img {
+        height: 280px;
+    }
+
+    .hero-light-stats {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .stat-divider-light {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-light-title {
+        font-size: 28px;
+    }
+
+    .geo-btn-light {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .geo-arrow {
+        display: none;
+    }
+}
+
+/* HERO SECTION - Modern with Background (OLD) */
+.hero-modern {
+    position: relative;
     padding: 100px 0 80px;
+    overflow: hidden;
+    display: none;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(31, 41, 55, 0.9) 0%, rgba(17, 24, 39, 0.85) 100%);
+}
+
+.hero-modern .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 700px;
+    margin: 0 auto;
     text-align: center;
 }
 
-.hero h1 {
-    font-size: 52px;
-    font-weight: bold;
-    color: #1f2937;
-    margin-bottom: 15px;
+.hero-badge-filiali {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(226, 39, 33, 0.15);
+    color: #e22721;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 30px;
+    margin-bottom: 24px;
 }
 
-.hero .subtitle {
-    font-size: 22px;
-    color: #4b5563;
-    margin-bottom: 50px;
+.hero-modern h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 16px;
+    line-height: 1.15;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 40px;
+}
+
+/* Geo Button Modern */
+.hero-geo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.geo-btn-modern {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #e22721;
+    color: white;
+    border: none;
+    padding: 18px 32px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(226, 39, 33, 0.3);
+}
+
+.geo-btn-modern:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(226, 39, 33, 0.4);
+    background: #c91f1a;
+}
+
+.geo-btn-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.geo-btn-text {
+    text-align: left;
+}
+
+.geo-btn-main {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.geo-btn-sub {
+    display: block;
+    font-size: 13px;
+    opacity: 0.85;
+}
+
+.hero-search-alt {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+}
+
+.search-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.search-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Geo Alert Modern */
+.geo-alert-modern {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 24px;
+    max-width: 550px;
+    margin: 0 auto 40px;
+    display: flex;
+    gap: 16px;
+    text-align: left;
+}
+
+.geo-alert-icon-modern {
+    flex-shrink: 0;
+    color: #E56E12;
+}
+
+.geo-alert-modern h3 {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.geo-alert-modern p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.geo-alert-actions-modern {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.geo-alert-btn-modern {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.geo-alert-btn-modern.primary {
+    background: #e22721;
+    color: white;
+    border: none;
+}
+
+.geo-alert-btn-modern.primary:hover {
+    background: #c91f1a;
+}
+
+.geo-alert-btn-modern.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.geo-alert-btn-modern.secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Hero Stats Row */
+.hero-stats-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 24px 40px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-stat-item {
+    text-align: center;
+}
+
+.hero-stat-item .stat-num {
+    display: block;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+}
+
+.hero-stat-item .stat-label {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.hero-stat-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Old hero hidden */
+.hero {
+    display: none;
 }
 
 /* BOTTONE GEOLOCALIZZAZIONE */
@@ -308,67 +848,494 @@ body {
     color: white;
 }
 
-/* VANTAGGI SECTION */
-.vantaggi {
+/* VANTAGGI SECTION - Bento Grid Modern */
+.vantaggi-modern {
     background: #f9fafb;
-    padding: 60px 0;
+    padding: 80px 0;
 }
 
-.vantaggi-grid {
+.vantaggi-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.vantaggi-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(11, 141, 132, 0.1);
+    color: #0B8D84;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+
+.vantaggi-header h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.vantaggi-bento {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    max-width: 1000px;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+}
+
+.vantaggio-card-large {
+    grid-row: span 2;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.vantaggio-card-large:hover {
+    box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+    transform: translateY(-4px);
+}
+
+.vantaggio-card-image {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.vantaggio-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.vantaggio-overlay {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+}
+
+.vantaggio-overlay-content {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 12px 18px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.vantaggio-overlay-content .overlay-num {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    color: #0B8D84;
+}
+
+.vantaggio-overlay-content .overlay-label {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.vantaggio-card-body {
+    padding: 28px;
+}
+
+.vantaggio-icon-modern {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.vantaggio-icon-modern.red {
+    background: rgba(226, 39, 33, 0.1);
+    color: #e22721;
+}
+
+.vantaggio-icon-modern.orange {
+    background: rgba(229, 110, 18, 0.1);
+    color: #E56E12;
+}
+
+.vantaggio-icon-modern.green {
+    background: rgba(11, 141, 132, 0.1);
+    color: #0B8D84;
+}
+
+.vantaggio-card-body h3,
+.vantaggio-card-medium h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 10px;
+}
+
+.vantaggio-card-body p,
+.vantaggio-card-medium p {
+    font-size: 15px;
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+.vantaggio-card-medium {
+    background: white;
+    padding: 28px;
+    border-radius: 20px;
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.vantaggio-card-medium:hover {
+    box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+    transform: translateY(-4px);
+}
+
+.vantaggio-highlight {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(229, 110, 18, 0.1);
+    color: #E56E12;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 16px;
+    border-radius: 20px;
+    margin-top: 16px;
+}
+
+.vantaggio-highlight.green {
+    background: rgba(11, 141, 132, 0.1);
+    color: #0B8D84;
+}
+
+.vantaggio-card-image-small {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.vantaggio-card-image-small img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    min-height: 180px;
+}
+
+/* Old vantaggi hidden */
+.vantaggi {
+    display: none;
+}
+
+/* BRANDS SECTION - Hidden (old) */
+.brands-section {
+    display: none;
+}
+
+/* STORIA SECTION - La nostra storia */
+.storia-section {
+    background: white;
+    padding: 80px 0;
+}
+
+.storia-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.storia-label {
+    display: inline-block;
+    background: rgba(226, 39, 33, 0.1);
+    color: #e22721;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+}
+
+.storia-header h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 12px;
+}
+
+.storia-header p {
+    font-size: 18px;
+    color: #6b7280;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.storia-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.storia-card {
+    background: #f9fafb;
+    padding: 28px;
+    border-radius: 16px;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.storia-card:hover {
+    border-color: var(--brand-color);
+    background: white;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+    transform: translateY(-4px);
+}
+
+.storia-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #6b7280;
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 12px;
+    border-radius: 12px;
+}
+
+.storia-logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--brand-color);
+    margin-bottom: 12px;
+    margin-top: 10px;
+}
+
+.storia-card p {
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.storia-stat {
+    padding-top: 16px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.storia-stat .storia-num {
+    display: block;
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--brand-color);
+}
+
+.storia-stat .storia-lbl {
+    font-size: 13px;
+    color: #9ca3af;
+}
+
+/* Oggi siamo ATTAL Group */
+.storia-oggi {
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+}
+
+.storia-oggi-content {
+    max-width: 600px;
     margin: 0 auto;
 }
 
-.vantaggio-card {
-    text-align: center;
-    padding: 30px 20px;
-}
-
-.vantaggio-icon {
-    width: 70px;
-    height: 70px;
-    background: linear-gradient(135deg, #e22721, #c91f1a);
+.storia-oggi-icon {
+    width: 64px;
+    height: 64px;
+    background: rgba(226, 39, 33, 0.15);
     border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 20px;
+    margin: 0 auto 20px auto;
+    color: #e22721;
 }
 
-.vantaggio-icon i,
-.vantaggio-icon svg {
-    width: 32px;
-    height: 32px;
-    stroke: white;
+.storia-oggi h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 12px;
+}
+
+.storia-oggi p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+.storia-oggi-text {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+.storia-oggi-stat {
+    text-align: center;
+}
+
+.storia-oggi-stat .num {
+    display: block;
+    font-size: 36px;
+    font-weight: 800;
+    color: #e22721;
+}
+
+.storia-oggi-stat .lbl {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* CTA FILIALI MODERN */
+.cta-filiali-modern {
+    position: relative;
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.cta-filiali-modern .cta-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.cta-filiali-modern .cta-bg-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cta-filiali-modern .cta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(31, 41, 55, 0.92) 0%, rgba(17, 24, 39, 0.95) 100%);
+}
+
+.cta-filiali-modern .container {
+    position: relative;
+    z-index: 1;
+}
+
+.cta-filiali-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cta-filiali-content .cta-icon-wrap {
+    width: 80px;
+    height: 80px;
+    background: rgba(226, 39, 33, 0.15);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px auto;
+    color: #e22721;
+}
+
+.cta-filiali-content h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 16px;
+}
+
+.cta-filiali-content p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 32px;
+}
+
+.cta-contacts-row {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.cta-contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 28px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cta-contact-btn.primary {
+    background: #e22721;
     color: white;
 }
 
-.vantaggio-icon.icon-primary {
-    background: linear-gradient(135deg, #e22721, #c91f1a);
+.cta-contact-btn.primary:hover {
+    background: #c91f1a;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(226, 39, 33, 0.4);
 }
 
-.vantaggio-icon.icon-warning {
-    background: linear-gradient(135deg, #E56E12, #cc6210);
+.cta-contact-btn.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.vantaggio-icon.icon-success {
-    background: linear-gradient(135deg, #0B8D84, #097a72);
+.cta-contact-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
 }
 
-.vantaggio-card h3 {
-    font-size: 20px;
-    color: #1f2937;
-    margin-bottom: 10px;
-    font-weight: 700;
+.cta-filiali-content .cta-trust-row {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
 }
 
-.vantaggio-card p {
-    color: #6b7280;
-    font-size: 15px;
-    line-height: 1.6;
+.cta-filiali-content .cta-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+}
+
+.cta-filiali-content .cta-trust-item svg {
+    color: #0B8D84;
+}
+
+/* Old CTA hidden */
+.cta-finale {
+    display: none;
 }
 
 /* MAPPA + FILTRI SECTION */
@@ -1202,20 +2169,85 @@ body {
     .filiale-actions-row {
         justify-content: flex-start;
     }
+
+    .vantaggi-bento {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .vantaggio-card-large {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .storia-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
-    .hero h1 {
+    .hero-modern h1 {
         font-size: 32px;
     }
 
-    .hero .subtitle {
+    .hero-subtitle {
         font-size: 16px;
     }
 
-    .vantaggi-grid {
+    .hero-stats-row {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .hero-stat-divider {
+        width: 50px;
+        height: 1px;
+    }
+
+    .geo-btn-modern {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .vantaggi-bento {
         grid-template-columns: 1fr;
-        gap: 30px;
+    }
+
+    .vantaggio-card-large {
+        grid-column: span 1;
+    }
+
+    .storia-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .storia-oggi {
+        padding: 30px 20px;
+    }
+
+    .storia-oggi h3 {
+        font-size: 22px;
+    }
+
+    .storia-oggi-text {
+        gap: 20px;
+    }
+
+    .storia-oggi-stat .num {
+        font-size: 28px;
+    }
+
+    .cta-contacts-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-filiali-content h2 {
+        font-size: 28px;
+    }
+
+    .cta-filiali-content .cta-trust-row {
+        flex-direction: column;
+        gap: 12px;
     }
 
     .filiale-row {

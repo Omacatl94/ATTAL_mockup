@@ -11,6 +11,12 @@
 /login          /pages/profilo.html      200
 /profilo        /pages/profilo.html      200
 /chatbot        /pages/chatbot.html      200
+/privacy-policy /pages/privacy-policy.html 200
+/privacy        /pages/privacy-policy.html 200
+
+# Admin
+/admin          /admin/filiali-manager.html  200
+/admin/filiali  /admin/filiali-manager.html  200
 
 # Redirect anche con .html
 /careers.html       /pages/careers.html      200
@@ -20,4 +26,5 @@
 /registrazione.html /pages/registrazione.html 200
 /profilo.html       /pages/profilo.html      200
 /chatbot.html       /pages/chatbot.html      200
+/privacy-policy.html /pages/privacy-policy.html 200
 /index.html         /pages/index.html        200

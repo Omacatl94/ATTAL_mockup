@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatti | ATTAL Group - Agenzia per il Lavoro</title>
+    <meta name="description" content="Contatta ATTAL Group: telefono, email, indirizzo e form di contatto. 86 filiali in Italia, siamo sempre vicini a te.">
+    <link rel="canonical" href="https://www.attalgroup.it/contatti">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Contatti | ATTAL Group">
+    <meta property="og:description" content="Hai domande? Contattaci tramite telefono, email o compila il form. Siamo qui per aiutarti.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.attalgroup.it/contatti">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/pages/contatti.css">
+
+    <!-- Schema.org LocalBusiness -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EmploymentAgency",
+        "name": "ATTAL Group S.p.A.",
+        "description": "Agenzia per il Lavoro - Vicini a te, vicini al lavoro. Somministrazione, ricerca e selezione, formazione.",
+        "url": "https://www.attalgroup.it",
+        "logo": "https://www.attalgroup.it/assets/images/logo.png",
+        "telephone": "+39 080 5618
+
+901",
+        "email": "info@attalgroup.it",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Via Marco D'Aviano, 2",
+            "addressLocality": "Milano",
+            "addressRegion": "MI",
+            "postalCode": "20131",
+            "addressCountry": "IT"
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "09:00",
+                "closes": "18:00"
+            }
+        ],
+        "sameAs": [
+            "https://www.facebook.com/attalgroupitalia",
+            "https://www.linkedin.com/company/attalgroupitalia",
+            "https://www.instagram.com/attalgroup_official/"
+        ],
+        "numberOfEmployees": {
+            "@type": "QuantitativeValue",
+            "value": "21000"
+        },
+        "foundingDate": "1999"
+    }
+    </script>
+
+    <!-- Schema.org ContactPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contatti ATTAL Group",
+        "description": "Contatta ATTAL Group per informazioni, supporto o per trovare lavoro",
+        "url": "https://www.attalgroup.it/contatti",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "ATTAL Group S.p.A."
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="contact-hero-badge">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                Siamo qui per te
+            </div>
+            <h1>Parliamo del tuo <span>futuro</span></h1>
+            <p>Hai domande? Vuoi saperne di più sui nostri servizi? Compila il form o contattaci direttamente. Ti risponderemo entro 24 ore.</p>
+        </div>
+    </section>
+
+    <!-- Main Contact Section -->
+    <section class="contact-main">
+        <div class="container">
+            <div class="contact-grid">
+
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <h2>Inviaci un messaggio</h2>
+                    <p class="form-subtitle">Compila il form e ti ricontatteremo al pi&ugrave; presto.</p>
+
+                    <form id="contact-form" action="https://formspree.io/f/myzrnbdz" method="POST">
+                        <div class="form-group">
+                            <label for="name">Nome completo <span class="required">*</span></label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="es. Mario Rossi"
+                                required
+                                autocomplete="name"
+                                aria-required="true"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email <span class="required">*</span></label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="es. mario.rossi@email.com"
+                                required
+                                autocomplete="email"
+                                aria-required="true"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Telefono</label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="es. 333 1234567"
+                                autocomplete="tel"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Motivo del contatto</label>
+                            <select id="subject" name="subject">
+                                <option value="">Seleziona un'opzione</option>
+                                <option value="candidato">Sono un candidato</option>
+                                <option value="azienda">Sono un'azienda</option>
+                                <option value="informazioni">Richiesta informazioni</option>
+                                <option value="collaborazione">Proposta di collaborazione</option>
+                                <option value="altro">Altro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Messaggio <span class="required">*</span></label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                placeholder="Scrivi qui il tuo messaggio..."
+                                required
+                                aria-required="true"
+                            ></textarea>
+                        </div>
+
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="privacy" name="privacy" required aria-required="true">
+                            <label for="privacy">
+                                Ho letto e accetto la <a href="privacy-policy.html" target="_blank">Privacy Policy</a>. Acconsento al trattamento dei miei dati per rispondere alla mia richiesta. <span class="required">*</span>
+                            </label>
+                        </div>
+
+                        <!-- Honeypot anti-spam -->
+                        <input type="text" name="_gotcha" style="display:none">
+
+                        <button type="submit" class="form-submit">
+                            Invia messaggio
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </button>
+                    </form>
+
+                    <!-- Success Message -->
+                    <div class="form-success" id="form-success">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <h3>Messaggio inviato!</h3>
+                        <p>Grazie per averci contattato. Ti risponderemo entro 24 ore lavorative.</p>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info-wrapper">
+
+                    <!-- Info Card -->
+                    <div class="contact-info-card">
+                        <h3>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            Contatti diretti
+                        </h3>
+
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                            </div>
+                            <div class="contact-item-content">
+                                <h4>Telefono</h4>
+                                <a href="tel:+390805618901">080 561 8901</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <div class="contact-item-content">
+                                <h4>Email</h4>
+                                <a href="mailto:info@attalgroup.it">info@attalgroup.it</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+                            <div class="contact-item-content">
+                                <h4>Sede Legale</h4>
+                                <p>Via Marco D'Aviano, 2<br>20131 Milano (MI)</p>
+                            </div>
+                        </div>
+
+                        <!-- Social -->
+                        <div class="contact-social">
+                            <a href="https://www.facebook.com/attalgroupitalia" target="_blank" aria-label="Facebook">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                                </svg>
+                            </a>
+                            <a href="https://www.instagram.com/attalgroup_official/" target="_blank" aria-label="Instagram">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                                </svg>
+                            </a>
+                            <a href="https://it.linkedin.com/company/attalgroupitalia" target="_blank" aria-label="LinkedIn">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                    <rect width="4" height="12" x="2" y="9"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Orari Card -->
+                    <div class="contact-info-card">
+                        <h3>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            Orari di apertura
+                        </h3>
+
+                        <div class="orari-grid">
+                            <span class="day">Luned&igrave;</span>
+                            <span class="time">09:00 - 18:00</span>
+                            <span class="day">Marted&igrave;</span>
+                            <span class="time">09:00 - 18:00</span>
+                            <span class="day">Mercoled&igrave;</span>
+                            <span class="time">09:00 - 18:00</span>
+                            <span class="day">Gioved&igrave;</span>
+                            <span class="time">09:00 - 18:00</span>
+                            <span class="day">Venerd&igrave;</span>
+                            <span class="time">09:00 - 18:00</span>
+                            <span class="day">Sabato</span>
+                            <span class="time">Chiuso</span>
+                            <span class="day">Domenica</span>
+                            <span class="time">Chiuso</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Card -->
+                    <div class="contact-cta-card">
+                        <h3>Preferisci parlare di persona?</h3>
+                        <p>Trova la filiale ATTAL più vicina a te. Abbiamo 86 sedi in tutta Italia.</p>
+                        <a href="filiali.html" class="cta-btn">
+                            Trova la tua filiale
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="contact-map-section">
+        <div class="container">
+            <div class="contact-map-wrapper">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2797.5!2d9.2137!3d45.4773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c6b5d5b6c8f9%3A0x4e8c7e5d5b6c8f9a!2sVia%20Marco%20d&#39;Aviano%2C%202%2C%2020131%20Milano%20MI!5e0!3m2!1sit!2sit!4v1702000000000!5m2!1sit!2sit"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Mappa sede ATTAL Group Milano">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="../assets/js/attal-components.js"></script>
+
+    <script>
+        // Form submission handling
+        const contactForm = document.getElementById('contact-form');
+        const formSuccess = document.getElementById('form-success');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                const submitBtn = contactForm.querySelector('.form-submit');
+                const originalText = submitBtn.innerHTML;
+
+                // Loading state
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = 'Invio in corso...';
+
+                try {
+                    const formData = new FormData(contactForm);
+                    formData.append('_subject', 'Nuovo messaggio dal sito ATTAL');
+
+                    const response = await fetch(contactForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        // Success
+                        contactForm.style.display = 'none';
+                        formSuccess.classList.add('show');
+                    } else {
+                        throw new Error('Errore invio');
+                    }
+                } catch (error) {
+                    alert('Si è verificato un errore. Riprova più tardi o contattaci telefonicamente.');
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalText;
+                }
+            });
+        }
+    </script>
+</body>
+</html>

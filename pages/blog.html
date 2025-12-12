@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <title>Blog ATTAL Group | News, Normative e Consigli sul Lavoro</title>
+    <meta name="description" content="Il blog di ATTAL Group: articoli su lavoro, normative, eventi e consigli pratici per candidati e aziende. Resta aggiornato sul mondo del lavoro in Italia.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.attalgroup.it/pages/blog.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.attalgroup.it/pages/blog.html">
+    <meta property="og:title" content="Blog ATTAL Group | News e Consigli sul Lavoro">
+    <meta property="og:description" content="Articoli su lavoro, normative, eventi e consigli pratici per candidati e aziende.">
+    <meta property="og:image" content="https://www.attalgroup.it/assets/images/og-blog.jpg">
+    <meta property="og:locale" content="it_IT">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blog ATTAL Group | News e Consigli sul Lavoro">
+    <meta name="twitter:description" content="Articoli su lavoro, normative, eventi e consigli pratici per candidati e aziende.">
+
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/pages/blog.css">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Blog ATTAL Group",
+        "description": "Il blog ufficiale di ATTAL Group con news, normative e consigli sul mondo del lavoro",
+        "url": "https://www.attalgroup.it/pages/blog.html",
+        "publisher": {
+            "@type": "Organization",
+            "name": "ATTAL Group",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.attalgroup.it/assets/images/attal-logo.png"
+            }
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.attalgroup.it"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://www.attalgroup.it/pages/blog.html"
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Vai al contenuto principale</a>
+
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- HERO SECTION -->
+    <section class="blog-hero">
+        <div class="container">
+            <div class="blog-hero-content">
+                <div class="blog-badge">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                    Blog ATTAL Group
+                </div>
+                <h1>News, Normative e <span class="text-primary">Consigli sul Lavoro</span></h1>
+                <p class="blog-hero-subtitle">Resta aggiornato sul mondo del lavoro: articoli, guide pratiche e novità dal team ATTAL.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main id="main-content">
+        <div class="container">
+            <!-- FILTERS -->
+            <div class="blog-filters">
+                <div class="blog-search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input type="text" id="blogSearch" placeholder="Cerca articoli..." autocomplete="off">
+                </div>
+                <div class="blog-categories">
+                    <button class="category-btn active" data-category="all">Tutti</button>
+                    <button class="category-btn" data-category="lavoro">Lavoro</button>
+                    <button class="category-btn" data-category="normative">Normative</button>
+                    <button class="category-btn" data-category="news-azienda">News Azienda</button>
+                    <button class="category-btn" data-category="eventi">Eventi</button>
+                    <button class="category-btn" data-category="consigli-candidati">Per Candidati</button>
+                    <button class="category-btn" data-category="per-aziende">Per Aziende</button>
+                </div>
+            </div>
+
+            <!-- FEATURED POST -->
+            <section class="featured-post-section" id="featuredPost">
+                <!-- Populated by JS -->
+            </section>
+
+            <!-- POSTS GRID -->
+            <section class="blog-grid" id="blogGrid">
+                <!-- Populated by JS -->
+            </section>
+
+            <!-- LOAD MORE -->
+            <div class="load-more-section" id="loadMoreSection" style="display: none;">
+                <button class="load-more-btn" id="loadMoreBtn">
+                    <span>Carica altri articoli</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+            </div>
+
+            <!-- NO RESULTS -->
+            <div class="no-results" id="noResults" style="display: none;">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="1.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <h3>Nessun articolo trovato</h3>
+                <p>Prova a cambiare i filtri di ricerca</p>
+                <button class="reset-filters-btn" onclick="resetFilters()">Mostra tutti gli articoli</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- NEWSLETTER CTA -->
+    <section class="blog-newsletter">
+        <div class="container">
+            <div class="newsletter-card">
+                <div class="newsletter-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </div>
+                <div class="newsletter-content">
+                    <h2>Resta aggiornato</h2>
+                    <p>Iscriviti alla newsletter per ricevere i nuovi articoli direttamente nella tua inbox.</p>
+                </div>
+                <form class="newsletter-form-inline" action="https://formspree.io/f/xyzrnnbj" method="POST">
+                    <input type="email" name="email" placeholder="La tua email" required>
+                    <button type="submit">Iscriviti</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Blog data
+        let blogPosts = [];
+        let filteredPosts = [];
+        let currentCategory = 'all';
+        let searchQuery = '';
+        let visiblePosts = 9;
+        const POSTS_PER_PAGE = 9;
+
+        // Category labels
+        const categoryLabels = {
+            'all': 'Tutti',
+            'lavoro': 'Lavoro',
+            'normative': 'Normative',
+            'news-azienda': 'News Azienda',
+            'eventi': 'Eventi',
+            'consigli-candidati': 'Per Candidati',
+            'per-aziende': 'Per Aziende'
+        };
+
+        // Category colors
+        const categoryColors = {
+            'lavoro': '#e22721',
+            'normative': '#0B8D84',
+            'news-azienda': '#6366f1',
+            'eventi': '#f59e0b',
+            'consigli-candidati': '#ec4899',
+            'per-aziende': '#3b82f6'
+        };
+
+        // Load posts
+        async function loadBlogPosts() {
+            try {
+                const response = await fetch('../assets/data/blog-posts.json');
+                blogPosts = await response.json();
+
+                // Sort by date (newest first)
+                blogPosts.sort((a, b) => new Date(b.datePublished) - new Date(a.datePublished));
+
+                filteredPosts = [...blogPosts];
+                renderPosts();
+            } catch (error) {
+                console.error('Errore caricamento blog posts:', error);
+            }
+        }
+
+        // Render posts
+        function renderPosts() {
+            const featuredSection = document.getElementById('featuredPost');
+            const gridSection = document.getElementById('blogGrid');
+            const loadMoreSection = document.getElementById('loadMoreSection');
+            const noResults = document.getElementById('noResults');
+
+            // Filter posts
+            let posts = blogPosts.filter(post => {
+                const matchCategory = currentCategory === 'all' || post.category === currentCategory;
+                const matchSearch = !searchQuery ||
+                    post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchCategory && matchSearch && post.status === 'published';
+            });
+
+            filteredPosts = posts;
+
+            // No results
+            if (posts.length === 0) {
+                featuredSection.innerHTML = '';
+                gridSection.innerHTML = '';
+                loadMoreSection.style.display = 'none';
+                noResults.style.display = 'flex';
+                return;
+            }
+
+            noResults.style.display = 'none';
+
+            // Featured post (first featured or first post)
+            const featuredPost = posts.find(p => p.featured) || posts[0];
+            const otherPosts = posts.filter(p => p.id !== featuredPost.id);
+
+            // Render featured
+            featuredSection.innerHTML = renderFeaturedCard(featuredPost);
+
+            // Render grid
+            const visibleOtherPosts = otherPosts.slice(0, visiblePosts);
+            gridSection.innerHTML = visibleOtherPosts.map(post => renderPostCard(post)).join('');
+
+            // Load more button
+            if (otherPosts.length > visiblePosts) {
+                loadMoreSection.style.display = 'flex';
+            } else {
+                loadMoreSection.style.display = 'none';
+            }
+        }
+
+        // Render featured card
+        function renderFeaturedCard(post) {
+            const date = new Date(post.datePublished).toLocaleDateString('it-IT', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+            });
+
+            return `
+                <a href="blog/${post.slug}.html" class="featured-card">
+                    <div class="featured-image">
+                        <img src="${post.heroImage.url}" alt="${post.heroImage.alt}" loading="eager">
+                        <span class="featured-badge">In Evidenza</span>
+                    </div>
+                    <div class="featured-content">
+                        <span class="post-category" style="--cat-color: ${categoryColors[post.category] || '#6b7280'}">${categoryLabels[post.category] || post.category}</span>
+                        <h2 class="featured-title">${post.title}</h2>
+                        <p class="featured-excerpt">${post.excerpt}</p>
+                        <div class="post-meta">
+                            <img src="${post.author.avatar}" alt="${post.author.name}" class="author-avatar">
+                            <div class="meta-info">
+                                <span class="author-name">${post.author.name}</span>
+                                <span class="meta-separator">•</span>
+                                <time datetime="${post.datePublished}">${date}</time>
+                                <span class="meta-separator">•</span>
+                                <span>${post.readingTime} min lettura</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            `;
+        }
+
+        // Render post card
+        function renderPostCard(post) {
+            const date = new Date(post.datePublished).toLocaleDateString('it-IT', {
+                day: 'numeric',
+                month: 'short',
+                year: 'numeric'
+            });
+
+            return `
+                <a href="blog/${post.slug}.html" class="post-card">
+                    <div class="post-image">
+                        <img src="${post.heroImage.url}" alt="${post.heroImage.alt}" loading="lazy">
+                    </div>
+                    <div class="post-content">
+                        <span class="post-category" style="--cat-color: ${categoryColors[post.category] || '#6b7280'}">${categoryLabels[post.category] || post.category}</span>
+                        <h3 class="post-title">${post.title}</h3>
+                        <p class="post-excerpt">${post.excerpt}</p>
+                        <div class="post-footer">
+                            <img src="${post.author.avatar}" alt="${post.author.name}" class="author-avatar-small">
+                            <span class="author-name-small">${post.author.name}</span>
+                            <span class="meta-dot">•</span>
+                            <time datetime="${post.datePublished}">${date}</time>
+                        </div>
+                    </div>
+                </a>
+            `;
+        }
+
+        // Filter by category
+        function filterByCategory(category) {
+            currentCategory = category;
+            visiblePosts = POSTS_PER_PAGE;
+
+            // Update active button
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.category === category);
+            });
+
+            renderPosts();
+        }
+
+        // Search
+        function searchPosts(query) {
+            searchQuery = query;
+            visiblePosts = POSTS_PER_PAGE;
+            renderPosts();
+        }
+
+        // Load more
+        function loadMorePosts() {
+            visiblePosts += POSTS_PER_PAGE;
+            renderPosts();
+        }
+
+        // Reset filters
+        function resetFilters() {
+            currentCategory = 'all';
+            searchQuery = '';
+            visiblePosts = POSTS_PER_PAGE;
+            document.getElementById('blogSearch').value = '';
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.category === 'all');
+            });
+            renderPosts();
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            loadBlogPosts();
+
+            // Category buttons
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.addEventListener('click', () => filterByCategory(btn.dataset.category));
+            });
+
+            // Search input
+            const searchInput = document.getElementById('blogSearch');
+            let searchTimeout;
+            searchInput.addEventListener('input', (e) => {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(() => searchPosts(e.target.value), 300);
+            });
+
+            // Load more button
+            document.getElementById('loadMoreBtn').addEventListener('click', loadMorePosts);
+        });
+    </script>
+
+    <!-- Components -->
+    <script src="../assets/js/attal-components.js"></script>
+</body>
+</html>

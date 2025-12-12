@@ -1,0 +1,26 @@
+[
+  {
+    "id": "esempio-articolo-benvenuto",
+    "slug": "benvenuto-blog-attal-group",
+    "title": "Benvenuto nel Blog di ATTAL Group",
+    "excerpt": "Scopri tutte le novità sul mondo del lavoro, normative, eventi e consigli per candidati e aziende.",
+    "content": "",
+    "category": "news-azienda",
+    "author": {
+      "name": "Marco Bianchi",
+      "role": "HR Manager",
+      "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
+    },
+    "heroImage": {
+      "url": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&h=675&fit=crop",
+      "alt": "Ufficio moderno ATTAL Group",
+      "caption": "La sede centrale di ATTAL Group"
+    },
+    "datePublished": "2025-01-15T10:00:00+01:00",
+    "dateModified": "2025-01-15T10:00:00+01:00",
+    "readingTime": 3,
+    "tags": ["attal", "news", "lavoro"],
+    "featured": true,
+    "status": "published"
+  }
+]

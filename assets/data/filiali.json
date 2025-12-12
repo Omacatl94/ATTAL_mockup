@@ -396,28 +396,6 @@
     "website": "https://www.lavorint.it/"
   },
   {
-    "citta": "Mosciano Sant'Angelo",
-    "brand": "Lavorint",
-    "regione": "Abruzzo",
-    "indirizzo": "Viale Europa, 1, 64023 Mosciano Sant'Angelo TE",
-    "tel": "085 904 0630",
-    "rating": 4.9,
-    "reviews": 231,
-    "orari": [
-      "lunedì: 09:00–13:00, 14:00–18:00",
-      "martedì: 09:00–13:00, 14:00–18:00",
-      "mercoledì: 09:00–13:00, 14:00–18:00",
-      "giovedì: 09:00–13:00, 14:00–18:00",
-      "venerdì: 09:00–13:00, 14:00–18:00",
-      "sabato: Chiuso",
-      "domenica: Chiuso"
-    ],
-    "lat": 42.7114238,
-    "lng": 13.910475,
-    "place_id": "ChIJyX0ZNornMRMRRXvOAj1cMBI",
-    "website": "https://www.lavorint.it/"
-  },
-  {
     "citta": "Napoli",
     "brand": "Lavorint",
     "regione": "Campania",

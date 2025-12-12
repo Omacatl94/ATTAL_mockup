@@ -47,7 +47,7 @@ const ATTAL_HEADER = `
 
         <div class="nav-center">
             <ul class="nav-links">
-                <li><a href="careers.html">Offerte di Lavoro</a></li>
+                <li><a href="https://careers.attalgroup.it/jobs.php" target="_blank">Offerte di Lavoro</a></li>
                 <li><a href="filiali.html">Filiali</a></li>
                 <li><a href="aziende.html">Per le Aziende</a></li>
                 <li><a href="chi-siamo.html">Chi Siamo</a></li>
@@ -55,15 +55,8 @@ const ATTAL_HEADER = `
         </div>
 
         <div class="nav-right">
-            <a href="profilo.html" class="profile-link" id="profile-link-desktop" style="display: none;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="12" cy="7" r="4"></circle>
-                </svg>
-                Profilo
-            </a>
-            <a href="registrazione.html" class="btn-secondary" id="accedi-link-desktop">Accedi</a>
-            <a href="careers.html" class="btn-primary">
+            <a href="https://careers.attalgroup.it/job-seekers-login.php#login" target="_blank" class="btn-secondary">Accedi</a>
+            <a href="https://careers.attalgroup.it/jobs.php" target="_blank" class="btn-primary">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="11" cy="11" r="8"></circle>
                     <path d="m21 21-4.3-4.3"></path>
@@ -87,27 +80,20 @@ const ATTAL_HEADER = `
 
     <div class="mobile-menu" aria-hidden="true">
         <ul class="nav-links">
-            <li><a href="careers.html">Offerte di Lavoro</a></li>
+            <li><a href="https://careers.attalgroup.it/jobs.php" target="_blank">Offerte di Lavoro</a></li>
             <li><a href="filiali.html">Filiali</a></li>
             <li><a href="aziende.html">Per le Aziende</a></li>
             <li><a href="chi-siamo.html">Chi Siamo</a></li>
         </ul>
         <div class="mobile-ctas">
-            <a href="careers.html" class="btn-primary">
+            <a href="https://careers.attalgroup.it/jobs.php" target="_blank" class="btn-primary">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="11" cy="11" r="8"></circle>
                     <path d="m21 21-4.3-4.3"></path>
                 </svg>
                 Trova Lavoro
             </a>
-            <a href="profilo.html" class="profile-link" id="profile-link-mobile" style="display: none; justify-content: center; padding: 12px 20px;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="12" cy="7" r="4"></circle>
-                </svg>
-                Il Mio Profilo
-            </a>
-            <a href="registrazione.html" class="btn-secondary" id="accedi-link-mobile">Accedi</a>
+            <a href="https://careers.attalgroup.it/job-seekers-login.php#login" target="_blank" class="btn-secondary">Accedi</a>
         </div>
     </div>
 </header>
@@ -130,15 +116,15 @@ const ATTAL_FOOTER = `
                     </svg>
                 </a>
                 <p class="footer-tagline">Agenzia per il Lavoro<br>Vicini a te, vicini al lavoro.</p>
-                <p class="footer-auth">Aut. Min. Prot. n° 1234 del 01/01/2020<br>Albo Informatico delle APL - Sez. I</p>
+                <p class="footer-auth">Aut. Min. indet. Prot. 0013582 del 03/10/2012<br>Albo Informatico delle APL - Sez. I</p>
             </div>
 
             <div class="footer-column">
                 <h4>Candidati</h4>
                 <ul>
-                    <li><a href="careers.html">Offerte di Lavoro</a></li>
+                    <li><a href="https://careers.attalgroup.it/jobs.php" target="_blank">Offerte di Lavoro</a></li>
                     <li><a href="filiali.html">Trova Filiale</a></li>
-                    <li><a href="registrazione.html">Registrati</a></li>
+                    <li><a href="https://careers.attalgroup.it/job-seekers-login.php#login" target="_blank">Registrati</a></li>
                     <li><a href="#" style="pointer-events: none; opacity: 0.5;" title="Pagina non disponibile">Formazione Gratuita</a></li>
                     <li><a href="#" style="pointer-events: none; opacity: 0.5;" title="Pagina non disponibile">FAQ</a></li>
                 </ul>
@@ -151,7 +137,7 @@ const ATTAL_FOOTER = `
                     <li><a href="#" style="pointer-events: none; opacity: 0.5;" title="Pagina non disponibile">Ricerca e Selezione</a></li>
                     <li><a href="#" style="pointer-events: none; opacity: 0.5;" title="Pagina non disponibile">Formazione</a></li>
                     <li><a href="#" style="pointer-events: none; opacity: 0.5;" title="Pagina non disponibile">Outsourcing</a></li>
-                    <li><a href="#" style="pointer-events: none; opacity: 0.5;" title="Pagina non disponibile">Contattaci</a></li>
+                    <li><a href="contatti.html">Contattaci</a></li>
                 </ul>
             </div>
 
@@ -160,9 +146,9 @@ const ATTAL_FOOTER = `
                 <ul>
                     <li><a href="chi-siamo.html">Chi Siamo</a></li>
                     <li><a href="filiali.html">Le Nostre Filiali</a></li>
-                    <li><a href="#" style="pointer-events: none; opacity: 0.5;" title="Pagina non disponibile">Lavora con Noi</a></li>
+                    <li><a href="lavora-con-noi.html">Lavora con Noi</a></li>
                     <li><a href="#" style="pointer-events: none; opacity: 0.5;" title="Pagina non disponibile">News</a></li>
-                    <li><a href="#" style="pointer-events: none; opacity: 0.5;" title="Pagina non disponibile">Contatti</a></li>
+                    <li><a href="contatti.html">Contatti</a></li>
                 </ul>
             </div>
 
@@ -170,26 +156,28 @@ const ATTAL_FOOTER = `
                 <div class="footer-newsletter">
                     <h4>Ricevi offerte su misura</h4>
                     <p>Iscriviti per ricevere le migliori opportunità nella tua zona.</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="La tua email" required>
-                        <button type="submit">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2L15 22L11 13L2 9L22 2Z"/></svg>
+                    <form class="newsletter-form" action="https://formspree.io/f/xyzrnnbj" method="POST">
+                        <input type="email" name="email" placeholder="La tua email" required>
+                        <button type="submit" aria-label="Iscriviti">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="min-width: 18px;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                         </button>
                     </form>
+                    <label class="newsletter-consent" style="display: flex; align-items: flex-start; gap: 8px; margin-top: 12px; cursor: pointer;">
+                        <input type="checkbox" name="consent" required style="margin-top: 3px; accent-color: var(--attal-red);">
+                        <span style="font-size: 11px; color: var(--gray-400); line-height: 1.4;">Acconsento a ricevere newsletter e comunicazioni commerciali da Attal Group. <a href="privacy-policy.html" style="color: var(--attal-red); text-decoration: underline;">Privacy Policy</a></span>
+                    </label>
+                    <p class="newsletter-success" style="display: none; color: #22c55e; font-size: 13px; margin-top: 10px;">Iscrizione completata! Ti terremo aggiornato.</p>
                 </div>
 
                 <div class="footer-social">
-                    <a href="#" style="pointer-events: none; opacity: 0.3;" aria-label="Facebook" title="Link esterno non disponibile in locale">
+                    <a href="https://www.facebook.com/attalgroupitalia" target="_blank" aria-label="Facebook">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
                     </a>
-                    <a href="#" style="pointer-events: none; opacity: 0.3;" aria-label="Instagram" title="Link esterno non disponibile in locale">
+                    <a href="https://www.instagram.com/attalgroup_official/" target="_blank" aria-label="Instagram">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                     </a>
-                    <a href="#" style="pointer-events: none; opacity: 0.3;" aria-label="LinkedIn" title="Link esterno non disponibile in locale">
+                    <a href="https://it.linkedin.com/company/attalgroupitalia" target="_blank" aria-label="LinkedIn">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-                    </a>
-                    <a href="#" style="pointer-events: none; opacity: 0.3;" aria-label="YouTube" title="Link esterno non disponibile in locale">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
                     </a>
                 </div>
             </div>
@@ -197,13 +185,13 @@ const ATTAL_FOOTER = `
 
         <div class="footer-bottom">
             <p class="footer-copyright">
-                © 2025 ATTAL S.p.A. — P.IVA 01234567890 — Tutti i diritti riservati
+                © 2025 Attal Group S.p.A. con socio unico — P.IVA 06961760722 — Tutti i diritti riservati
             </p>
             <div class="footer-legal">
-                <a href="#" style="pointer-events: none; opacity: 0.5;" title="Pagina non disponibile">Privacy Policy</a>
-                <a href="#" style="pointer-events: none; opacity: 0.5;" title="Pagina non disponibile">Cookie Policy</a>
-                <a href="#" style="pointer-events: none; opacity: 0.5;" title="Pagina non disponibile">Termini e Condizioni</a>
-                <a href="#" style="pointer-events: none; opacity: 0.5;" title="Pagina non disponibile">Trasparenza</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="cookie-policy.html">Cookie Policy</a>
+                <a href="whistleblowing.html">Whistleblowing</a>
+                <a href="javascript:void(0);" onclick="if(window.AttalCookies) AttalCookies.openPreferences();">Gestisci Cookie</a>
             </div>
         </div>
     </div>
@@ -349,11 +337,45 @@ function initFooterScripts() {
 
     const newsletterForm = document.querySelector('.newsletter-form');
     if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
+        newsletterForm.addEventListener('submit', async function(e) {
             e.preventDefault();
-            const email = this.querySelector('input[type="email"]').value;
-            alert('Grazie per l\'iscrizione! Riceverai presto le migliori offerte.');
-            this.reset();
+            const form = this;
+            const button = form.querySelector('button');
+            const consentCheckbox = form.parentElement.querySelector('input[name="consent"]');
+            const successMsg = form.parentElement.querySelector('.newsletter-success');
+            const consentLabel = form.parentElement.querySelector('.newsletter-consent');
+
+            // Verifica consenso
+            if (!consentCheckbox || !consentCheckbox.checked) {
+                alert('Devi accettare l\'informativa privacy per iscriverti.');
+                return;
+            }
+
+            button.disabled = true;
+
+            try {
+                const formData = new FormData(form);
+                formData.append('consent', 'accepted');
+                formData.append('consent_date', new Date().toISOString());
+
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    form.style.display = 'none';
+                    if (consentLabel) consentLabel.style.display = 'none';
+                    successMsg.style.display = 'block';
+                } else {
+                    alert('Errore durante l\'iscrizione. Riprova.');
+                    button.disabled = false;
+                }
+            } catch (error) {
+                alert('Errore di connessione. Riprova.');
+                button.disabled = false;
+            }
         });
     }
 }
@@ -366,74 +388,17 @@ if (document.readyState === 'loading') {
 
 // CSS già caricati nelle pagine HTML - non serve caricarli dinamicamente
 
-// Funzione globale per impostare lo stato di login e reinizializzare Ally
-window.attalSetUserLoggedIn = function(userProfile = null) {
-    // Imposta lo stato di login
-    sessionStorage.setItem('attal_user_logged_in', 'true');
-
-    // Se non viene passato un profilo, estrai dati dalla pagina di registrazione
-    if (!userProfile) {
-        const emailInput = document.getElementById('email');
-
-        // Cerca il nome nella sezione dati verificati (step 3)
-        let nome = 'Mario';
-        let cognome = 'Rossi';
-        const dataValues = document.querySelectorAll('.data-value');
-        dataValues.forEach(el => {
-            const text = el.textContent.trim();
-            if (text.includes('Mario Rossi')) {
-                const parts = text.replace('Modifica', '').trim().split(' ');
-                if (parts.length >= 2) {
-                    nome = parts[0];
-                    cognome = parts.slice(1).join(' ');
-                }
-            }
-        });
-
-        userProfile = {
-            nome: nome,
-            cognome: cognome,
-            email: emailInput ? emailInput.value : 'mario.rossi@email.com'
-        };
-    }
-
-    // Salva il profilo utente
-    sessionStorage.setItem('attal_user_profile', JSON.stringify(userProfile));
-
-    // Aggiorna l'header per mostrare il link profilo
-    if (typeof window.updateHeaderForLoginState === 'function') {
-        window.updateHeaderForLoginState();
-    }
-
-    // Reinizializza Ally con lo stato loggato (il widget viene re-iniettato automaticamente)
-    if (typeof window.initializeAlly === 'function') {
-        window.initializeAlly({ isLoggedIn: true, userProfile });
-    }
-};
-
-(function loadAllyWidget() {
+// Carica Cookie Banner
+(function loadCookieBanner() {
     const script = document.createElement('script');
     // Determina il path base in base alla posizione della pagina
     const isInSubfolder = window.location.pathname.includes('/pages/');
     const basePath = isInSubfolder ? '../assets/js/' : 'assets/js/';
-    script.src = basePath + 'ally-widget-unified.js';
+    script.src = basePath + 'cookie-banner.js';
     script.async = true;
 
-    script.onload = function() {
-        const isLoggedIn = sessionStorage.getItem('attal_user_logged_in') === 'true';
-
-        if (typeof window.initializeAlly === 'function') {
-            if (isLoggedIn) {
-                const userProfile = JSON.parse(sessionStorage.getItem('attal_user_profile') || '{}');
-                window.initializeAlly({ isLoggedIn: true, userProfile });
-            } else {
-                window.initializeAlly({ isLoggedIn: false });
-            }
-        }
-    };
-
     script.onerror = function() {
-        console.warn('Ally widget not loaded - widget file may not exist yet');
+        console.warn('Cookie banner not loaded - file may not exist yet');
     };
 
     document.body.appendChild(script);

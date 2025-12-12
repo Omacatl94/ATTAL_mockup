@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Gestione Filiali</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f3f4f6;
+            padding: 20px;
+        }
+        .container { max-width: 1400px; margin: 0 auto; }
+        h1 { color: #1f2937; margin-bottom: 20px; }
+
+        .toolbar {
+            background: white;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .toolbar input[type="text"] {
+            padding: 8px 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 14px;
+            width: 250px;
+        }
+        .toolbar select {
+            padding: 8px 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-primary { background: #e22721; color: white; }
+        .btn-primary:hover { background: #c91f1a; }
+        .btn-secondary { background: #6b7280; color: white; }
+        .btn-secondary:hover { background: #4b5563; }
+        .btn-success { background: #10b981; color: white; }
+        .btn-success:hover { background: #059669; }
+        .btn-danger { background: #ef4444; color: white; }
+        .btn-danger:hover { background: #dc2626; }
+        .btn-sm { padding: 4px 8px; font-size: 12px; }
+
+        .stats {
+            background: white;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .stat { font-size: 14px; color: #6b7280; }
+        .stat strong { color: #1f2937; }
+
+        /* Classifica Brand */
+        .brand-ranking {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        .brand-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .brand-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+        }
+        .brand-card.Lavorint::before { background: #4b95cf; }
+        .brand-card.Tempor::before { background: #c1172a; }
+        .brand-card.Temporary::before { background: #f18f03; }
+        .brand-card.Tempus::before { background: #df1d1d; }
+        .brand-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .brand-card-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1f2937;
+        }
+        .brand-card-rank {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .rank-1 { background: #fef3c7; color: #d97706; }
+        .rank-2 { background: #e5e7eb; color: #6b7280; }
+        .rank-3 { background: #fed7aa; color: #c2410c; }
+        .rank-4 { background: #f3f4f6; color: #9ca3af; }
+        .brand-card-stats {
+            display: grid;
+            gap: 12px;
+        }
+        .brand-stat-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        .brand-stat-row:last-child { border-bottom: none; }
+        .brand-stat-label {
+            font-size: 12px;
+            color: #6b7280;
+        }
+        .brand-stat-value {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1f2937;
+        }
+        .brand-stat-value.rating {
+            color: #f59e0b;
+        }
+        .brand-stat-bar {
+            height: 6px;
+            background: #e5e7eb;
+            border-radius: 3px;
+            margin-top: 4px;
+            overflow: hidden;
+        }
+        .brand-stat-bar-fill {
+            height: 100%;
+            border-radius: 3px;
+            transition: width 0.5s ease;
+        }
+        .Lavorint .brand-stat-bar-fill { background: #4b95cf; }
+        .Tempor .brand-stat-bar-fill { background: #c1172a; }
+        .Temporary .brand-stat-bar-fill { background: #f18f03; }
+        .Tempus .brand-stat-bar-fill { background: #df1d1d; }
+
+        @media (max-width: 900px) {
+            .brand-ranking { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 500px) {
+            .brand-ranking { grid-template-columns: 1fr; }
+        }
+
+        .table-container {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+        th {
+            background: #f9fafb;
+            padding: 12px 8px;
+            text-align: left;
+            font-weight: 600;
+            color: #374151;
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+        }
+        td {
+            padding: 8px;
+            border-bottom: 1px solid #f3f4f6;
+            vertical-align: top;
+        }
+        tr:hover { background: #f9fafb; }
+
+        td input, td select {
+            width: 100%;
+            padding: 6px 8px;
+            border: 1px solid #e5e7eb;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        td input:focus, td select:focus {
+            outline: none;
+            border-color: #e22721;
+        }
+        td input.changed {
+            background: #fef3c7;
+            border-color: #f59e0b;
+        }
+
+        .brand-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            color: white;
+        }
+        .brand-Lavorint { background: #4b95cf; }
+        .brand-Tempor { background: #c1172a; }
+        .brand-Temporary { background: #f18f03; }
+        .brand-Tempus { background: #df1d1d; }
+
+        .rating { color: #f59e0b; }
+        .actions { white-space: nowrap; }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal.open { display: flex; }
+        .modal-content {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            max-width: 500px;
+            width: 90%;
+        }
+        .modal h3 { margin-bottom: 16px; }
+        .modal-actions { margin-top: 20px; display: flex; gap: 12px; justify-content: flex-end; }
+
+        .loading {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #f3f4f6;
+            border-top-color: #e22721;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 12px 20px;
+            background: #1f2937;
+            color: white;
+            border-radius: 8px;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 1001;
+        }
+        .toast.show { opacity: 1; }
+        .toast.success { background: #10b981; }
+        .toast.error { background: #ef4444; }
+
+        .api-key-section {
+            background: #fef3c7;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        .api-key-section input {
+            flex: 1;
+            padding: 8px 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gestione Filiali ATTAL</h1>
+
+        <div class="api-key-section" style="background: #d1fae5;">
+            <span style="font-size: 14px; color: #065f46;">API Key Google configurata nel backend Netlify</span>
+            <button class="btn btn-sm btn-secondary" onclick="testGoogleApi()">Test API</button>
+        </div>
+
+        <div class="toolbar">
+            <input type="text" id="searchInput" placeholder="Cerca città o indirizzo..." oninput="filterTable()">
+            <select id="brandFilter" onchange="filterTable()">
+                <option value="">Tutti i brand</option>
+                <option value="Lavorint">Lavorint</option>
+                <option value="Tempor">Tempor</option>
+                <option value="Temporary">Temporary</option>
+                <option value="Tempus">Tempus</option>
+            </select>
+            <select id="regioneFilter" onchange="filterTable()">
+                <option value="">Tutte le regioni</option>
+            </select>
+            <div style="flex: 1;"></div>
+            <button class="btn btn-secondary" onclick="loadFromFile()">Carica JSON</button>
+            <button class="btn btn-success" onclick="exportJSON()">Esporta JSON</button>
+            <button class="btn btn-primary" onclick="updateAllFromGoogle()">⟳ Aggiorna TUTTE da Google</button>
+        </div>
+
+        <div class="stats">
+            <div class="stat">Totale: <strong id="totalCount">0</strong> filiali</div>
+            <div class="stat">Visualizzate: <strong id="filteredCount">0</strong></div>
+            <div class="stat">Modificate: <strong id="changedCount">0</strong></div>
+        </div>
+
+        <h2 style="margin-bottom: 16px; color: #1f2937;">Classifica Brand</h2>
+        <div class="brand-ranking" id="brandRanking"></div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 40px;">#</th>
+                        <th style="width: 120px;">Città</th>
+                        <th style="width: 100px;">Brand</th>
+                        <th style="width: 100px;">Regione</th>
+                        <th style="width: 200px;">Indirizzo</th>
+                        <th style="width: 120px;">Telefono</th>
+                        <th style="width: 60px;">Rating</th>
+                        <th style="width: 60px;">Reviews</th>
+                        <th style="width: 160px;">Azioni</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal per dettagli -->
+    <div class="modal" id="detailModal">
+        <div class="modal-content">
+            <h3>Dettagli Filiale</h3>
+            <div id="modalContent"></div>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" onclick="closeModal()">Chiudi</button>
+                <button class="btn btn-primary" onclick="saveModalChanges()">Salva</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <input type="file" id="fileInput" accept=".json" style="display: none;" onchange="handleFileLoad(event)">
+
+    <script>
+        let filiali = [];
+        let filteredFiliali = [];
+        let changedIndices = new Set();
+        let currentEditIndex = null;
+
+        // Carica JSON all'avvio
+        async function init() {
+            try {
+                const response = await fetch('../assets/data/filiali.json');
+                filiali = await response.json();
+                populateRegionFilter();
+                renderTable();
+                renderBrandRanking();
+                showToast(`Caricate ${filiali.length} filiali`, 'success');
+            } catch (error) {
+                showToast('Errore caricamento: ' + error.message, 'error');
+            }
+        }
+
+        function populateRegionFilter() {
+            const regioni = [...new Set(filiali.map(f => f.regione).filter(Boolean))].sort();
+            const select = document.getElementById('regioneFilter');
+            regioni.forEach(r => {
+                const opt = document.createElement('option');
+                opt.value = r;
+                opt.textContent = r;
+                select.appendChild(opt);
+            });
+        }
+
+        function filterTable() {
+            const search = document.getElementById('searchInput').value.toLowerCase();
+            const brand = document.getElementById('brandFilter').value;
+            const regione = document.getElementById('regioneFilter').value;
+
+            filteredFiliali = filiali.filter((f, i) => {
+                const matchSearch = !search ||
+                    f.citta?.toLowerCase().includes(search) ||
+                    f.indirizzo?.toLowerCase().includes(search);
+                const matchBrand = !brand || f.brand === brand;
+                const matchRegione = !regione || f.regione === regione;
+                return matchSearch && matchBrand && matchRegione;
+            });
+
+            renderTable();
+        }
+
+        function renderTable() {
+            const tbody = document.getElementById('tableBody');
+            const data = filteredFiliali.length > 0 || document.getElementById('searchInput').value ||
+                         document.getElementById('brandFilter').value || document.getElementById('regioneFilter').value
+                         ? filteredFiliali : filiali;
+
+            if (filteredFiliali.length === 0 && !document.getElementById('searchInput').value) {
+                filteredFiliali = [...filiali];
+            }
+
+            tbody.innerHTML = data.map((f, idx) => {
+                const realIndex = filiali.indexOf(f);
+                const isChanged = changedIndices.has(realIndex);
+                return `
+                    <tr data-index="${realIndex}">
+                        <td>${realIndex + 1}</td>
+                        <td><input type="text" value="${f.citta || ''}" onchange="updateField(${realIndex}, 'citta', this.value)" class="${isChanged ? 'changed' : ''}"></td>
+                        <td>
+                            <select onchange="updateField(${realIndex}, 'brand', this.value)">
+                                <option value="Lavorint" ${f.brand === 'Lavorint' ? 'selected' : ''}>Lavorint</option>
+                                <option value="Tempor" ${f.brand === 'Tempor' ? 'selected' : ''}>Tempor</option>
+                                <option value="Temporary" ${f.brand === 'Temporary' ? 'selected' : ''}>Temporary</option>
+                                <option value="Tempus" ${f.brand === 'Tempus' ? 'selected' : ''}>Tempus</option>
+                            </select>
+                        </td>
+                        <td><input type="text" value="${f.regione || ''}" onchange="updateField(${realIndex}, 'regione', this.value)"></td>
+                        <td><input type="text" value="${f.indirizzo || ''}" onchange="updateField(${realIndex}, 'indirizzo', this.value)"></td>
+                        <td><input type="text" value="${f.tel || ''}" onchange="updateField(${realIndex}, 'tel', this.value)"></td>
+                        <td><span class="rating">${f.rating ? '★ ' + f.rating.toFixed(1) : '-'}</span></td>
+                        <td>${f.reviews || 0}</td>
+                        <td class="actions">
+                            <button class="btn btn-sm btn-secondary" onclick="showDetails(${realIndex})" title="Modifica dettagli">Dettagli</button>
+                            <button class="btn btn-sm btn-primary" onclick="updateFromGoogle(${realIndex})" title="Aggiorna rating, recensioni e dati da Google">Aggiorna</button>
+                            <button class="btn btn-sm btn-danger" onclick="removeFiliale(${realIndex})" title="Rimuovi filiale">✕</button>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+
+            document.getElementById('totalCount').textContent = filiali.length;
+            document.getElementById('filteredCount').textContent = data.length;
+            document.getElementById('changedCount').textContent = changedIndices.size;
+        }
+
+        function updateField(index, field, value) {
+            filiali[index][field] = value;
+            changedIndices.add(index);
+            document.getElementById('changedCount').textContent = changedIndices.size;
+
+            // Evidenzia la riga
+            const row = document.querySelector(`tr[data-index="${index}"]`);
+            if (row) {
+                row.style.background = '#fef3c7';
+            }
+        }
+
+        function removeFiliale(index) {
+            const f = filiali[index];
+            if (!confirm(`Sei sicuro di voler rimuovere la filiale "${f.citta}" (${f.brand})?\n\nQuesta azione non può essere annullata.`)) {
+                return;
+            }
+
+            filiali.splice(index, 1);
+
+            // Aggiorna gli indici delle modifiche
+            const newChangedIndices = new Set();
+            changedIndices.forEach(i => {
+                if (i < index) newChangedIndices.add(i);
+                else if (i > index) newChangedIndices.add(i - 1);
+            });
+            changedIndices = newChangedIndices;
+
+            filterTable();
+            renderBrandRanking();
+            showToast(`Filiale "${f.citta}" rimossa`, 'success');
+        }
+
+        function showDetails(index) {
+            currentEditIndex = index;
+            const f = filiali[index];
+            document.getElementById('modalContent').innerHTML = `
+                <div style="display: grid; gap: 12px;">
+                    <div>
+                        <label style="font-weight: 600; display: block; margin-bottom: 4px;">Città</label>
+                        <input type="text" id="edit_citta" value="${f.citta || ''}" style="width: 100%; padding: 8px; border: 1px solid #d1d5db; border-radius: 6px;">
+                    </div>
+                    <div>
+                        <label style="font-weight: 600; display: block; margin-bottom: 4px;">Indirizzo completo</label>
+                        <input type="text" id="edit_indirizzo" value="${f.indirizzo || ''}" style="width: 100%; padding: 8px; border: 1px solid #d1d5db; border-radius: 6px;">
+                    </div>
+                    <div>
+                        <label style="font-weight: 600; display: block; margin-bottom: 4px;">Telefono</label>
+                        <input type="text" id="edit_tel" value="${f.tel || ''}" style="width: 100%; padding: 8px; border: 1px solid #d1d5db; border-radius: 6px;">
+                    </div>
+                    <div>
+                        <label style="font-weight: 600; display: block; margin-bottom: 4px;">Website</label>
+                        <input type="text" id="edit_website" value="${f.website || ''}" style="width: 100%; padding: 8px; border: 1px solid #d1d5db; border-radius: 6px;">
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                        <div>
+                            <label style="font-weight: 600; display: block; margin-bottom: 4px;">Lat</label>
+                            <input type="text" id="edit_lat" value="${f.lat || ''}" style="width: 100%; padding: 8px; border: 1px solid #d1d5db; border-radius: 6px;">
+                        </div>
+                        <div>
+                            <label style="font-weight: 600; display: block; margin-bottom: 4px;">Lng</label>
+                            <input type="text" id="edit_lng" value="${f.lng || ''}" style="width: 100%; padding: 8px; border: 1px solid #d1d5db; border-radius: 6px;">
+                        </div>
+                    </div>
+                    <div>
+                        <label style="font-weight: 600; display: block; margin-bottom: 4px;">Place ID</label>
+                        <input type="text" id="edit_place_id" value="${f.place_id || ''}" style="width: 100%; padding: 8px; border: 1px solid #d1d5db; border-radius: 6px; font-family: monospace; font-size: 11px;">
+                    </div>
+                    <div>
+                        <label style="font-weight: 600; display: block; margin-bottom: 4px;">Orari</label>
+                        <textarea id="edit_orari" style="width: 100%; padding: 8px; border: 1px solid #d1d5db; border-radius: 6px; height: 100px; font-size: 12px;">${(f.orari || []).join('\n')}</textarea>
+                    </div>
+                </div>
+            `;
+            document.getElementById('detailModal').classList.add('open');
+        }
+
+        function closeModal() {
+            document.getElementById('detailModal').classList.remove('open');
+            currentEditIndex = null;
+        }
+
+        function saveModalChanges() {
+            if (currentEditIndex === null) return;
+
+            filiali[currentEditIndex].citta = document.getElementById('edit_citta').value;
+            filiali[currentEditIndex].indirizzo = document.getElementById('edit_indirizzo').value;
+            filiali[currentEditIndex].tel = document.getElementById('edit_tel').value;
+            filiali[currentEditIndex].website = document.getElementById('edit_website').value;
+            filiali[currentEditIndex].lat = parseFloat(document.getElementById('edit_lat').value) || null;
+            filiali[currentEditIndex].lng = parseFloat(document.getElementById('edit_lng').value) || null;
+            filiali[currentEditIndex].place_id = document.getElementById('edit_place_id').value;
+            filiali[currentEditIndex].orari = document.getElementById('edit_orari').value.split('\n').filter(Boolean);
+
+            changedIndices.add(currentEditIndex);
+            renderTable();
+            closeModal();
+            showToast('Modifiche salvate localmente', 'success');
+        }
+
+        async function testGoogleApi() {
+            try {
+                const response = await fetch('/.netlify/functions/google-places', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ action: 'findPlace', query: 'Lavorint Milano' })
+                });
+                const data = await response.json();
+                if (data.error) {
+                    showToast('Errore API: ' + data.error, 'error');
+                } else if (data.candidates && data.candidates.length > 0) {
+                    showToast('API funzionante! Trovato: ' + data.candidates[0].name, 'success');
+                } else {
+                    showToast('API risponde ma nessun risultato trovato', 'error');
+                }
+            } catch (error) {
+                showToast('Errore connessione: ' + error.message, 'error');
+            }
+        }
+
+        async function updateFromGoogle(index) {
+            const f = filiali[index];
+            const btn = event.target;
+            btn.innerHTML = '<span class="loading"></span>';
+            btn.disabled = true;
+
+            try {
+                let placeId = f.place_id;
+
+                // Se non abbiamo place_id, cercalo
+                if (!placeId) {
+                    const searchQuery = `${f.brand} ${f.citta}`;
+                    const findResponse = await fetch('/.netlify/functions/google-places', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ action: 'findPlace', query: searchQuery })
+                    });
+                    const findData = await findResponse.json();
+
+                    if (findData.candidates && findData.candidates.length > 0) {
+                        placeId = findData.candidates[0].place_id;
+                    } else {
+                        throw new Error('Filiale non trovata su Google');
+                    }
+                }
+
+                // Ottieni i dettagli
+                const detailsResponse = await fetch('/.netlify/functions/google-places', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ action: 'details', placeId: placeId })
+                });
+                const detailsData = await detailsResponse.json();
+
+                if (detailsData.result) {
+                    const r = detailsData.result;
+                    filiali[index].indirizzo = r.formatted_address || f.indirizzo;
+                    filiali[index].tel = r.formatted_phone_number || f.tel;
+                    filiali[index].rating = r.rating || f.rating;
+                    filiali[index].reviews = r.user_ratings_total || f.reviews;
+                    filiali[index].website = r.website || f.website;
+                    filiali[index].place_id = placeId;
+                    if (r.geometry && r.geometry.location) {
+                        filiali[index].lat = r.geometry.location.lat;
+                        filiali[index].lng = r.geometry.location.lng;
+                    }
+                    if (r.opening_hours && r.opening_hours.weekday_text) {
+                        filiali[index].orari = r.opening_hours.weekday_text;
+                    }
+
+                    changedIndices.add(index);
+                    renderTable();
+                    renderBrandRanking();
+                    showToast(`Aggiornata: ${f.citta}`, 'success');
+                } else {
+                    throw new Error('Nessun dettaglio disponibile');
+                }
+
+            } catch (error) {
+                showToast('Errore: ' + error.message, 'error');
+            }
+
+            btn.innerHTML = 'Aggiorna';
+            btn.disabled = false;
+        }
+
+        async function updateAllFromGoogle() {
+            if (!confirm(`Aggiornare tutte le ${filiali.length} filiali da Google?\nQuesta operazione potrebbe richiedere qualche minuto.`)) {
+                return;
+            }
+
+            const btn = event.target;
+            btn.innerHTML = '<span class="loading"></span> Aggiornando...';
+            btn.disabled = true;
+
+            let updated = 0;
+            let errors = 0;
+
+            for (let i = 0; i < filiali.length; i++) {
+                const f = filiali[i];
+                try {
+                    let placeId = f.place_id;
+
+                    if (!placeId) {
+                        const searchQuery = `${f.brand} ${f.citta}`;
+                        const findResponse = await fetch('/.netlify/functions/google-places', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ action: 'findPlace', query: searchQuery })
+                        });
+                        const findData = await findResponse.json();
+                        if (findData.candidates && findData.candidates.length > 0) {
+                            placeId = findData.candidates[0].place_id;
+                        }
+                    }
+
+                    if (placeId) {
+                        const detailsResponse = await fetch('/.netlify/functions/google-places', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ action: 'details', placeId: placeId })
+                        });
+                        const detailsData = await detailsResponse.json();
+
+                        if (detailsData.result) {
+                            const r = detailsData.result;
+                            filiali[i].indirizzo = r.formatted_address || f.indirizzo;
+                            filiali[i].tel = r.formatted_phone_number || f.tel;
+                            filiali[i].rating = r.rating || f.rating;
+                            filiali[i].reviews = r.user_ratings_total || f.reviews;
+                            filiali[i].website = r.website || f.website;
+                            filiali[i].place_id = placeId;
+                            if (r.geometry && r.geometry.location) {
+                                filiali[i].lat = r.geometry.location.lat;
+                                filiali[i].lng = r.geometry.location.lng;
+                            }
+                            if (r.opening_hours && r.opening_hours.weekday_text) {
+                                filiali[i].orari = r.opening_hours.weekday_text;
+                            }
+                            changedIndices.add(i);
+                            updated++;
+                        }
+                    } else {
+                        errors++;
+                    }
+
+                    // Update progress ogni 5
+                    if (i % 5 === 0) {
+                        document.getElementById('changedCount').textContent = updated;
+                    }
+
+                    // Piccola pausa per non sovraccaricare l'API
+                    await new Promise(r => setTimeout(r, 200));
+
+                } catch (error) {
+                    errors++;
+                }
+            }
+
+            renderTable();
+            renderBrandRanking();
+            btn.innerHTML = '⟳ Aggiorna TUTTE da Google';
+            btn.disabled = false;
+            showToast(`Aggiornate ${updated} filiali, ${errors} errori`, updated > 0 ? 'success' : 'error');
+        }
+
+        function loadFromFile() {
+            document.getElementById('fileInput').click();
+        }
+
+        function handleFileLoad(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                try {
+                    filiali = JSON.parse(e.target.result);
+                    changedIndices.clear();
+                    filterTable();
+                    showToast(`Caricate ${filiali.length} filiali da file`, 'success');
+                } catch (error) {
+                    showToast('Errore parsing JSON: ' + error.message, 'error');
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        function exportJSON() {
+            const json = JSON.stringify(filiali, null, 2);
+            const blob = new Blob([json], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'filiali.json';
+            a.click();
+            URL.revokeObjectURL(url);
+            showToast('File esportato! Sostituiscilo in assets/data/', 'success');
+        }
+
+        function showToast(message, type = '') {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.className = 'toast show ' + type;
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
+        function renderBrandRanking() {
+            const brands = ['Lavorint', 'Tempor', 'Temporary', 'Tempus'];
+            const brandStats = brands.map(brand => {
+                const brandFiliali = filiali.filter(f => f.brand === brand);
+                const filialiWithRating = brandFiliali.filter(f => f.rating);
+                const totalReviews = brandFiliali.reduce((sum, f) => sum + (f.reviews || 0), 0);
+                const avgRating = filialiWithRating.length > 0
+                    ? filialiWithRating.reduce((sum, f) => sum + f.rating, 0) / filialiWithRating.length
+                    : 0;
+                const avgReviews = brandFiliali.length > 0
+                    ? totalReviews / brandFiliali.length
+                    : 0;
+
+                return {
+                    name: brand,
+                    count: brandFiliali.length,
+                    avgRating: avgRating,
+                    avgReviews: avgReviews,
+                    totalReviews: totalReviews
+                };
+            });
+
+            // Ordina per rating medio (decrescente)
+            brandStats.sort((a, b) => b.avgRating - a.avgRating);
+
+            // Trova il max per le barre proporzionali
+            const maxReviews = Math.max(...brandStats.map(b => b.totalReviews));
+            const maxAvgReviews = Math.max(...brandStats.map(b => b.avgReviews));
+
+            const container = document.getElementById('brandRanking');
+            container.innerHTML = brandStats.map((brand, idx) => `
+                <div class="brand-card ${brand.name}">
+                    <div class="brand-card-header">
+                        <span class="brand-card-name">${brand.name}</span>
+                        <span class="brand-card-rank rank-${idx + 1}">${idx + 1}°</span>
+                    </div>
+                    <div class="brand-card-stats">
+                        <div class="brand-stat-row">
+                            <span class="brand-stat-label">Rating medio</span>
+                            <span class="brand-stat-value rating">★ ${brand.avgRating.toFixed(2)}</span>
+                        </div>
+                        <div class="brand-stat-row">
+                            <span class="brand-stat-label">Filiali</span>
+                            <span class="brand-stat-value">${brand.count}</span>
+                        </div>
+                        <div class="brand-stat-row">
+                            <span class="brand-stat-label">Recensioni totali</span>
+                            <span class="brand-stat-value">${brand.totalReviews}</span>
+                        </div>
+                        <div class="brand-stat-bar">
+                            <div class="brand-stat-bar-fill" style="width: ${maxReviews > 0 ? (brand.totalReviews / maxReviews * 100) : 0}%"></div>
+                        </div>
+                        <div class="brand-stat-row">
+                            <span class="brand-stat-label">Media recensioni/filiale</span>
+                            <span class="brand-stat-value">${brand.avgReviews.toFixed(1)}</span>
+                        </div>
+                        <div class="brand-stat-bar">
+                            <div class="brand-stat-bar-fill" style="width: ${maxAvgReviews > 0 ? (brand.avgReviews / maxAvgReviews * 100) : 0}%"></div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Inizializza
+        init();
+    </script>
+</body>
+</html>
